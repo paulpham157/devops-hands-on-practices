@@ -1,0 +1,29 @@
+name: web-app
+description: Basic public web application with managed database and object storage.
+requirements:
+  traffic: public-http
+  state: app-stateless-database-stateful
+  availability: multi-zone
+  data_classification: internal
+aws:
+  compute: ECS on Fargate or EKS
+  load_balancer: Application Load Balancer
+  database: RDS PostgreSQL
+  storage: S3
+  network: VPC with public and private subnets
+  secrets: Secrets Manager
+azure:
+  compute: Container Apps or AKS
+  load_balancer: Application Gateway
+  database: Azure Database for PostgreSQL
+  storage: Blob Storage
+  network: Virtual Network with public and private subnets
+  secrets: Key Vault
+gcp:
+  compute: Cloud Run or GKE
+  load_balancer: Cloud Load Balancing
+  database: Cloud SQL PostgreSQL
+  storage: Cloud Storage
+  network: VPC network with subnets
+  secrets: Secret Manager
+

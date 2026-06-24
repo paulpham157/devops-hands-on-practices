@@ -1,0 +1,23 @@
+services:
+  rest-api:
+    build:
+      context: ./rest-api
+    ports:
+      - "5200:5000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/healthz')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  grpc-service:
+    build:
+      context: ./grpc-service
+    ports:
+      - "5201:50051"
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+

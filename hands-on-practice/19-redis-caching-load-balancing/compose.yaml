@@ -1,0 +1,65 @@
+services:
+  redis:
+    image: redis:7.4-alpine
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app-a:
+    build:
+      context: ./app
+    environment:
+      INSTANCE_NAME: app-a
+      REDIS_URL: redis://redis:6379/0
+      CACHE_TTL_SECONDS: "20"
+      ORIGIN_DELAY_MS: "180"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  app-b:
+    build:
+      context: ./app
+    environment:
+      INSTANCE_NAME: app-b
+      REDIS_URL: redis://redis:6379/0
+      CACHE_TTL_SECONDS: "20"
+      ORIGIN_DELAY_MS: "180"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  app-c:
+    build:
+      context: ./app
+    environment:
+      INSTANCE_NAME: app-c
+      REDIS_URL: redis://redis:6379/0
+      CACHE_TTL_SECONDS: "20"
+      ORIGIN_DELAY_MS: "180"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "5190:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app-a
+      - app-b
+      - app-c
+
+volumes:
+  redis-data:
+

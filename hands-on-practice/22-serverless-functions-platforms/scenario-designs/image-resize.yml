@@ -1,0 +1,19 @@
+name: image-resize
+description: Resize uploaded images asynchronously.
+requirements:
+  trigger: object-storage-upload
+  workload: bursty
+  state: object-storage
+  user_response: async
+recommended_pattern:
+  aws: S3 event -> Lambda -> S3 output
+  azure: Blob trigger -> Azure Functions -> Blob output
+  gcp: Cloud Storage event -> Cloud Run functions -> Cloud Storage output
+  cloudflare: R2 event/integration -> Worker/Queue -> R2 output
+  vercel: Upload webhook -> queue/container worker when long-running
+  netlify: Upload webhook -> background function or external queue
+notes:
+  - Make processing idempotent by output key.
+  - Use a queue for burst control when uploads spike.
+  - Avoid synchronous resize in user request path.
+

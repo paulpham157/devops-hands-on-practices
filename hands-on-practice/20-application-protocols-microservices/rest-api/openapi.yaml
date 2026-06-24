@@ -1,0 +1,46 @@
+openapi: 3.1.0
+info:
+  title: Docker Course Catalog REST API
+  version: 1.0.0
+paths:
+  /healthz:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: Service is healthy
+  /products/{productId}:
+    get:
+      summary: Get one product by ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Product response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - id
+        - name
+        - price
+        - protocol
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+        protocol:
+          type: string
+

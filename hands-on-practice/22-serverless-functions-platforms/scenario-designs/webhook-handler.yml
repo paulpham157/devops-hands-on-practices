@@ -1,0 +1,19 @@
+name: webhook-handler
+description: Receive third-party webhook and enqueue durable processing.
+requirements:
+  trigger: http
+  latency: fast-ack
+  reliability: retry-safe
+  security: signature-validation
+recommended_pattern:
+  aws: API Gateway -> Lambda -> SQS
+  azure: HTTP trigger -> Azure Functions -> Service Bus
+  gcp: HTTP function -> Pub/Sub
+  cloudflare: Worker -> Queue
+  vercel: Function -> durable queue/provider integration
+  netlify: Function -> background function or external queue
+notes:
+  - Validate webhook signature before enqueue.
+  - Return quickly after durable write.
+  - Use idempotency key from webhook event ID.
+

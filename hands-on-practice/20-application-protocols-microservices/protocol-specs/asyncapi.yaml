@@ -1,0 +1,38 @@
+asyncapi: 3.0.0
+info:
+  title: Catalog Events API
+  version: 1.0.0
+channels:
+  productChanged:
+    address: catalog.product.changed
+    messages:
+      productChanged:
+        $ref: "#/components/messages/ProductChanged"
+operations:
+  publishProductChanged:
+    action: send
+    channel:
+      $ref: "#/channels/productChanged"
+    messages:
+      - $ref: "#/channels/productChanged/messages/productChanged"
+components:
+  messages:
+    ProductChanged:
+      payload:
+        type: object
+        required:
+          - id
+          - name
+          - price
+          - occurredAt
+        properties:
+          id:
+            type: string
+          name:
+            type: string
+          price:
+            type: number
+          occurredAt:
+            type: string
+            format: date-time
+

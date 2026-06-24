@@ -1,0 +1,27 @@
+name: kubernetes-platform
+description: Managed Kubernetes platform for containerized microservices.
+requirements:
+  cluster: managed-kubernetes
+  ingress: public-and-private
+  registry: private
+  secrets: managed-secret-store
+  observability: logs-metrics-traces
+aws:
+  kubernetes: EKS
+  registry: ECR
+  ingress: AWS Load Balancer Controller
+  secrets: Secrets Manager with External Secrets Operator
+  observability: CloudWatch and OpenTelemetry
+azure:
+  kubernetes: AKS
+  registry: Azure Container Registry
+  ingress: Application Gateway Ingress Controller or NGINX
+  secrets: Key Vault with CSI driver or External Secrets Operator
+  observability: Azure Monitor and OpenTelemetry
+gcp:
+  kubernetes: GKE
+  registry: Artifact Registry
+  ingress: GKE Ingress or Gateway API
+  secrets: Secret Manager with External Secrets Operator
+  observability: Cloud Monitoring and OpenTelemetry
+
