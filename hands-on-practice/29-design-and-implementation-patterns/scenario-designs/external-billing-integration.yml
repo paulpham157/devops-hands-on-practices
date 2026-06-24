@@ -1,0 +1,12 @@
+name: external-billing-integration
+description: "A new payments domain must integrate with a legacy billing platform that uses awkward field names and state codes."
+constraints:
+  - "Core payment domain language must remain clean"
+  - "Legacy contract cannot be changed"
+recommended_patterns:
+  - anti_corruption_layer
+  - sidecar
+decision_notes:
+  - "ACL prevents legacy vocabulary from leaking into domain services."
+  - "A sidecar is optional only for protocol or operational helper behavior, not for domain translation itself."
+

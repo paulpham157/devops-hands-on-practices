@@ -1,0 +1,23 @@
+{
+  "externalSystem": "legacy-billing",
+  "internalDomain": "payments",
+  "translations": [
+    {
+      "externalField": "acct_no",
+      "internalField": "customerAccountId"
+    },
+    {
+      "externalField": "txn_state",
+      "internalField": "paymentStatus"
+    },
+    {
+      "externalField": "settled_amt",
+      "internalField": "capturedAmount"
+    }
+  ],
+  "rules": [
+    "External status codes must be mapped at the ACL boundary.",
+    "Domain services must not consume legacy enum names directly."
+  ]
+}
+

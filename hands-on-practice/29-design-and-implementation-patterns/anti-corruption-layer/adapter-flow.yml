@@ -1,0 +1,13 @@
+adapter_flow:
+  inbound:
+    - receive legacy payload
+    - translate external fields and enums
+    - validate against internal domain rules
+    - pass canonical command to domain service
+  outbound:
+    - receive canonical response
+    - translate to external contract if needed
+  risks:
+    - "leaking legacy status names into internal services"
+    - "duplicating translation logic across many callers"
+

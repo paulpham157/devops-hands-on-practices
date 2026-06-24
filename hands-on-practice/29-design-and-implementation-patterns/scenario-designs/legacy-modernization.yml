@@ -1,0 +1,12 @@
+name: legacy-modernization
+description: "Monolithic retail system must be replaced gradually without one cutover weekend."
+constraints:
+  - "Catalog and checkout can be moved first"
+  - "Billing remains in the monolith for several months"
+  - "Rollback must work per capability"
+recommended_patterns:
+  - strangler_fig
+decision_notes:
+  - "A routing layer allows capability-by-capability migration."
+  - "The monolith and new services will coexist temporarily."
+

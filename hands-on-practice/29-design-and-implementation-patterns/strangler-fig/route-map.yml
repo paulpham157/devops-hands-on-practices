@@ -1,0 +1,23 @@
+migration_route_map:
+  legacy_app:
+    handles:
+      - customer-profile
+      - order-history
+      - billing
+  new_services:
+    catalog-service:
+      handles:
+        - product-catalog
+    checkout-service:
+      handles:
+        - checkout
+  routing_rules:
+    - path_prefix: /catalog
+      target: catalog-service
+    - path_prefix: /checkout
+      target: checkout-service
+    - path_prefix: /
+      target: legacy-app
+  rollback_rule:
+    "if new service health fails, route traffic back to legacy for that capability only"
+
