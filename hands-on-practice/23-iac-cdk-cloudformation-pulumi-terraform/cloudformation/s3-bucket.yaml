@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Training example: tagged S3 bucket with safe defaults."
+
+Parameters:
+  EnvironmentName:
+    Type: String
+    Default: dev
+    AllowedPattern: "^[a-z0-9-]+$"
+    Description: "Short environment name used for tags."
+
+Resources:
+  TrainingBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Environment
+          Value:
+            Ref: EnvironmentName
+        - Key: ManagedBy
+          Value: cloudformation
+        - Key: Lesson
+          Value: iac-tooling
+
+Outputs:
+  BucketName:
+    Description: "Generated bucket name."
+    Value:
+      Ref: TrainingBucket
+  BucketArn:
+    Description: "Generated bucket ARN."
+    Value:
+      Fn::GetAtt:
+        - TrainingBucket
+        - Arn
+

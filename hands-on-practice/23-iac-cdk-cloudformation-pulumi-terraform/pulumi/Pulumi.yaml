@@ -1,0 +1,4 @@
+name: iac-pulumi-training-example
+runtime: nodejs
+description: "Training example for comparing Pulumi with CloudFormation, CDK, and Terraform."
+

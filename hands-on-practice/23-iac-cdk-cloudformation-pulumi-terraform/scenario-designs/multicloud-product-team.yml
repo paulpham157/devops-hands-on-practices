@@ -1,0 +1,16 @@
+name: multicloud-product-team
+description: "Product team deploying AWS, Cloudflare, and Datadog resources from one repo."
+constraints:
+  - "Team writes application code in TypeScript and Go"
+  - "Infrastructure includes cloud resources and SaaS integrations"
+  - "The team wants preview output in pull requests"
+  - "Platform team requires state locking and ownership rules"
+recommended_tooling:
+  primary: "Pulumi or Terraform/OpenTofu"
+  review_artifact: "Pulumi preview or Terraform/OpenTofu plan"
+  fallback: "Provider-specific native IaC only for special cases"
+decision_notes:
+  - "Pulumi fits teams that want real language abstractions."
+  - "Terraform/OpenTofu fits teams that prefer declarative HCL and mature module workflows."
+  - "State ownership and drift policy matter more than syntax preference."
+

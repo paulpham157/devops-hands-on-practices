@@ -1,0 +1,16 @@
+name: aws-platform-team
+description: "AWS-only platform team standardizing storage, queues, and IAM for product teams."
+constraints:
+  - "AWS-only for the next 18 months"
+  - "Central platform team owns reusable building blocks"
+  - "Product teams use TypeScript"
+  - "Security team wants reviewable generated templates"
+recommended_tooling:
+  primary: "AWS CDK"
+  review_artifact: "CDK diff plus synthesized CloudFormation template"
+  fallback: "CloudFormation for low-level custom resources or strict native control"
+decision_notes:
+  - "CDK fits TypeScript teams and reusable constructs."
+  - "CloudFormation remains the deployment engine, so stack events and rollback behavior stay AWS-native."
+  - "Generated templates must be reviewed for IAM and replacement risks."
+

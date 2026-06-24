@@ -1,0 +1,13 @@
+{
+  "name": "iac-pulumi-training-example",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "@pulumi/aws": "^6.0.0",
+    "@pulumi/pulumi": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
+
