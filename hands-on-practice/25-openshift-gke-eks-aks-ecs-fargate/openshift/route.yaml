@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: sample-web
+spec:
+  host: sample-web.apps.example.internal
+  to:
+    kind: Service
+    name: sample-web
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+

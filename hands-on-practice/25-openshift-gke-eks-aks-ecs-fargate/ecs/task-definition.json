@@ -1,0 +1,38 @@
+{
+  "family": "sample-web",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::111122223333:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::111122223333:role/sampleWebTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "public.ecr.aws/docker/library/nginx:1.27-alpine",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "PLATFORM_MODE",
+          "value": "ecs-fargate"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/sample-web",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
+

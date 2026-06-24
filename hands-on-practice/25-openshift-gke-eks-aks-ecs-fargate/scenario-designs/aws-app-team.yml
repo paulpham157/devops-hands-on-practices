@@ -1,0 +1,14 @@
+name: aws-app-team
+description: "AWS-only application team shipping web APIs and batch workers without a platform engineering group."
+constraints:
+  - "The team is comfortable with AWS but not deep Kubernetes operations"
+  - "Portability is lower priority than delivery speed"
+  - "Node management should be minimal"
+recommended_platforms:
+  primary: ECS with Fargate
+  alternatives:
+    - EKS with managed node groups
+decision_notes:
+  - "ECS with Fargate reduces cluster complexity and avoids worker node management."
+  - "EKS is reasonable only if Kubernetes features are required."
+

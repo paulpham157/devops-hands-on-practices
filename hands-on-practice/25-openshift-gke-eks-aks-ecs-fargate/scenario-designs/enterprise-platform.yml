@@ -1,0 +1,16 @@
+name: enterprise-platform
+description: "Regulated enterprise standardizing internal developer platform patterns across many application teams."
+constraints:
+  - "Strong default security posture is required"
+  - "Platform team wants curated ingress and policy behavior"
+  - "Application teams deploy mostly Kubernetes workloads"
+  - "Enterprise support model matters"
+recommended_platforms:
+  primary: OpenShift
+  alternatives:
+    - AKS
+    - EKS
+decision_notes:
+  - "OpenShift fits organizations that want opinionated platform controls on top of Kubernetes."
+  - "Managed Kubernetes alternatives still work, but the platform team must assemble more add-ons and operational standards."
+
