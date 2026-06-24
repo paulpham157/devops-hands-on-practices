@@ -1,0 +1,10 @@
+slo:
+  name: checkout-availability
+  sli_source: checkout-api
+  target_percent: 99.9
+  window: 30d
+  error_budget_percent: 0.1
+  notes:
+    - "Objective applies to user-visible checkout submission path."
+    - "Budget burn informs release and incident decisions."
+

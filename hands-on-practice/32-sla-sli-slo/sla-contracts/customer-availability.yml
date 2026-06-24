@@ -1,0 +1,14 @@
+sla:
+  service: checkout-platform
+  commitment_percent: 99.5
+  window: monthly
+  exclusions:
+    - planned_maintenance
+    - customer_misconfiguration
+    - upstream_internet_provider_outage
+  remedy:
+    type: service_credit
+    credit_percent: 10
+  note:
+    "Internal SLO may be stricter than the external SLA."
+

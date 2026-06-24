@@ -1,0 +1,12 @@
+name: ecommerce-critical-path
+description: "Checkout is revenue-critical and has tighter availability needs than recommendations."
+constraints:
+  - "User-visible latency matters"
+  - "Recommendation failures should not count the same as checkout failures"
+recommended_focus:
+  - separate_slis_by_journey
+  - stricter_checkout_slo
+decision_notes:
+  - "Not every endpoint deserves the same objective."
+  - "Critical user journeys need more explicit error budget policy."
+

@@ -1,0 +1,9 @@
+{
+  "service": "checkout-api",
+  "userJourney": "successful checkout submission",
+  "goodEvent": "HTTP 2xx or accepted async order response under 1000 ms",
+  "badEvent": "timeout, 5xx, or latency above 1000 ms",
+  "measurementWindow": "30d",
+  "sliType": "availability-and-latency"
+}
+

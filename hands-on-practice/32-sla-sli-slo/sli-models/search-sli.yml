@@ -1,0 +1,10 @@
+service: search-api
+user_journey: "search results page load"
+good_event:
+  success_code: "HTTP 200"
+  max_latency_ms: 1500
+bad_event_examples:
+  - "HTTP 5xx"
+  - "latency above threshold"
+  - "empty result due to backend failure, not valid zero matches"
+

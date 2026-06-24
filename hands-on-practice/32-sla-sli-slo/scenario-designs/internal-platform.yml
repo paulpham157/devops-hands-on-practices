@@ -1,0 +1,12 @@
+name: internal-platform
+description: "An internal developer platform needs reliability goals, but not every target should become a customer contract."
+constraints:
+  - "Used by internal teams only"
+  - "Reliability goals drive engineering prioritization"
+recommended_focus:
+  - internal_slos
+  - selective_external_slas
+decision_notes:
+  - "SLOs can exist without promising the same target in an SLA."
+  - "Contracts should lag behind operational confidence."
+

@@ -1,0 +1,10 @@
+error_budget_policy:
+  service: checkout-api
+  actions:
+    - condition: "burn_rate_high for 1h"
+      response: "page on-call and investigate active reliability issue"
+    - condition: "budget_consumed_over_50_percent halfway through window"
+      response: "require reliability review before major release"
+    - condition: "budget_exhausted"
+      response: "pause risky launches until recovery plan approved"
+
