@@ -105,13 +105,13 @@ This track continues after the basic Dockerfile examples in the repository. Each
     - Includes structured exercises under `exercises/`.
 
 22. `22-serverless-functions-platforms`
-    - Compare serverless function platforms from the diagram: AWS Lambda, Cloudflare Workers, Azure Functions, Vercel, Netlify, and GCP Functions / Cloud Run functions.
+    - Compare serverless function platforms from the diagram: AWS Lambda, Cloudflare Workers, Azure Functions, Vercel, Netlify, and GCP Functions mapped to current Google Cloud Run functions naming.
     - Learn invocation models, handler shapes, triggers, edge vs regional functions, cold starts, cost, limits, security, observability, and deployment tradeoffs.
     - Includes structured exercises under `exercises/`.
 
 23. `23-iac-cdk-cloudformation-pulumi-terraform`
     - Compare AWS CDK, CloudFormation, Pulumi, and Terraform extension patterns.
-    - Learn declarative templates, code-based IaC, synthesis, state, drift, plans/previews, modules, providers, CDKTF context, and production IaC review workflows.
+    - Learn declarative templates, code-based IaC, synthesis, state, drift, plans/previews, modules, providers, CDKTF legacy context, and production IaC review workflows.
     - Includes structured exercises under `exercises/`.
 
 24. `24-jfrog-artifactory`
@@ -206,6 +206,12 @@ This track continues after the basic Dockerfile examples in the repository. Each
 - Optional for lesson 32: no cloud account required; observability tooling is optional for deeper follow-up practice
 - Optional for lesson 33: no account required for the lesson; Snyk CLI and Sonar scanners are optional for deeper follow-up practice
 - Optional for lesson 34: no cloud account required; orchestration, warehouse, and stream tooling are optional for deeper follow-up practice
+
+## Version and Naming Notes
+
+- Cloud provider product names and runtime support change frequently. The serverless lesson now treats Google Cloud Run functions as the current primary name while noting that Cloud Functions v2/API and 1st gen still appear in docs and tooling.
+- CDK for Terraform is included only as legacy/migration context because HashiCorp documents it as deprecated and unsupported.
+- Floating tags such as `latest` and hosted runner labels such as `ubuntu-latest` are acceptable for small learning examples, but production pipelines should pin versions or define an explicit update policy.
 
 ## Suggested Order
 

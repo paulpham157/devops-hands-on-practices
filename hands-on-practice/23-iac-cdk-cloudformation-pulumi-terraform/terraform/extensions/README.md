@@ -60,5 +60,4 @@ Production Terraform extension also includes workflow controls:
 
 ## 6. CDK for Terraform Context
 
-CDK for Terraform lets developers write code that generates Terraform configuration. HashiCorp announced CDKTF deprecation, so treat it as legacy context and evaluate alternatives before starting new projects with it.
-
+CDK for Terraform lets developers write code that generates Terraform configuration. HashiCorp documents CDKTF as deprecated as of 2025-12-10 and no longer supported or maintained, so treat it as legacy or migration context. For new projects, compare HCL modules, AWS CDK, Pulumi, or provider/plugin extension patterns instead.

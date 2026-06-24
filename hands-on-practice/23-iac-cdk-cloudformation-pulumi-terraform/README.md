@@ -50,7 +50,7 @@ In real projects, extending Terraform usually means one of these patterns:
 - generate or wrap HCL carefully, with reviewable output.
 - use policy and validation around plans.
 
-It rarely means modifying Terraform core. CDK for Terraform exists as a code-to-Terraform approach, but HashiCorp has announced CDKTF deprecation, so this lesson treats it as context rather than the main recommended path for new work.
+It rarely means modifying Terraform core. CDK for Terraform exists as a code-to-Terraform approach, but HashiCorp documents CDKTF as deprecated as of 2025-12-10 and no longer supported or maintained. Treat CDKTF as migration/legacy context, not a recommended starting point for new work.
 
 ## Local Examples
 
@@ -138,4 +138,3 @@ The exercises cover IaC models, state and drift, CloudFormation, AWS CDK synthes
 - Terraform plugin framework: https://developer.hashicorp.com/terraform/plugin
 - Terraform modules documentation: https://developer.hashicorp.com/terraform/language/modules
 - CDK for Terraform documentation and deprecation notice: https://developer.hashicorp.com/terraform/cdktf
-

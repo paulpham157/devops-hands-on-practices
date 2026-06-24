@@ -43,7 +43,7 @@ The main decision is whether the team wants:
 | Managed container service | ECS | AWS-native task and service API |
 | Serverless container compute | Fargate | Run containers without managing worker nodes |
 
-Fargate is not a scheduler by itself. It is a compute option for ECS tasks and selected EKS pods.
+Fargate is not a scheduler by itself. It is a serverless compute engine used by ECS tasks and by EKS pods selected through Fargate profiles.
 
 ## Lab Layout
 
@@ -84,9 +84,9 @@ If the team needs a curated platform with enterprise guardrails, OpenShift can r
 
 All three expose the Kubernetes API, but the operational defaults differ.
 
-GKE often emphasizes tightly managed Kubernetes experiences and modes such as Autopilot.
+GKE offers Standard and Autopilot modes. Autopilot shifts more node and cluster operations to Google, but teams still design Kubernetes workloads, identity, networking, and release workflows.
 
-EKS keeps the Kubernetes API on AWS and integrates with AWS identity, networking, and load balancing patterns. Teams still choose more of the operational stack themselves.
+EKS keeps the Kubernetes API on AWS and integrates with AWS identity, networking, and load balancing patterns. Teams still choose more of the operational stack themselves; for EKS on Fargate, Fargate profiles decide which pods run without managed worker nodes.
 
 AKS integrates with Azure networking, identity, and node pool management while keeping the standard Kubernetes API surface.
 
@@ -102,7 +102,7 @@ ECS is usually a better fit than Kubernetes when:
 - the team wants fewer cluster abstractions
 - portability is less important than simpler AWS-native operations
 
-Fargate removes worker node management. That helps teams avoid node patching and capacity management, but it also reduces host-level control and changes pricing and platform constraints.
+Fargate removes worker node management. That helps teams avoid node patching and capacity management, but it also reduces host-level control and changes pricing and platform constraints. In ECS, Fargate runs tasks; in EKS, Fargate runs matching Kubernetes pods rather than replacing Kubernetes itself.
 
 ## Production Questions
 
@@ -150,4 +150,4 @@ The exercises cover platform groups, workload models, OpenShift features, differ
 - Azure Kubernetes Service documentation: https://learn.microsoft.com/azure/aks/
 - Amazon ECS documentation: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html
 - AWS Fargate documentation: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html
-
+- Amazon EKS on AWS Fargate: https://docs.aws.amazon.com/eks/latest/userguide/fargate.html
