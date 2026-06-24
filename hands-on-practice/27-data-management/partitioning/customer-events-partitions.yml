@@ -1,0 +1,16 @@
+dataset: customer_events
+partition_strategy: hash
+partition_key: customer_id
+partitions:
+  - partition: p0
+    rule: "hash(customer_id) mod 4 == 0"
+  - partition: p1
+    rule: "hash(customer_id) mod 4 == 1"
+  - partition: p2
+    rule: "hash(customer_id) mod 4 == 2"
+  - partition: p3
+    rule: "hash(customer_id) mod 4 == 3"
+risks:
+  - "Large tenants can still create skew even with hashing."
+  - "Cross-customer analytics may need fan-out reads."
+

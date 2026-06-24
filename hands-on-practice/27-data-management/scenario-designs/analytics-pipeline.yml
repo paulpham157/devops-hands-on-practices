@@ -1,0 +1,13 @@
+name: analytics-pipeline
+description: "Large append-heavy event data must scale across many partitions and support time-based analysis."
+constraints:
+  - "High write throughput"
+  - "Mostly append-only workload"
+  - "Analytics queries often filter by time windows"
+recommended_patterns:
+  - partitioning
+  - read_optimized_projections
+decision_notes:
+  - "Time or hash partitioning can improve scale."
+  - "Read projections avoid overloading operational write stores."
+

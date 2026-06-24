@@ -1,0 +1,15 @@
+name: ecommerce-platform
+description: "Order, payment, inventory, and shipping are separate services with independent databases."
+constraints:
+  - "Inventory and payment updates must coordinate without one shared transaction"
+  - "Customer order history reads are much heavier than writes"
+  - "Order status views can lag by a few seconds"
+recommended_patterns:
+  - database_per_service
+  - cqrs
+  - saga
+decision_notes:
+  - "CQRS fits read-heavy order history queries."
+  - "Saga fits cross-service business workflow coordination."
+  - "A shared database would reduce autonomy and create coupling."
+

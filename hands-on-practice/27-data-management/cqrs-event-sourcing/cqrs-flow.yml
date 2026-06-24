@@ -1,0 +1,16 @@
+workflow: order_query_separation
+command_side:
+  source_of_truth: orders_write_db
+  responsibilities:
+    - validate order command
+    - persist order aggregate
+    - emit order-created event
+query_side:
+  read_model: orders_read_db
+  responsibilities:
+    - consume order-created event
+    - build customer-facing order summary
+tradeoffs:
+  - "Read model may lag behind command writes."
+  - "Queries can be optimized without changing write-side schema."
+

@@ -1,0 +1,17 @@
+workflow: order_fulfillment
+steps:
+  - service: order
+    action: create_order
+    compensation: cancel_order
+  - service: payment
+    action: authorize_payment
+    compensation: refund_payment
+  - service: inventory
+    action: reserve_stock
+    compensation: release_stock
+  - service: shipping
+    action: create_shipment
+    compensation: cancel_shipment
+failure_rule:
+  on_step_failure: "run compensations for previously successful steps in reverse order"
+

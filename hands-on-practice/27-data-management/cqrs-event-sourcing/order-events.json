@@ -1,0 +1,21 @@
+[
+  {
+    "sequence": 1,
+    "type": "OrderCreated",
+    "orderId": "ord-1001",
+    "customerId": "cust-42",
+    "total": 120.0
+  },
+  {
+    "sequence": 2,
+    "type": "OrderApproved",
+    "orderId": "ord-1001"
+  },
+  {
+    "sequence": 3,
+    "type": "OrderShipped",
+    "orderId": "ord-1001",
+    "trackingId": "trk-123"
+  }
+]
+
