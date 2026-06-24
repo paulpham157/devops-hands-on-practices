@@ -1,0 +1,12 @@
+gatekeeper_policy:
+  prechecks:
+    - require_jwt
+    - require_tenant_header
+    - reject_payload_over_1mb
+    - reject_unknown_api_version
+  protects:
+    - payments-admin-api
+  failure_response:
+    status_code: 403
+    body: "request blocked at edge policy boundary"
+

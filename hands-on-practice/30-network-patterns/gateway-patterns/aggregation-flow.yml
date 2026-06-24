@@ -1,0 +1,13 @@
+aggregation_flow:
+  client_request: GET /dashboard
+  backend_calls:
+    - user-profile-service
+    - notifications-service
+    - order-summary-service
+  response_behavior:
+    combine_results: true
+    return_partial_on_optional_failure: true
+  risks:
+    - "gateway latency increases with fan-out calls"
+    - "partial failure rules must be explicit"
+

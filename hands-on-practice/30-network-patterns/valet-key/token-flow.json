@@ -1,0 +1,15 @@
+{
+  "resource": "invoice-pdf-bucket",
+  "tokenIssuer": "documents-api",
+  "clientFlow": [
+    "client requests invoice download",
+    "documents-api verifies authorization",
+    "documents-api issues short-lived scoped token",
+    "client downloads object directly from storage"
+  ],
+  "constraints": {
+    "expiresInSeconds": 300,
+    "scope": "read-single-object"
+  }
+}
+

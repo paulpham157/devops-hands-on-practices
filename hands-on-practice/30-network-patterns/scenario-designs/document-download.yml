@@ -1,0 +1,12 @@
+name: document-download
+description: "Authenticated users download large invoice PDFs from object storage."
+constraints:
+  - "Backend should not stream every file byte"
+  - "Access must be temporary and scoped"
+recommended_patterns:
+  - valet_key
+  - static_content_hosting
+decision_notes:
+  - "Valet Key gives temporary controlled access."
+  - "Static or direct object delivery reduces application load."
+

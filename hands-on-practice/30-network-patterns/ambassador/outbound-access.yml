@@ -1,0 +1,13 @@
+ambassador_pattern:
+  app_container:
+    talks_to: local-ambassador
+  ambassador:
+    responsibilities:
+      - add_external_auth_headers
+      - retry_transient_failures
+      - translate_local_endpoint_to_remote_api
+  external_service:
+    name: partner-billing-api
+  benefit:
+    - "application code uses a simpler local contract"
+

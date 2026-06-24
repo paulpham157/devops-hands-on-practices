@@ -1,0 +1,16 @@
+gateway_routes:
+  routes:
+    - host: api.example.internal
+      path_prefix: /catalog
+      target: catalog-service
+    - host: api.example.internal
+      path_prefix: /checkout
+      target: checkout-service
+    - host: mobile-api.example.internal
+      path_prefix: /
+      target: mobile-bff
+  offloaded_concerns:
+    - tls_termination
+    - request_logging
+    - response_compression
+

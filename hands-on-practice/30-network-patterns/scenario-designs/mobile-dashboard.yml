@@ -1,0 +1,11 @@
+name: mobile-dashboard
+description: "A mobile client currently calls four backend services directly and suffers high latency."
+constraints:
+  - "The client needs one compact dashboard response"
+  - "Some widgets are optional"
+recommended_patterns:
+  - gateway_aggregation
+decision_notes:
+  - "Aggregation reduces client chattiness."
+  - "Optional backend failures can return partial dashboard results."
+
