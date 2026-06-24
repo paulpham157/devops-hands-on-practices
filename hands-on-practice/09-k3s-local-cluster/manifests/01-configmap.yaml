@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k3s-demo-content
+  namespace: docker-course-k3s
+  labels:
+    app.kubernetes.io/name: k3s-demo
+    app.kubernetes.io/part-of: docker-course
+data:
+  index.html: |
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>K3s Local Cluster</title>
+    </head>
+    <body>
+      <h1>K3s Local Cluster</h1>
+      <p>This page is served by an unprivileged Nginx pod in K3s.</p>
+      <p>Traffic path: localhost -> k3d load balancer -> Traefik -> Service -> Pod.</p>
+    </body>
+    </html>

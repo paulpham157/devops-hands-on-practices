@@ -1,0 +1,31 @@
+groups:
+  - name: course_app_golden_signals
+    interval: 30s
+    rules:
+      - record: course_app:http_requests:rate1m
+        expr: |
+          sum(rate(http_requests_total{service="course-app"}[1m]))
+
+      - record: course_app:http_requests:error_rate5m
+        expr: |
+          sum(rate(http_requests_total{service="course-app",status=~"5.."}[5m]))
+          /
+          clamp_min(sum(rate(http_requests_total{service="course-app"}[5m])), 0.001)
+
+      - record: course_app:http_request_duration_seconds:p95
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum(rate(http_request_duration_seconds_bucket{service="course-app"}[5m])) by (le)
+          )
+
+      - alert: CourseAppHighErrorRate
+        expr: course_app:http_requests:error_rate5m > 0.05
+        for: 2m
+        labels:
+          severity: warning
+          slo: availability
+        annotations:
+          summary: "Course app error rate is above 5%"
+          description: "The sample app is returning 5xx responses above the practice threshold."
+

@@ -1,0 +1,57 @@
+logging {
+  level  = "info"
+  format = "logfmt"
+}
+
+local.file_match "course_app" {
+  path_targets = [
+    {
+      "__path__" = "/var/log/course/*.log",
+      "job"      = "course-app",
+      "service"  = "course-app",
+    },
+  ]
+}
+
+loki.source.file "course_app" {
+  targets    = local.file_match.course_app.targets
+  forward_to = [loki.process.course_app.receiver]
+}
+
+loki.process "course_app" {
+  stage.json {
+    expressions = {
+      endpoint   = "endpoint",
+      latency_ms = "latency_ms",
+      level      = "level",
+      method     = "method",
+      path       = "path",
+      status     = "status",
+    }
+  }
+
+  stage.labels {
+    values = {
+      level  = "",
+      method = "",
+      status = "",
+    }
+  }
+
+  stage.structured_metadata {
+    values = {
+      endpoint   = "",
+      latency_ms = "",
+      path       = "",
+    }
+  }
+
+  forward_to = [loki.write.local.receiver]
+}
+
+loki.write "local" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}
+
