@@ -70,13 +70,13 @@ kubeconfig.*
 .scannerwork/
 .jfrog/
 .snyk-cache/
-hands-on-practice/*/reports/
-hands-on-practice/*/artifacts/
-hands-on-practice/*/sandbox/
+[0-9][0-9]-*/reports/
+[0-9][0-9]-*/artifacts/
+[0-9][0-9]-*/sandbox/
 
 # Lesson-generated local secrets
-hands-on-practice/13-vaults-and-secrets-managers/secrets/*.txt
-!hands-on-practice/13-vaults-and-secrets-managers/secrets/*.example.txt
+13-vaults-and-secrets-managers/secrets/*.txt
+!13-vaults-and-secrets-managers/secrets/*.example.txt
 
 # Packer local output
 packer_cache/

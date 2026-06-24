@@ -1,0 +1,89 @@
+pipeline {
+  agent any
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10'))
+  }
+
+  environment {
+    APP_DIR = '/workspace/devops-hands-on-07-jenkins-ci-pipeline/sample-app'
+    COURSE_ROOT = '/workspace/devops-hands-on-practices'
+    IMAGE_NAME = 'docker-course/jenkins-sample-app'
+    IMAGE_TAG = "${env.BUILD_NUMBER}"
+    TEST_IMAGE = 'python:3.12-slim'
+  }
+
+  stages {
+    stage('Verify Docker') {
+      steps {
+        sh 'docker version'
+        sh 'docker info'
+      }
+    }
+
+    stage('Unit Tests') {
+      steps {
+        sh '''
+          docker run --rm \
+            -v "${COURSE_ROOT}:/workspace/devops-hands-on-practices" \
+            -w "${APP_DIR}" \
+            "${TEST_IMAGE}" \
+            sh -c "python -m pip install -r requirements.txt && python -m pytest -q && python -m py_compile app.py"
+        '''
+      }
+    }
+
+    stage('Build Image') {
+      steps {
+        sh 'docker build -t "${IMAGE_NAME}:${IMAGE_TAG}" "${APP_DIR}"'
+        sh 'docker tag "${IMAGE_NAME}:${IMAGE_TAG}" "${IMAGE_NAME}:latest"'
+      }
+    }
+
+    stage('Smoke Test') {
+      steps {
+        sh '''
+          docker rm -f jenkins-sample-app >/dev/null 2>&1 || true
+          docker run -d --name jenkins-sample-app "${IMAGE_NAME}:${IMAGE_TAG}"
+
+          for i in $(seq 1 20); do
+            if docker exec jenkins-sample-app python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/healthz')" >/dev/null 2>&1; then
+              echo "Smoke test passed"
+              exit 0
+            fi
+            sleep 1
+          done
+
+          echo "Smoke test failed"
+          docker logs jenkins-sample-app
+          exit 1
+        '''
+      }
+      post {
+        always {
+          sh 'docker rm -f jenkins-sample-app >/dev/null 2>&1 || true'
+        }
+      }
+    }
+
+    stage('Archive Build Metadata') {
+      steps {
+        sh '''
+          mkdir -p build
+          {
+            echo "image=${IMAGE_NAME}:${IMAGE_TAG}"
+            echo "build_number=${BUILD_NUMBER}"
+            echo "job_name=${JOB_NAME}"
+          } > build/metadata.txt
+        '''
+        archiveArtifacts artifacts: 'build/metadata.txt', fingerprint: true
+      }
+    }
+  }
+
+  post {
+    always {
+      sh 'docker image ls "${IMAGE_NAME}" || true'
+    }
+  }
+}

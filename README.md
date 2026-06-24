@@ -1,77 +1,99 @@
-# docker-course
+# DevOps Hands-on Practices
 
-## Course Sections
+This repository is a practical DevOps learning workspace. It starts with Docker fundamentals, then expands into infrastructure automation, CI/CD, Kubernetes platforms, security, observability, cloud, distributed systems, reliability, and data pipeline practices.
 
-- `lab-setup`: Vagrant VM used as a clean Docker lab machine.
-- `images`: first Docker image examples.
-- `docker-image-examples`: Dockerfiles for Nginx, Flask, Node.js, Prometheus, Grafana, and non-root containers.
-- `docker-init`: minimal Flask app for first containerization practice.
-- `multi-stage-builds`: single-stage, multi-stage, and distroless Node.js image examples.
-- `optimize-docker-images`: layer count and cache optimization examples.
-- `hands-on-practice`: follow-up hands-on labs for Compose, Kubernetes, K3s, OpenShift, GKE, EKS, AKS, ECS, Fargate, service mesh with Istio, Linkerd, and Consul, data management patterns for distributed cloud systems, data pipeline design and operation, availability patterns for distributed systems, design and implementation patterns such as Strangler Fig, Sidecar, and Anti-Corruption Layer, network patterns such as Ambassador, Gateway Routing, Gatekeeper, Valet Key, and Static Content Hosting, backend patterns such as Backend for Frontend, SLI/SLO/SLA and error budget practices, Snyk and Sonar for security and quality gates, Ansible, Packer, Terraform, OpenTofu, AWS CDK, CloudFormation, Pulumi, Terraform extension patterns, observability with Prometheus/Grafana/Loki, Jenkins CI, GitHub Actions, GitLab CI, DevSecOps, Argo CD GitOps, secrets management, AWS identity, Helm, Kustomize, artifact repositories, JFrog Artifactory, OpenTelemetry, Jaeger, Datadog, language runtime containerization with Python, Java Spring, Ruby, Go, and Rust, Linux/Unix fundamentals, Redis caching, load balancing, application protocols for microservices, AWS/Azure/GCP cloud fundamentals, and serverless functions platforms.
+The labs are designed to be runnable locally first. Cloud accounts are optional for most lessons; when a lesson touches AWS, Azure, Google Cloud, Artifactory, Datadog, or similar services, the core material still includes offline reading, validation, and design exercises.
 
-Start the follow-up practice track here:
+## Repository Layout
+
+| Area | Path | Purpose |
+| --- | --- | --- |
+| Docker foundations | `00-docker-fundamentals` | Optional Vagrant VM, first images, Dockerfiles, multi-stage builds, distroless, layer, and cache examples |
+| Main DevOps labs | `01-*` to `34-*` | Numbered hands-on lessons grouped by DevOps domain |
+
+Start by opening any numbered lesson folder from the repository root.
+
+## DevOps Practice Areas
+
+The numbered lesson folders stay stable so links and exercises do not move, but the curriculum is organized around these DevOps areas:
+
+| DevOps area | Lessons |
+| --- | --- |
+| Container foundations | `00`, `01`, `17`, `18` |
+| Infrastructure automation and IaC | `03`, `04`, `05`, `10`, `23` |
+| CI/CD, GitOps, and supply chain | `07`, `08`, `11`, `12`, `15`, `24`, `33` |
+| Kubernetes and platform engineering | `02`, `09`, `25`, `26` |
+| Observability and reliability | `06`, `16`, `28`, `32` |
+| Cloud and identity | `13`, `14`, `21`, `22` |
+| Distributed application architecture | `19`, `20`, `27`, `29`, `30`, `31` |
+| Data engineering | `34` |
+
+## Optional Vagrant Lab
+
+You can run most lessons directly on a workstation with Docker Desktop or Docker Engine. The Vagrant setup is optional and useful when you want a disposable Linux VM for Docker practice.
+
+### Install VirtualBox
+
+You need administrator permission on the workstation for VirtualBox.
+
+Download VirtualBox from:
+
+```text
+https://www.virtualbox.org/wiki/Downloads
+```
+
+### Install Vagrant
+
+Download Vagrant from:
+
+```text
+https://developer.hashicorp.com/vagrant/downloads
+```
+
+Restart the workstation after installing VirtualBox and Vagrant.
+
+### Bring Up the VM
+
+Clone this repository:
 
 ```bash
-cd hands-on-practice
+git clone https://github.com/YOUR_ORG/devops-hands-on-practices.git
 ```
 
-## Install Latest VirtualBox
-> Note: You should have admin permission in your workstation to make Virtaualbox work.
+Open a terminal and move into the lab setup:
 
-Download and install virtual box from https://www.virtualbox.org/wiki/Downloads
-
-## Install Vagrant
-
-Install Vagrant followin insructions from https://developer.hashicorp.com/vagrant/downloads
-
-## Restart the System
-
-Once all the installation is done, restart the system.
-
-## Bring up the VM
-
-Clone the docker course repo.
-
-```
-git clone https://github.com/techiescamp/docker-course.git
+```bash
+cd devops-hands-on-practices/00-docker-fundamentals/examples/lab-setup
 ```
 
-Now, open the terminal and cd in the docker-course/lab-setup.
+Start the VM:
 
-```
-cd docker-course/lab-setup
-```
-
-Execute the following command to bring up the VMs
-
-```
+```bash
 vagrant up
 ```
-Check the vm status using the following command. You should see  VM in running state.
 
-```
+Check VM status:
+
+```bash
 vagrant status
 ```
 
-Once the VMs are up, you cna login to the VM using the VM name.
+Connect to the VM:
 
+```bash
+vagrant ssh Docker
 ```
-vagrant ssh Docker 
-```
 
-## Halt the VMs
+### Stop or Destroy the VM
 
-When you are not using the setup, you can halt the VMS to free up the CPU and memory in your system using the halt command.
+Stop the VM when you are not using it:
 
-```
+```bash
 vagrant halt
 ```
 
-## Destroy the setup
+Destroy the VM and its local state:
 
-You can destroy the VMs usin the following command.
-
-```
+```bash
 vagrant destroy -f
 ```
