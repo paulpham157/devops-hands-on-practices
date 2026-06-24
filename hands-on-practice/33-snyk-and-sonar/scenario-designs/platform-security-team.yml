@@ -1,0 +1,12 @@
+name: platform-security-team
+description: "A platform team wants baseline security and quality checks across many repositories."
+constraints:
+  - "Dependency, container, and IaC scanning all matter"
+  - "Not every repository has the same test maturity"
+recommended_approach:
+  - snyk_multi_surface_scanning
+  - sonar_quality_gate_by_language_and_team_maturity
+decision_notes:
+  - "One global gate for every repo is often too blunt."
+  - "Policy should vary by risk and maturity without abandoning standards."
+

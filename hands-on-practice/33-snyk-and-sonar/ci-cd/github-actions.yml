@@ -1,0 +1,35 @@
+name: security-and-quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  snyk-and-sonar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --coverage
+
+      - name: Snyk Open Source
+        run: snyk test
+
+      - name: Snyk Container
+        run: snyk container test sample-app:latest
+
+      - name: Sonar Scan
+        run: sonar-scanner
+

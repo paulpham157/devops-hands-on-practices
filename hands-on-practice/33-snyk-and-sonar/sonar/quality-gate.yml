@@ -1,0 +1,16 @@
+quality_gate:
+  focus: new_code
+  conditions:
+    - metric: new_reliability_rating
+      operator: better_than
+      value: "A"
+    - metric: new_security_rating
+      operator: better_than
+      value: "A"
+    - metric: new_coverage
+      operator: greater_than
+      value: 80
+    - metric: new_duplicated_lines_density
+      operator: less_than
+      value: 3
+

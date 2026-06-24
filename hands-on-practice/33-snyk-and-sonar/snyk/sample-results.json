@@ -1,0 +1,17 @@
+{
+  "openSource": {
+    "critical": 0,
+    "high": 2,
+    "medium": 4
+  },
+  "container": {
+    "critical": 1,
+    "high": 3,
+    "baseImage": "node:20-alpine"
+  },
+  "iac": {
+    "high": 1,
+    "exampleFinding": "public security group ingress"
+  }
+}
+

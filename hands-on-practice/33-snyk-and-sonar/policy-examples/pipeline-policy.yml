@@ -1,0 +1,15 @@
+pipeline_policy:
+  pull_request:
+    block_on:
+      - "Snyk critical vulnerability on reachable dependency"
+      - "Snyk high severity IaC issue in production path"
+      - "Sonar quality gate failure on new code"
+    warn_on:
+      - "existing legacy code smell outside changed files"
+      - "medium severity dependency issue with accepted temporary risk"
+  main_branch:
+    require_monitoring:
+      - "snyk monitor"
+    require_reporting:
+      - "quality gate status"
+

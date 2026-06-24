@@ -1,0 +1,13 @@
+name: fast-moving-product-team
+description: "A product team ships quickly and wants merge-time checks without overwhelming developers."
+constraints:
+  - "New code quality must stay healthy"
+  - "Critical vulnerabilities should block merge"
+  - "Legacy codebase is imperfect"
+recommended_approach:
+  - sonar_new_code_quality_gate
+  - snyk_block_on_critical_and_selected_high
+decision_notes:
+  - "Clean-as-you-code keeps progress possible."
+  - "Security blocking should focus on meaningful risk, not every historical issue."
+
