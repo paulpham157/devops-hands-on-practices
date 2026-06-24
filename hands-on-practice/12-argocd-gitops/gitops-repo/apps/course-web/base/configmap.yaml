@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: course-web-content
+  namespace: docker-course-gitops
+  labels:
+    app.kubernetes.io/name: course-web
+    app.kubernetes.io/part-of: docker-course
+data:
+  index.html: |
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>Argo CD GitOps</title>
+      </head>
+      <body>
+        <h1>Argo CD GitOps lesson</h1>
+        <p>This page is reconciled from Git by Argo CD.</p>
+      </body>
+    </html>

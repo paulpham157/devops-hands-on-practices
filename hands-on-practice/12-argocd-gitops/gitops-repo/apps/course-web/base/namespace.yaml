@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: docker-course-gitops
+  labels:
+    app.kubernetes.io/part-of: docker-course
+    docker-course.dev/lesson: "12-argocd-gitops"

@@ -1,0 +1,27 @@
+name: devsecops-container-pipeline
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  security-gate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: hands-on-practice/11-devsecops-container-pipeline
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run DevSecOps gate
+        run: ./scripts/security-gate.sh
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: devsecops-sbom
+          path: hands-on-practice/11-devsecops-container-pipeline/reports/devsecops-sbom.cdx.json

@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: course-web
+  namespace: docker-course-gitops
+spec:
+  replicas: 2
+  template:
+    metadata:
+      annotations:
+        docker-course.dev/gitops-overlay: dev

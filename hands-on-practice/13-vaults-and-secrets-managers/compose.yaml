@@ -1,0 +1,27 @@
+services:
+  vault:
+    image: hashicorp/vault:1.20
+    container_name: docker-course-vault
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: root
+      VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+
+  app:
+    build:
+      context: ./sample-app
+    container_name: docker-course-secrets-app
+    ports:
+      - "8100:8080"
+    environment:
+      APP_NAME: docker-course-secrets-app
+      SECRET_FILE: /run/secrets/demo_api_token
+    secrets:
+      - demo_api_token
+
+secrets:
+  demo_api_token:
+    file: ./secrets/demo_api_token.txt
