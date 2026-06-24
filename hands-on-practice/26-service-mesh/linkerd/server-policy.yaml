@@ -1,0 +1,11 @@
+apiVersion: policy.linkerd.io/v1beta1
+kind: Server
+metadata:
+  name: reviews
+spec:
+  podSelector:
+    matchLabels:
+      app: reviews
+  port: http
+  proxyProtocol: HTTP/1
+

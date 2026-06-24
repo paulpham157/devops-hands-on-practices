@@ -1,0 +1,13 @@
+apiVersion: policy.linkerd.io/v1beta1
+kind: ServerAuthorization
+metadata:
+  name: ratings-to-reviews
+spec:
+  server:
+    name: reviews
+  client:
+    meshTLS:
+      serviceAccounts:
+        - name: ratings
+          namespace: default
+

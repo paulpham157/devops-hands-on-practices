@@ -1,0 +1,14 @@
+name: hybrid-runtime
+description: "Organization running Kubernetes services and legacy virtual machine services that must share service identity and policy."
+constraints:
+  - "Mixed runtime estate"
+  - "Service-to-service controls must cross environment boundaries"
+  - "Operational model already uses HashiCorp tooling"
+recommended_mesh:
+  primary: Consul
+  alternatives:
+    - Istio
+decision_notes:
+  - "Consul is a strong fit when service networking must extend beyond Kubernetes."
+  - "Istio can still be considered, but the runtime mix raises operational questions."
+

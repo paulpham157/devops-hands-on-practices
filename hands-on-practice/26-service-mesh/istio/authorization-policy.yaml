@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: reviews-allow-ratings
+spec:
+  selector:
+    matchLabels:
+      app: reviews
+  rules:
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/default/sa/ratings
+

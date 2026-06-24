@@ -1,0 +1,14 @@
+name: platform-team
+description: "Kubernetes platform team running many internal microservices with progressive delivery and strict service-to-service policy."
+constraints:
+  - "Fine-grained traffic shifting is required"
+  - "mTLS and service authorization are mandatory"
+  - "The team already operates several Kubernetes add-ons"
+recommended_mesh:
+  primary: Istio
+  alternatives:
+    - Linkerd
+decision_notes:
+  - "Istio fits rich traffic management and broader policy requirements."
+  - "Linkerd could fit if the team accepts a smaller traffic feature surface."
+
