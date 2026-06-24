@@ -1,0 +1,14 @@
+throttling_policy:
+  global:
+    max_requests_per_second: 500
+    max_inflight_requests: 200
+  per_tenant:
+    default_rps: 50
+    premium_rps: 150
+  dependency_protection:
+    when_payment_latency_ms_above: 800
+    reduce_checkout_rps_by_percent: 40
+  response_behavior:
+    status_code: 429
+    retry_after_seconds: 10
+

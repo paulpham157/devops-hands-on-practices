@@ -1,0 +1,17 @@
+workflow: order_processing
+steps:
+  - action: accept_order_request
+    result: "return accepted response with order reference"
+  - action: enqueue_order_job
+    result: "job stored in durable queue"
+  - action: worker_processes_job
+    result: "payment and inventory steps handled asynchronously"
+  - action: publish_order_status
+    result: "customer status view updated"
+benefits:
+  - "absorbs spikes in checkout volume"
+  - "protects downstream services from burst load"
+risks:
+  - "queue backlog increases customer completion latency"
+  - "poison messages need dead-letter handling"
+

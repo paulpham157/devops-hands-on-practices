@@ -1,0 +1,12 @@
+name: dependency-outage
+description: "Product catalog API remains up, but recommendation service becomes unavailable."
+constraints:
+  - "Core browsing must continue"
+  - "Optional personalization can be removed temporarily"
+recommended_patterns:
+  - health_endpoint_monitoring
+  - graceful_degradation
+decision_notes:
+  - "Keep readiness for catalog if critical dependencies still work."
+  - "Return product pages without recommendation panels."
+

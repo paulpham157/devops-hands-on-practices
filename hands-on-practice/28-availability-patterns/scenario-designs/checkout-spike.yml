@@ -1,0 +1,15 @@
+name: checkout-spike
+description: "Traffic surges to 5x normal rate during a sale event."
+constraints:
+  - "Payment service is slower than usual"
+  - "Checkout requests are business-critical"
+  - "Recommendation service is optional"
+recommended_patterns:
+  - queue_based_load_leveling
+  - throttling
+  - graceful_degradation
+decision_notes:
+  - "Queue core order work that can complete asynchronously."
+  - "Throttle non-critical traffic before payment collapses."
+  - "Disable recommendation dependency to preserve checkout."
+

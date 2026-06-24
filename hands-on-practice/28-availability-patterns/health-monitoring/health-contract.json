@@ -1,0 +1,25 @@
+{
+  "service": "checkout-api",
+  "checks": [
+    {
+      "name": "liveness",
+      "path": "/health/live",
+      "purpose": "process is running and event loop is not stuck"
+    },
+    {
+      "name": "readiness",
+      "path": "/health/ready",
+      "purpose": "instance can receive traffic"
+    },
+    {
+      "name": "dependencies",
+      "path": "/health/deps",
+      "purpose": "critical downstream dependencies are healthy enough"
+    }
+  ],
+  "notes": [
+    "Optional analytics dependency should not fail liveness.",
+    "Readiness may fail when database connection pool is exhausted."
+  ]
+}
+

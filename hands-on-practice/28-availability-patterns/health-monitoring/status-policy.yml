@@ -1,0 +1,12 @@
+health_policy:
+  fail_liveness_when:
+    - "process deadlock"
+    - "runtime cannot serve any request"
+  fail_readiness_when:
+    - "database unavailable"
+    - "connection pool exhausted"
+    - "startup incomplete"
+  degrade_only_when:
+    - "recommendation service unavailable"
+    - "analytics pipeline delayed"
+
