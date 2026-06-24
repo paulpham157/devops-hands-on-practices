@@ -1,0 +1,32 @@
+.DS_Store
+
+# Python local cache
+__pycache__/
+*.py[cod]
+.venv/
+
+# Terraform local state and plugin cache
+.terraform/
+.tofu/
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+*.tfplan
+*.tfplan.json
+*.tfvars
+*.tfvars.json
+crash.log
+
+# Security scanner local cache and generated reports
+.trivy-cache/
+hands-on-practice/*/reports/
+hands-on-practice/*/artifacts/
+hands-on-practice/*/sandbox/
+
+# Lesson-generated local secrets
+hands-on-practice/13-vaults-and-secrets-managers/secrets/*.txt
+!hands-on-practice/13-vaults-and-secrets-managers/secrets/*.example.txt
+
+# Packer local output
+packer_cache/
+*.pkrvars.hcl
