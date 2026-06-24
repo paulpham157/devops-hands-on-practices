@@ -1,0 +1,8 @@
+replicaCount: 1
+
+ingress:
+  enabled: true
+
+content:
+  title: Helm Dev
+  message: Dev values rendered by Helm.

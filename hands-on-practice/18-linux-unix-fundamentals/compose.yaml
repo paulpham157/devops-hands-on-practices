@@ -1,0 +1,15 @@
+services:
+  ubuntu-lab:
+    image: ubuntu:24.04
+    command: ["sleep", "infinity"]
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+
+  alpine-lab:
+    image: alpine:3.20
+    command: ["sleep", "infinity"]
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+

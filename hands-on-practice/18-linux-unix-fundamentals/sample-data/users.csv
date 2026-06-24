@@ -1,0 +1,6 @@
+name,team,shell
+ana,platform,/bin/bash
+minh,backend,/bin/sh
+paul,devops,/bin/zsh
+linh,security,/usr/sbin/nologin
+

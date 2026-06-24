@@ -1,0 +1,56 @@
+services:
+  python-flask:
+    build:
+      context: ./apps/python-flask
+    ports:
+      - "5117:5000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/healthz')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  java-spring:
+    build:
+      context: ./apps/java-spring
+    ports:
+      - "5118:8080"
+    healthcheck:
+      test: ["CMD", "java", "-version"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  ruby-sinatra:
+    build:
+      context: ./apps/ruby-sinatra
+    ports:
+      - "5119:4567"
+    healthcheck:
+      test: ["CMD", "ruby", "-rsocket", "-e", "TCPSocket.new('127.0.0.1',4567).close"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  go-http:
+    build:
+      context: ./apps/go-http
+    ports:
+      - "5120:8080"
+    healthcheck:
+      test: ["CMD", "/app/server", "-healthcheck"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  rust-http:
+    build:
+      context: ./apps/rust-http
+    ports:
+      - "5121:8080"
+    healthcheck:
+      test: ["CMD", "/app/server", "--healthcheck"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+

@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: course-web
+  namespace: docker-course-packaging
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        docker-course.dev/overlay: dev

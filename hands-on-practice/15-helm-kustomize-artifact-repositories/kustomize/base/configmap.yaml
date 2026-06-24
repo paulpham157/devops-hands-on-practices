@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: course-web-content
+  namespace: docker-course-packaging
+data:
+  index.html: |
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>Kustomize Course Web</title>
+      </head>
+      <body>
+        <h1>Kustomize Course Web</h1>
+        <p>Rendered from a Kustomize base.</p>
+      </body>
+    </html>

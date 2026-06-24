@@ -1,0 +1,7 @@
+2026-06-24T09:00:01Z INFO service=checkout path=/checkout status=200 latency_ms=42
+2026-06-24T09:00:02Z INFO service=checkout path=/cart status=200 latency_ms=18
+2026-06-24T09:00:03Z ERROR service=payment path=/pay status=500 latency_ms=310
+2026-06-24T09:00:04Z INFO service=catalog path=/products status=200 latency_ms=25
+2026-06-24T09:00:05Z WARN service=checkout path=/checkout status=429 latency_ms=12
+2026-06-24T09:00:06Z ERROR service=checkout path=/checkout status=503 latency_ms=890
+

@@ -1,0 +1,43 @@
+services:
+  app:
+    build:
+      context: ./app
+    environment:
+      FLASK_HOST: 0.0.0.0
+      FLASK_PORT: "5000"
+      OTEL_EXPORTER_OTLP_ENDPOINT: otel-collector:4317
+      OTEL_SERVICE_NAME: course-otel-app
+      OTEL_DEPLOYMENT_ENVIRONMENT: local
+      OTEL_SERVICE_VERSION: "1.0.0"
+    ports:
+      - "5016:5000"
+    depends_on:
+      otel-collector:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/healthz')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    command:
+      - --config=/etc/otelcol-contrib/collector.yaml
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "8888:8888"
+    volumes:
+      - ./otel/collector.yaml:/etc/otelcol-contrib/collector.yaml:ro
+    depends_on:
+      jaeger:
+        condition: service_started
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports:
+      - "16686:16686"
+
