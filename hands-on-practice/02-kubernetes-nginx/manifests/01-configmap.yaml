@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: course-nginx-content
+  namespace: docker-course
+  labels:
+    app.kubernetes.io/name: course-nginx
+    app.kubernetes.io/part-of: docker-course
+data:
+  index.html: |
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Kubernetes Practice</title>
+    </head>
+    <body>
+      <h1>Kubernetes Practice</h1>
+      <p>This page is served by an Nginx pod.</p>
+    </body>
+    </html>
+

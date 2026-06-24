@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: course-nginx-ingress
+  namespace: docker-course
+  labels:
+    app.kubernetes.io/name: course-nginx
+    app.kubernetes.io/part-of: docker-course
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: course-nginx
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector: {}
+      ports:
+        - protocol: TCP
+          port: 8080
+

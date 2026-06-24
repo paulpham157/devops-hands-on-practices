@@ -1,0 +1,56 @@
+---
+- name: Configure Docker host for course labs
+  hosts: docker_hosts
+  become: true
+  gather_facts: true
+
+  vars:
+    docker_host_packages:
+      - ca-certificates
+      - curl
+      - docker.io
+      - gnupg
+    docker_users:
+      - vagrant
+
+  pre_tasks:
+    - name: Confirm supported operating system
+      ansible.builtin.assert:
+        that:
+          - ansible_os_family == "Debian"
+        fail_msg: "This lesson expects a Debian or Ubuntu based VM."
+
+  tasks:
+    - name: Update apt package cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Install Docker host packages
+      ansible.builtin.apt:
+        name: "{{ docker_host_packages }}"
+        state: present
+
+    - name: Ensure Docker service is enabled and running
+      ansible.builtin.service:
+        name: docker
+        enabled: true
+        state: started
+
+    - name: Add lab users to docker group
+      ansible.builtin.user:
+        name: "{{ item }}"
+        groups: docker
+        append: true
+      loop: "{{ docker_users }}"
+
+    - name: Check Docker client version
+      ansible.builtin.command: docker --version
+      register: docker_version
+      changed_when: false
+
+  post_tasks:
+    - name: Show installed Docker version
+      ansible.builtin.debug:
+        var: docker_version.stdout
+
