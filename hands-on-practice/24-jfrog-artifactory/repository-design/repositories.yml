@@ -1,0 +1,62 @@
+repositories:
+  docker:
+    local:
+      - key: docker-dev-local
+        purpose: "CI publishes unpromoted images."
+        mutable: true
+      - key: docker-staging-local
+        purpose: "Integration-tested candidate images."
+        mutable: false
+      - key: docker-release-local
+        purpose: "Approved production images."
+        mutable: false
+    remote:
+      - key: dockerhub-remote
+        url: "https://registry-1.docker.io"
+        purpose: "Cache Docker Hub dependencies."
+    virtual:
+      - key: docker-virtual
+        includes:
+          - docker-release-local
+          - docker-staging-local
+          - dockerhub-remote
+        purpose: "Single Docker registry endpoint for users."
+
+  npm:
+    local:
+      - key: npm-dev-local
+        purpose: "Internal prerelease packages."
+      - key: npm-release-local
+        purpose: "Approved internal packages."
+    remote:
+      - key: npmjs-remote
+        url: "https://registry.npmjs.org"
+        purpose: "Cache npmjs.org dependencies."
+    virtual:
+      - key: npm-virtual
+        includes:
+          - npm-release-local
+          - npmjs-remote
+
+  maven:
+    local:
+      - key: maven-snapshot-local
+        purpose: "Snapshot builds."
+      - key: maven-release-local
+        purpose: "Release builds."
+    remote:
+      - key: maven-central-remote
+        url: "https://repo1.maven.org/maven2"
+    virtual:
+      - key: maven-virtual
+        includes:
+          - maven-release-local
+          - maven-central-remote
+
+  generic:
+    local:
+      - key: generic-dev-local
+        purpose: "CLI tools, tarballs, SBOMs, and other binary artifacts."
+      - key: generic-release-local
+        purpose: "Approved release binaries."
+

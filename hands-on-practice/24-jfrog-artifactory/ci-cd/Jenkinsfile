@@ -1,0 +1,44 @@
+pipeline {
+  agent any
+
+  environment {
+    BUILD_NAME = 'sample-service'
+    TARGET_REPO = 'generic-dev-local'
+    RELEASE_REPO = 'generic-release-local'
+  }
+
+  stages {
+    stage('Build') {
+      steps {
+        sh 'mkdir -p dist && cp sample-package/package.json dist/package.json'
+      }
+    }
+
+    stage('Publish Build Info') {
+      steps {
+        sh '''
+          jf rt upload "dist/*" "${TARGET_REPO}/${BUILD_NAME}/${BUILD_NUMBER}/" \
+            --build-name="${BUILD_NAME}" \
+            --build-number="${BUILD_NUMBER}"
+          jf rt build-collect-env "${BUILD_NAME}" "${BUILD_NUMBER}"
+          jf rt build-add-git "${BUILD_NAME}" "${BUILD_NUMBER}"
+          jf rt build-publish "${BUILD_NAME}" "${BUILD_NUMBER}"
+        '''
+      }
+    }
+
+    stage('Promote') {
+      when {
+        branch 'main'
+      }
+      steps {
+        sh '''
+          jf rt build-promote "${BUILD_NAME}" "${BUILD_NUMBER}" "${RELEASE_REPO}" \
+            --status="Released" \
+            --copy=true
+        '''
+      }
+    }
+  }
+}
+

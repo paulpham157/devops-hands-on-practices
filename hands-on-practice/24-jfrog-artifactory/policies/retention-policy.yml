@@ -1,0 +1,18 @@
+retention_policy:
+  name: artifact-retention-baseline
+  rules:
+    - repository_pattern: "*-dev-local"
+      keep_last_builds: 30
+      keep_days: 14
+      delete_unreferenced_artifacts: true
+    - repository_pattern: "*-staging-local"
+      keep_days: 30
+      delete_unreferenced_artifacts: true
+    - repository_pattern: "*-release-local"
+      keep_days: 365
+      require_manual_delete_approval: true
+      delete_unreferenced_artifacts: false
+    - repository_pattern: "*-remote"
+      keep_unused_cache_days: 30
+      delete_unused_cached_artifacts: true
+

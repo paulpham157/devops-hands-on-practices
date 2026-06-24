@@ -1,0 +1,41 @@
+xray_policy:
+  name: release-security-gate
+  description: "Training policy for blocking risky artifacts before release promotion."
+  watches:
+    - docker-release-local
+    - npm-release-local
+    - maven-release-local
+    - generic-release-local
+  rules:
+    - name: block-critical-vulnerabilities
+      criteria:
+        min_severity: Critical
+      action:
+        fail_build: true
+        notify:
+          - security-team
+    - name: block-high-vulnerabilities-with-fix
+      criteria:
+        min_severity: High
+        fix_available: true
+      action:
+        fail_build: true
+        notify:
+          - owning-team
+    - name: block-disallowed-licenses
+      criteria:
+        licenses:
+          - GPL-3.0
+          - AGPL-3.0
+      action:
+        fail_build: true
+        notify:
+          - legal-review
+    - name: flag-malicious-packages
+      criteria:
+        malicious_package: true
+      action:
+        fail_build: true
+        notify:
+          - security-team
+

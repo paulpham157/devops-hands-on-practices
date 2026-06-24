@@ -1,0 +1,29 @@
+artifact_lifecycle:
+  artifact_name: sample-service
+  package_type: docker
+  version: "1.0.0"
+  stages:
+    - name: build
+      repository: docker-dev-local
+      evidence:
+        - build-info
+        - unit-test-report
+        - sbom
+    - name: staging
+      repository: docker-staging-local
+      required_gates:
+        - xray-scan-passed
+        - integration-tests-passed
+      promotion_mode: copy
+    - name: release
+      repository: docker-release-local
+      required_gates:
+        - release-approval
+        - no-critical-vulnerabilities
+      promotion_mode: copy
+  rules:
+    rebuild_for_release: false
+    overwrite_release_artifacts: false
+    require_build_info: true
+    require_security_scan: true
+

@@ -1,0 +1,62 @@
+permission_targets:
+  developers:
+    repositories:
+      - docker-dev-local
+      - npm-dev-local
+      - maven-snapshot-local
+      - generic-dev-local
+    permissions:
+      read: true
+      deploy: true
+      delete: false
+      manage: false
+
+  ci_service_account:
+    repositories:
+      - docker-dev-local
+      - npm-dev-local
+      - maven-snapshot-local
+      - generic-dev-local
+    permissions:
+      read: true
+      deploy: true
+      annotate: true
+      delete: false
+      manage: false
+
+  release_managers:
+    repositories:
+      - docker-staging-local
+      - docker-release-local
+      - npm-release-local
+      - maven-release-local
+      - generic-release-local
+    permissions:
+      read: true
+      deploy: true
+      annotate: true
+      delete: false
+      manage: false
+
+  runtime_readonly:
+    repositories:
+      - docker-release-local
+      - npm-release-local
+      - maven-release-local
+      - generic-release-local
+    permissions:
+      read: true
+      deploy: false
+      delete: false
+      manage: false
+
+  platform_admins:
+    repositories:
+      - "*"
+    permissions:
+      read: true
+      deploy: true
+      annotate: true
+      delete: true
+      manage: true
+

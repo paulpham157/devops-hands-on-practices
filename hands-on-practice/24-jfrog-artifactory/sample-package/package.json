@@ -1,0 +1,11 @@
+{
+  "name": "sample-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Training package metadata for Artifactory lifecycle exercises.",
+  "scripts": {
+    "build": "echo build complete",
+    "test": "echo tests complete"
+  }
+}
+
