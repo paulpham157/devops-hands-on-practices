@@ -1,0 +1,14 @@
+aggregation_flow:
+  client: web-dashboard
+  bff_calls:
+    - user-profile-service
+    - orders-service
+    - notifications-service
+  bff_behaviors:
+    - combine_responses
+    - normalize_errors
+    - trim_unused_fields
+    - optional_cache_for_read_models
+  rule:
+    "domain rules stay in downstream services; BFF only orchestrates and shapes responses"
+

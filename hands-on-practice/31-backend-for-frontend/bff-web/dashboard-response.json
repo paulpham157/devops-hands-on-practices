@@ -1,0 +1,22 @@
+{
+  "page": "dashboard",
+  "widgets": [
+    {
+      "type": "profileSummary",
+      "source": "user-profile-service"
+    },
+    {
+      "type": "recentOrders",
+      "source": "orders-service"
+    },
+    {
+      "type": "notifications",
+      "source": "notifications-service"
+    }
+  ],
+  "notes": [
+    "Response is optimized for one page render.",
+    "Widget failures may be returned as partial placeholders."
+  ]
+}
+

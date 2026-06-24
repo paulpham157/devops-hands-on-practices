@@ -1,0 +1,11 @@
+name: shared-gateway-only
+description: "All clients currently look similar and mostly need simple routing to domain APIs."
+constraints:
+  - "Little client-specific transformation is needed"
+  - "Generic edge policies matter more than presentation shaping"
+recommended_patterns:
+  - api_gateway_only_for_now
+decision_notes:
+  - "A BFF would add another layer without solving a real client mismatch yet."
+  - "Revisit BFF only when clients diverge materially."
+

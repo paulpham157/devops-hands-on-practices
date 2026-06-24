@@ -1,0 +1,12 @@
+name: web-mobile-split
+description: "Web and mobile clients consume the same domains but have very different payload and latency needs."
+constraints:
+  - "Mobile needs fewer fields and fewer round trips"
+  - "Web needs richer dashboard composition"
+  - "Teams release clients independently"
+recommended_patterns:
+  - backend_for_frontend
+decision_notes:
+  - "Separate BFFs let each client optimize response shape and release cadence."
+  - "Domain services still own business logic and source-of-truth data."
+

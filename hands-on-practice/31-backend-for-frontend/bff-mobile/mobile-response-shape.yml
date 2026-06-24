@@ -1,0 +1,15 @@
+mobile_response:
+  endpoint: GET /home
+  goals:
+    - "minimize payload size"
+    - "reduce backend round trips"
+    - "avoid unused fields"
+  sections:
+    - name: summary
+      source: account-service
+    - name: offers
+      source: promotions-service
+  optimizations:
+    - "compact field naming allowed only inside mobile contract"
+    - "pagination or truncation applied earlier than web"
+
