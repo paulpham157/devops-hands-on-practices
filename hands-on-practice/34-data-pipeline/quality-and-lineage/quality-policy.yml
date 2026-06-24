@@ -1,0 +1,11 @@
+quality_policy:
+  checks:
+    - "row_count_not_zero"
+    - "primary_key_unique"
+    - "required_columns_not_null"
+    - "event_timestamp_within_expected_window"
+  on_failure:
+    - quarantine_bad_batch
+    - block_publish
+    - alert_pipeline_owner
+

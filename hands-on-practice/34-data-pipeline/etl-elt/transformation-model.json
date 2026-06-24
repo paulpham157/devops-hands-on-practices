@@ -1,0 +1,11 @@
+{
+  "etl": {
+    "flow": ["extract", "transform", "load"],
+    "fit": "transform before destination load"
+  },
+  "elt": {
+    "flow": ["extract", "load", "transform"],
+    "fit": "land raw data then model in target platform"
+  }
+}
+

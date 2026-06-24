@@ -1,0 +1,13 @@
+pipeline:
+  source: payments-api
+  ingestion_mode: batch
+  landing_zone: raw/payments/
+  stages:
+    - extract_api_data
+    - write_raw_json_files
+    - register_batch_metadata
+    - trigger_transformation
+  notes:
+    - "Raw landing data is preserved before transformation."
+    - "Later stages can reprocess from the landing zone."
+

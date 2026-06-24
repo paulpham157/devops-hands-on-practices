@@ -1,0 +1,17 @@
+modes:
+  batch:
+    freshness: "minutes to hours"
+    strengths:
+      - simpler scheduling
+      - easier backfill
+    risks:
+      - stale data between runs
+  streaming:
+    freshness: "seconds to near-real-time"
+    strengths:
+      - low-latency updates
+      - continuous processing
+    risks:
+      - ordering and state complexity
+      - harder replay and debugging
+

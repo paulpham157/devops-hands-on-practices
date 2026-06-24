@@ -1,0 +1,18 @@
+workflow:
+  name: daily_orders_pipeline
+  tasks:
+    - name: extract_orders
+      depends_on: []
+    - name: load_raw_orders
+      depends_on:
+        - extract_orders
+    - name: transform_orders
+      depends_on:
+        - load_raw_orders
+    - name: validate_orders
+      depends_on:
+        - transform_orders
+    - name: publish_orders_mart
+      depends_on:
+        - validate_orders
+

@@ -1,0 +1,12 @@
+name: product-analytics
+description: "Product usage data must feed dashboards every hour and support historical reprocessing."
+constraints:
+  - "Freshness target is under one hour"
+  - "Historical backfill matters"
+recommended_patterns:
+  - batch_pipeline
+  - elt
+decision_notes:
+  - "Hourly batch may be enough without streaming complexity."
+  - "Raw landing data supports later reprocessing and remodelling."
+

@@ -1,0 +1,11 @@
+name: fraud-detection
+description: "Transaction events must update risk scoring with low latency."
+constraints:
+  - "Latency target is seconds"
+  - "Near-real-time scoring matters more than simple operations"
+recommended_patterns:
+  - streaming_pipeline
+decision_notes:
+  - "Streaming is justified when latency requirements are strict."
+  - "The team must own replay, ordering, and state complexity."
+
