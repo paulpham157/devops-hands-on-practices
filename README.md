@@ -13,6 +13,16 @@ The labs are designed to be runnable locally first. Cloud accounts are optional 
 
 Start by opening any numbered lesson folder from the repository root.
 
+## Validate the Lessons
+
+Run all available lesson checks from the repository root:
+
+```bash
+./scripts/validate-all.sh
+```
+
+Lesson validation is local-first. Scripts check required files and syntax, then run optional tool checks only when the matching CLI is installed and usable.
+
 ## DevOps Practice Areas
 
 The numbered lesson folders stay stable so links and exercises do not move, but the curriculum is organized around these DevOps areas:
@@ -27,6 +37,23 @@ The numbered lesson folders stay stable so links and exercises do not move, but 
 | Cloud and identity | `13`, `14`, `21`, `22` |
 | Distributed application architecture | `19`, `20`, `27`, `29`, `30`, `31` |
 | Data engineering | `34` |
+
+## Curriculum Coverage
+
+| Lessons | Coverage | Notes |
+| --- | --- | --- |
+| `00-05` | Foundational hands-on, exercises, validation | Docker, Compose, Kubernetes, Ansible, Packer, Terraform |
+| `06-14` | Platform labs, exercises, validation | Observability, CI/CD, K3s, OpenTofu, DevSecOps, GitOps, secrets, AWS identity |
+| `15-24` | Advanced tooling, exercises, validation | Helm, Kustomize, artifacts, OTel, runtimes, Linux, protocols, cloud, serverless, IaC, Artifactory |
+| `25-34` | Architecture and reliability patterns, exercises, validation | Managed platforms, service mesh, data management, availability, network, backend, SLOs, security quality gates, data pipeline |
+
+Time-sensitive lessons should prefer current tool names and supported paths:
+
+- Use `docker compose` instead of legacy `docker-compose`.
+- Use Grafana Alloy for new Loki collection examples; Promtail is only legacy context.
+- Treat CDKTF as deprecated context, not a recommended new IaC path.
+- Refer to Google Cloud Functions 2nd gen as Cloud Run functions where relevant.
+- Pin CI runner images or document the update policy for production examples.
 
 ## Optional Vagrant Lab
 
