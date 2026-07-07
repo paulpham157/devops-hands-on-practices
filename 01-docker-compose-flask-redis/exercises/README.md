@@ -1,24 +1,31 @@
-# Docker Compose Exercises
+# Exercises: Docker Compose with Flask and Redis
 
-These exercises extend lesson 01. Start the stack first:
+## Sections
 
-```bash
-cd 01-docker-compose-flask-redis
-docker compose up --build
-```
+1. `01-compose-basics`
+   - Change the published web port and verify service reachability.
+2. `02-configuration`
+   - Add application configuration through Compose environment variables.
+3. `03-state`
+   - Persist Redis data with a named volume.
+4. `04-failure-modes`
+   - Observe and improve behavior when Redis is unavailable.
+5. `05-inspection`
+   - Read the fully rendered Compose model.
 
-## Exercise Order
+## Suggested Flow
 
-1. Change the published web port from `5001` to `8081`, then verify the app still reaches Redis.
-2. Add an `APP_MESSAGE` environment variable in `compose.yaml`, read it in Flask, and render it on the page.
-3. Add a named Redis volume so `page_hits` survives `docker compose down`.
-4. Stop only the Redis service and observe how the web service fails; then add a clearer error response.
-5. Run `docker compose config` and explain the fully rendered service definitions.
-
-## Completion Rule
-
-Finish each exercise only after verifying the behavior from the running stack:
+Start with service wiring, then configuration, then state and failure behavior.
 
 ```text
-edit -> docker compose up --build -> curl the app -> inspect logs/state
+ports -> environment -> volumes -> outage behavior -> rendered config
 ```
+
+## Completion Target
+
+By the end, you should be able to explain:
+
+- How Compose publishes ports and connects services.
+- How app configuration enters a container.
+- Why Redis state disappears without a volume.
+- How to verify behavior with `curl`, logs, and `docker compose config`.

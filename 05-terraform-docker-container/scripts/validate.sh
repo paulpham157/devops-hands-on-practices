@@ -15,6 +15,12 @@ for file in $required_files; do
   echo "ok $file"
 done
 
+for variant in explainer problem solution; do
+  count=$(find exercises -path "*/$variant/readme.md" -type f | wc -l | tr -d ' ')
+  [ "$count" -ge 5 ]
+  echo "ok exercises $variant readmes: $count"
+done
+
 if command -v terraform >/dev/null 2>&1; then
   terraform fmt -check -recursive
   if [ -d .terraform ]; then

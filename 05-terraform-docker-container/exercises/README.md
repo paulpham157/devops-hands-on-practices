@@ -1,25 +1,31 @@
-# Terraform Docker Exercises
+# Exercises: Manage a Docker Container with Terraform
 
-These exercises extend lesson 05. Initialize Terraform first:
+## Sections
 
-```bash
-cd 05-terraform-docker-container
-terraform init
-terraform validate
-```
+1. `01-plan-apply`
+   - Change a variable and inspect the plan before applying.
+2. `02-resource-lifecycle`
+   - Observe how resource identity affects replacement.
+3. `03-outputs`
+   - Add useful outputs for operators and scripts.
+4. `04-validation`
+   - Add input validation for safer changes.
+5. `05-state`
+   - Destroy, recreate, and inspect local state.
 
-## Exercise Order
+## Suggested Flow
 
-1. Change `host_port` to `8084` and inspect the plan before applying.
-2. Change `container_name` and explain why Terraform replaces or updates the resource.
-3. Add an output for the Docker image name.
-4. Add variable validation for the host port range.
-5. Destroy and recreate the container, then inspect the state file entries.
-
-## Completion Rule
-
-Finish each exercise only after checking the plan and state:
+Read the plan before every apply. Treat state as the source of what Terraform currently manages.
 
 ```text
-edit HCL -> terraform fmt/validate -> terraform plan -> apply or explain why not
+edit HCL -> fmt/validate -> plan -> apply -> inspect output/state
 ```
+
+## Completion Target
+
+By the end, you should be able to explain:
+
+- How Terraform plans describe proposed changes.
+- Why some arguments update resources and others replace them.
+- How outputs expose useful resource data.
+- Why local state is sensitive and should not be committed.

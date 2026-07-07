@@ -17,6 +17,12 @@ for file in $required_files; do
   echo "ok $file"
 done
 
+for variant in explainer problem solution; do
+  count=$(find exercises -path "*/$variant/readme.md" -type f | wc -l | tr -d ' ')
+  [ "$count" -ge 5 ]
+  echo "ok exercises $variant readmes: $count"
+done
+
 if command -v kubectl >/dev/null 2>&1 && kubectl cluster-info >/dev/null 2>&1; then
   kubectl apply --dry-run=client --validate=false -f manifests/ >/dev/null
   echo "ok manifests/"

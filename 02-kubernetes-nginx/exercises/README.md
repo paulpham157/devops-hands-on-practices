@@ -1,24 +1,31 @@
-# Kubernetes Nginx Exercises
+# Exercises: Kubernetes Nginx Deployment
 
-These exercises extend lesson 02. Use any local Kubernetes cluster, then apply the manifests:
+## Sections
 
-```bash
-cd 02-kubernetes-nginx
-kubectl apply -f manifests/
-```
+1. `01-workloads`
+   - Scale a Deployment and watch rollout behavior.
+2. `02-configuration`
+   - Update content through a ConfigMap.
+3. `03-debugging`
+   - Diagnose an image pull failure.
+4. `04-networking`
+   - Trace Service ports to container ports.
+5. `05-policy`
+   - Explain NetworkPolicy intent and limits.
 
-## Exercise Order
+## Suggested Flow
 
-1. Scale the Deployment from `2` replicas to `3` and watch the rollout.
-2. Change the ConfigMap HTML and confirm the served page changes after the pods reload.
-3. Break the image tag intentionally, inspect `ImagePullBackOff`, then restore the valid image.
-4. Read the Service and explain how port `80` routes to container port `8080`.
-5. Read the NetworkPolicy and describe which ingress traffic is allowed.
-
-## Completion Rule
-
-Finish each exercise only after checking Kubernetes state:
+Apply the manifests once, then change one concept at a time.
 
 ```text
-edit manifest -> kubectl apply -> kubectl get/describe/logs -> curl or port-forward
+replicas -> config -> failure -> service routing -> policy
 ```
+
+## Completion Target
+
+By the end, you should be able to explain:
+
+- How Deployments create and replace Pods.
+- How Services select Pods and route traffic.
+- How ConfigMaps decouple configuration from images.
+- How to inspect common Kubernetes failure states.

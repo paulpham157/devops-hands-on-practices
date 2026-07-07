@@ -1,25 +1,31 @@
-# Packer Image Exercises
+# Exercises: Build an Image with Packer
 
-These exercises extend lesson 04. Initialize and validate the template first:
+## Sections
 
-```bash
-cd 04-packer-docker-image
-packer init .
-packer validate .
-```
+1. `01-template-basics`
+   - Change static content and rebuild the image.
+2. `02-provisioning`
+   - Add a package during image provisioning.
+3. `03-tagging`
+   - Change version tags safely.
+4. `04-post-processors`
+   - Add an additional local image tag.
+5. `05-comparison`
+   - Compare Packer image baking with Dockerfile builds.
 
-## Exercise Order
+## Suggested Flow
 
-1. Change `files/index.html`, build the image, and verify the new page is served.
-2. Add another package to the image and confirm it exists with `docker run`.
-3. Change the image tag from `1.0` to `1.1`.
-4. Add a second tag for `latest` and inspect both local images.
-5. Compare the Packer build flow with a normal Dockerfile build and write down when each is useful.
-
-## Completion Rule
-
-Finish each exercise only after building and running the image:
+Move from content change to image metadata and design tradeoffs.
 
 ```text
-edit template/files -> packer fmt/validate -> packer build -> docker run/inspect
+edit files -> validate template -> build image -> run/inspect image
 ```
+
+## Completion Target
+
+By the end, you should be able to explain:
+
+- What Packer validates before a build.
+- How provisioners change the baked image.
+- How image tags affect repeatability.
+- When Packer is useful beyond Docker image builds.
