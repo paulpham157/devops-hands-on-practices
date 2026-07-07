@@ -2,9 +2,9 @@
 
 ## Goal
 
-Use Ansible to configure the Vagrant Ubuntu VM from `../00-docker-fundamentals/lab-setup` as a Docker host.
+Use Ansible to configure the Vagrant Ubuntu VM from `../00-docker-fundamentals/examples/lab-setup` as a Docker host.
 
-The default inventory targets the VM from `../00-docker-fundamentals/lab-setup/settings.yaml`:
+The default inventory targets the VM from `../00-docker-fundamentals/examples/lab-setup/settings.yaml`:
 
 ```text
 192.168.201.10
@@ -13,14 +13,14 @@ The default inventory targets the VM from `../00-docker-fundamentals/lab-setup/s
 ## Start the VM
 
 ```bash
-cd ../00-docker-fundamentals/lab-setup
+cd ../00-docker-fundamentals/examples/lab-setup
 vagrant up
 ```
 
 Return to this lesson:
 
 ```bash
-cd ../../03-ansible-docker-host
+cd ../../../03-ansible-docker-host
 ```
 
 ## Check Connectivity
@@ -61,6 +61,6 @@ ansible -i inventory/hosts.ini docker_hosts -m command -a "docker run --rm hello
 The playbook installs packages on the VM. To remove the whole VM:
 
 ```bash
-cd ../00-docker-fundamentals/lab-setup
+cd ../00-docker-fundamentals/examples/lab-setup
 vagrant destroy -f
 ```
