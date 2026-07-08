@@ -1,0 +1,10 @@
+scenario: sovereign-private-cloud
+team: infrastructure-platform
+constraints:
+  - workloads must remain on organization-operated hardware
+  - multiple internal tenants need quota and network isolation
+  - vm-based workloads remain common across business units
+recommended_fit:
+  - openstack core services
+  - heat for baseline stack modeling
+  - explicit operations ownership for upgrades and capacity

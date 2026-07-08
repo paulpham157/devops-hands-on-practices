@@ -1,0 +1,64 @@
+heat_template_version: 2018-08-31
+
+description: Example compute stack for a tenant application
+
+parameters:
+  image:
+    type: string
+    default: ubuntu-24.04
+  flavor:
+    type: string
+    default: m1.small
+  network_id:
+    type: string
+  public_network:
+    type: string
+    default: public
+
+resources:
+  web_security_group:
+    type: OS::Neutron::SecurityGroup
+    properties:
+      name: web-sg
+      rules:
+        - protocol: tcp
+          port_range_min: 22
+          port_range_max: 22
+          remote_ip_prefix: 0.0.0.0/0
+        - protocol: tcp
+          port_range_min: 80
+          port_range_max: 80
+          remote_ip_prefix: 0.0.0.0/0
+
+  web_port:
+    type: OS::Neutron::Port
+    properties:
+      network: { get_param: network_id }
+      security_groups:
+        - { get_resource: web_security_group }
+
+  web_server:
+    type: OS::Nova::Server
+    properties:
+      name: web-01
+      image: { get_param: image }
+      flavor: { get_param: flavor }
+      networks:
+        - port: { get_resource: web_port }
+
+  web_floating_ip:
+    type: OS::Neutron::FloatingIP
+    properties:
+      floating_network: { get_param: public_network }
+
+  web_floating_ip_assoc:
+    type: OS::Neutron::FloatingIPAssociation
+    properties:
+      floatingip_id: { get_resource: web_floating_ip }
+      port_id: { get_resource: web_port }
+
+outputs:
+  instance_name:
+    value: { get_attr: [web_server, name] }
+  floating_ip:
+    value: { get_attr: [web_floating_ip, floating_ip_address] }
