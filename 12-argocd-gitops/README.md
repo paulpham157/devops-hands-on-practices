@@ -111,7 +111,7 @@ localhost:8445 -> K3s HTTPS load balancer
 ./scripts/install-argocd.sh
 ```
 
-The script uses server-side apply because Argo CD's install manifest includes large CRDs.
+The script installs `ARGOCD_VERSION=v3.4.4` by default and uses server-side apply because Argo CD's install manifest includes large CRDs. Override `ARGOCD_VERSION` only after checking the release notes and Kubernetes compatibility.
 
 Get the initial admin password:
 

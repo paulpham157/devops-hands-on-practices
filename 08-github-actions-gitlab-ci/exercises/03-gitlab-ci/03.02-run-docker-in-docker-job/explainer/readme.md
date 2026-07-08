@@ -12,9 +12,9 @@ service container -> docker daemon
 The sample uses:
 
 ```yaml
-image: docker:28.5-cli
+image: docker:29.6.1-cli
 services:
-  - name: docker:28.5-dind
+  - name: docker:29.6.1-dind
 ```
 
 This requires a privileged runner. Treat it as powerful infrastructure access.

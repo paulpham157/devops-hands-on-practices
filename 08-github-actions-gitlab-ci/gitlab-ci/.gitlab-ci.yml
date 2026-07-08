@@ -35,9 +35,9 @@ test:
 
 build-image:
   stage: image
-  image: docker:28.5-cli
+  image: docker:29.6.1-cli
   services:
-    - name: docker:28.5-dind
+    - name: docker:29.6.1-dind
       command: ["--tls=false"]
   variables:
     DOCKER_HOST: tcp://docker:2375
@@ -68,9 +68,9 @@ build-image:
 
 publish-image:
   stage: publish
-  image: docker:28.5-cli
+  image: docker:29.6.1-cli
   services:
-    - name: docker:28.5-dind
+    - name: docker:29.6.1-dind
       command: ["--tls=false"]
   variables:
     DOCKER_HOST: tcp://docker:2375

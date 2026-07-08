@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
 
-ARGOCD_VERSION="${ARGOCD_VERSION:-stable}"
+ARGOCD_VERSION="${ARGOCD_VERSION:-v3.4.4}"
 ARGOCD_MANIFEST_URL="https://raw.githubusercontent.com/argoproj/argo-cd/${ARGOCD_VERSION}/manifests/install.yaml"
 
 command -v kubectl >/dev/null 2>&1 || {

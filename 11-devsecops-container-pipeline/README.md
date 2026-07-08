@@ -65,8 +65,10 @@ Install:
 
 The scripts run scanners through Docker images:
 
-- `aquasec/trivy`
-- `hadolint/hadolint`
+- `aquasec/trivy:0.72.0`
+- `ghcr.io/hadolint/hadolint:v2.14.0-debian`
+
+The versions are pinned so scanner behavior is repeatable during practice. In real CI, review and bump scanner versions on a schedule, and prefer pinned tags or digests over mutable `latest`.
 
 Check:
 
@@ -178,6 +180,8 @@ The exercises cover the DevSecOps feedback loop, threat modeling, Dockerfile lin
 ## References
 
 - OWASP DevSecOps Guideline: https://owasp.org/www-project-devsecops-guideline/
+- Trivy documentation: https://trivy.dev/docs/
+- Hadolint documentation: https://github.com/hadolint/hadolint
 - NIST Secure Software Development Framework: https://csrc.nist.gov/pubs/sp/800/218/final
 - SLSA supply-chain security framework: https://slsa.dev/
 - Trivy documentation: https://trivy.dev/latest/docs/

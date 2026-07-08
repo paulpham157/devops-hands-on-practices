@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
 
-TRIVY_IMAGE="${TRIVY_IMAGE:-aquasec/trivy:latest}"
+TRIVY_IMAGE="${TRIVY_IMAGE:-aquasec/trivy:0.72.0}"
 EXIT_CODE="${EXIT_CODE:-1}"
 
 mkdir -p .trivy-cache reports

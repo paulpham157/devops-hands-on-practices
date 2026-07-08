@@ -1,6 +1,6 @@
 services:
   docker:
-    image: docker:28.5-dind
+    image: docker:29.6.1-dind
     privileged: true
     environment:
       DOCKER_TLS_CERTDIR: /certs
