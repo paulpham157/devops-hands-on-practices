@@ -47,6 +47,19 @@ The numbered lesson folders stay stable so links and exercises do not move, but 
 | `15-24` | Advanced tooling, exercises, validation | Helm, Kustomize, artifacts, OTel, runtimes, Linux, protocols, cloud, serverless, IaC, Artifactory |
 | `25-34` | Architecture and reliability patterns, exercises, validation | Managed platforms, service mesh, data management, availability, network, backend, SLOs, security quality gates, data pipeline |
 
+## Lesson Maturity Matrix
+
+| Lessons | Runnable local | Deep exercises | Validation | Live cloud optional | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `00-05` | Yes | Yes | Yes | No | Foundation labs for Docker, Kubernetes, Ansible, Packer, and Terraform |
+| `06-10` | Yes | Yes | Yes | Optional | Core platform labs for observability, CI/CD, K3s, and OpenTofu |
+| `11-15` | Mostly yes | Yes | Yes | Optional | Security, GitOps, secrets, identity, Helm, Kustomize, and artifact patterns |
+| `16-20` | Mostly yes | Yes | Yes | Optional | Telemetry, runtimes, Linux, caching, load balancing, and protocols |
+| `21-24` | Offline-first | Yes | Yes | Yes | Cloud, serverless, IaC platforms, and artifact repository scenarios |
+| `25-34` | Offline-first | Yes | Yes | Yes | Platform selection, architecture, reliability, network, backend, SLO, quality, and data pipeline patterns |
+
+Use `Runnable local` for lessons that can be executed mainly with local tools. Use `Offline-first` for lessons where the core exercise is design, reading, validation, or scenario analysis without requiring paid cloud resources.
+
 Time-sensitive lessons should prefer current tool names and supported paths:
 
 - Use `docker compose` instead of legacy `docker-compose`.
