@@ -1,27 +1,27 @@
-# Observability Exercises
+# Exercises: Observability with Prometheus, Grafana, Loki, and Alloy
 
-These exercises extend lesson 06. Run the stack first:
+Run the stack first:
 
 ```bash
 cd 06-observability-prometheus-grafana-loki
 docker compose up --build
 ```
 
-Each exercise has:
+## Sections
 
-- `explainer/readme.md`: concept notes before doing the task.
-- `problem/readme.md`: task instructions and verification commands.
-- `solution/readme.md`: one possible solution and expected output.
+1. `01-metrics-and-prometheus`
+   - Instrument a business endpoint.
+   - Query golden signals with PromQL.
+2. `02-logs-and-loki`
+   - Parse structured logs with Alloy.
+   - Debug failures with LogQL.
+3. `03-grafana-and-alerting`
+   - Build dashboards and alerts.
+   - Tune alert thresholds.
+4. `04-incident-workflow`
+   - Correlate metrics and logs during an incident.
 
-## Exercise Order
-
-1. `01.01-instrument-a-business-endpoint`
-2. `01.02-query-golden-signals`
-3. `02.01-parse-logs-with-alloy`
-4. `02.02-debug-errors-with-logql`
-5. `03.01-build-dashboard-and-alert`
-
-## Completion Rule
+## Completion Target
 
 For each exercise, finish only when you can verify the change from the running tools, not only from the file edit.
 
@@ -29,3 +29,4 @@ For each exercise, finish only when you can verify the change from the running t
 edit -> restart or reload -> generate traffic -> query Prometheus/Loki/Grafana
 ```
 
+By the end, you should be able to move from symptom to signal to supporting logs.

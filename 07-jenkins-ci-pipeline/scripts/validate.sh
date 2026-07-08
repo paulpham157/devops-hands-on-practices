@@ -19,6 +19,12 @@ for file in $required_files; do
   echo "ok $file"
 done
 
+for variant in explainer problem solution; do
+  count=$(find exercises -path "*/$variant/readme.md" -type f | wc -l | tr -d ' ')
+  [ "$count" -ge 7 ]
+  echo "ok exercises $variant readmes: $count"
+done
+
 if command -v python3 >/dev/null 2>&1; then
   python3 -m py_compile sample-app/app.py sample-app/tests/test_app.py
   echo "ok sample app Python"
