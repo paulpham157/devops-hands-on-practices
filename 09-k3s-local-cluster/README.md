@@ -12,6 +12,17 @@ This lesson teaches:
 - How Ingress traffic reaches a workload through the k3d load balancer
 - Basic operations: rollout, scale, inspect, and cleanup
 
+## Navigation
+
+- Previous lesson: `08-github-actions-gitlab-ci`
+- Next lesson: `10-opentofu-docker-module`
+
+## Related Lessons
+
+- `02-kubernetes-nginx`
+- `12-argocd-gitops`
+- `25-openshift-gke-eks-aks-ecs-fargate`
+
 ## Why K3s
 
 K3s is a lightweight Kubernetes distribution. It is useful for edge, homelab, CI, development, small VMs, and single-board computers.

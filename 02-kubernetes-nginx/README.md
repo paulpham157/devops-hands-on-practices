@@ -6,6 +6,17 @@ Deploy an unprivileged Nginx container to a local Kubernetes cluster and expose 
 
 This lesson uses `nginxinc/nginx-unprivileged` so the pod can run as a non-root user on port `8080`.
 
+## Navigation
+
+- Previous lesson: `01-docker-compose-flask-redis`
+- Next lesson: `03-ansible-docker-host`
+
+## Related Lessons
+
+- `01-docker-compose-flask-redis`
+- `03-ansible-docker-host`
+- `09-k3s-local-cluster`
+
 ## Prerequisites
 
 Use one local Kubernetes option:

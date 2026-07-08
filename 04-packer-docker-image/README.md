@@ -6,6 +6,17 @@ Use Packer to bake a Docker image with Nginx and a static page.
 
 Packer is often used to build VM images such as AMIs or VirtualBox boxes. This lesson uses the Docker builder so the workflow stays local and fast.
 
+## Navigation
+
+- Previous lesson: `03-ansible-docker-host`
+- Next lesson: `05-terraform-docker-container`
+
+## Related Lessons
+
+- `03-ansible-docker-host`
+- `05-terraform-docker-container`
+- `17-language-runtime-containerization`
+
 ## Build
 
 ```bash

@@ -15,6 +15,17 @@ This lesson teaches:
 - Amazon Cognito for application end-user identity
 - How identity policy, trust policy, resource policy, SCP, and explicit deny interact
 
+## Navigation
+
+- Previous lesson: `13-vaults-and-secrets-managers`
+- Next lesson: `15-helm-kustomize-artifact-repositories`
+
+## Related Lessons
+
+- `13-vaults-and-secrets-managers`
+- `21-aws-azure-gcp-cloud-fundamentals`
+- `22-serverless-functions-platforms`
+
 ## Why AWS Identity Matters
 
 Most AWS security incidents are not caused by a missing firewall rule. They are often caused by credentials that are too powerful, too long-lived, exposed in logs or Git, or attached to the wrong identity.

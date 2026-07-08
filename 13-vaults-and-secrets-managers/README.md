@@ -14,6 +14,17 @@ This lesson teaches:
 - How to pass a secret into a container through a mounted file
 - How to reason about secret rotation, access control, audit, and blast radius
 
+## Navigation
+
+- Previous lesson: `12-argocd-gitops`
+- Next lesson: `14-aws-identity`
+
+## Related Lessons
+
+- `14-aws-identity`
+- `21-aws-azure-gcp-cloud-fundamentals`
+- `33-snyk-and-sonar`
+
 ## What Counts as a Secret
 
 A secret is any value that grants access or proves identity.

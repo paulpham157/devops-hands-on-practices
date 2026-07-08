@@ -6,6 +6,17 @@ Use Terraform to pull an Nginx image and run a local Docker container.
 
 This lesson avoids cloud resources. It still teaches the Terraform workflow: `init`, `fmt`, `validate`, `plan`, `apply`, outputs, state, and `destroy`.
 
+## Navigation
+
+- Previous lesson: `04-packer-docker-image`
+- Next lesson: `06-observability-prometheus-grafana-loki`
+
+## Related Lessons
+
+- `04-packer-docker-image`
+- `10-opentofu-docker-module`
+- `23-iac-cdk-cloudformation-pulumi-terraform`
+
 ## Initialize
 
 ```bash

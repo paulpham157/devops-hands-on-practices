@@ -12,6 +12,17 @@ This lesson teaches:
 - How to keep CI behavior close to local Docker commands
 - Where GitHub Actions, GitLab CI, and Jenkins differ in real projects
 
+## Navigation
+
+- Previous lesson: `07-jenkins-ci-pipeline`
+- Next lesson: `09-k3s-local-cluster`
+
+## Related Lessons
+
+- `07-jenkins-ci-pipeline`
+- `11-devsecops-container-pipeline`
+- `37-teamcity-ci-pipelines`
+
 ## Why These Platforms
 
 GitHub Actions and GitLab CI are CI/CD systems built into source control platforms.

@@ -11,6 +11,17 @@ This lesson teaches:
 - CI stages: test, build, smoke test, archive artifacts
 - Running Docker commands from Jenkins through a Docker-in-Docker sidecar
 
+## Navigation
+
+- Previous lesson: `06-observability-prometheus-grafana-loki`
+- Next lesson: `08-github-actions-gitlab-ci`
+
+## Related Lessons
+
+- `08-github-actions-gitlab-ci`
+- `11-devsecops-container-pipeline`
+- `37-teamcity-ci-pipelines`
+
 ## Why Jenkins
 
 Jenkins is an automation server. In CI/CD work, Jenkins commonly watches code changes, runs tests, builds artifacts or container images, and publishes results.

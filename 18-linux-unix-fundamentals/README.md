@@ -16,6 +16,17 @@ This lesson teaches:
 - Basic network and port inspection
 - How these concepts show up inside containers
 
+## Navigation
+
+- Previous lesson: `17-language-runtime-containerization`
+- Next lesson: `19-redis-caching-load-balancing`
+
+## Related Lessons
+
+- `00-docker-fundamentals`
+- `17-language-runtime-containerization`
+- `20-application-protocols-microservices`
+
 ## Mental Model
 
 ```text

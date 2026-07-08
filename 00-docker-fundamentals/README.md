@@ -13,6 +13,17 @@ By the end of this lesson, you should be able to:
 - Understand how layer ordering affects build cache.
 - Run a disposable Linux VM for Docker practice when needed.
 
+## Navigation
+
+- Previous lesson: none
+- Next lesson: `01-docker-compose-flask-redis`
+
+## Related Lessons
+
+- `01-docker-compose-flask-redis`
+- `02-kubernetes-nginx`
+- `17-language-runtime-containerization`
+
 ## Mental Model
 
 ```text

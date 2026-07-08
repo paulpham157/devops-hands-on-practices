@@ -4,6 +4,17 @@
 
 Run a small Flask app and a Redis service together with Docker Compose. The app increments a Redis counter on every request.
 
+## Navigation
+
+- Previous lesson: `00-docker-fundamentals`
+- Next lesson: `02-kubernetes-nginx`
+
+## Related Lessons
+
+- `00-docker-fundamentals`
+- `02-kubernetes-nginx`
+- `03-ansible-docker-host`
+
 ## Files
 
 - `compose.yaml`: defines the `web` and `redis` services.
