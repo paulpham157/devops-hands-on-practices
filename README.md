@@ -97,7 +97,7 @@ Restart the workstation after installing VirtualBox and Vagrant.
 Clone this repository:
 
 ```bash
-git clone https://github.com/YOUR_ORG/devops-hands-on-practices.git
+git clone https://github.com/paulpham157/devops-hands-on-practices.git
 ```
 
 Open a terminal and move into the lab setup:
