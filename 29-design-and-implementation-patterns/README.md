@@ -14,6 +14,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `28-availability-patterns`
+- Next lesson: `30-network-patterns`
+
+## Related Lessons
+
+- `27-data-management`
+- `30-network-patterns`
+- `31-backend-for-frontend`
+
 ## Mental Model
 
 ```text
