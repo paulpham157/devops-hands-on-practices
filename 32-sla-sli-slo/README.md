@@ -15,6 +15,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `31-backend-for-frontend`
+- Next lesson: `33-snyk-and-sonar`
+
+## Related Lessons
+
+- `06-observability-prometheus-grafana-loki`
+- `16-opentelemetry-jaeger-datadog`
+- `28-availability-patterns`
+
 ## Mental Model
 
 ```text

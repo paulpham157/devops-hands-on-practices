@@ -15,6 +15,17 @@ This lesson teaches:
 
 No OpenStack cluster is required for the core exercises. The lesson is offline-first and emphasizes architecture and operations reasoning.
 
+## Navigation
+
+- Previous lesson: `37-teamcity-ci-pipelines`
+- Next lesson: none
+
+## Related Lessons
+
+- `21-aws-azure-gcp-cloud-fundamentals`
+- `23-iac-cdk-cloudformation-pulumi-terraform`
+- `25-openshift-gke-eks-aks-ecs-fargate`
+
 ## Mental Model
 
 ```text

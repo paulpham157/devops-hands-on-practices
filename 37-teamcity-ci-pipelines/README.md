@@ -15,6 +15,17 @@ This lesson teaches:
 
 No TeamCity server is required for the core exercises. The lesson is offline-first and focuses on design, review, and configuration modeling.
 
+## Navigation
+
+- Previous lesson: `36-chef-infra-automation`
+- Next lesson: `38-openstack-private-cloud`
+
+## Related Lessons
+
+- `07-jenkins-ci-pipeline`
+- `08-github-actions-gitlab-ci`
+- `33-snyk-and-sonar`
+
 ## Mental Model
 
 ```text

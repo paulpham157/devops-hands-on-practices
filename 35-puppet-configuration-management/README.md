@@ -15,6 +15,17 @@ This lesson teaches:
 
 No Puppet server is required for the core exercises. The lesson is designed as an offline-first modeling and review lab.
 
+## Navigation
+
+- Previous lesson: `34-data-pipeline`
+- Next lesson: `36-chef-infra-automation`
+
+## Related Lessons
+
+- `03-ansible-docker-host`
+- `04-packer-docker-image`
+- `36-chef-infra-automation`
+
 ## Mental Model
 
 ```text

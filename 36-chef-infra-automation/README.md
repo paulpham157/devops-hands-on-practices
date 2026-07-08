@@ -15,6 +15,17 @@ This lesson teaches:
 
 No Chef server is required for the core exercises. The lesson is offline-first and focuses on modeling and operational tradeoffs.
 
+## Navigation
+
+- Previous lesson: `35-puppet-configuration-management`
+- Next lesson: `37-teamcity-ci-pipelines`
+
+## Related Lessons
+
+- `03-ansible-docker-host`
+- `11-devsecops-container-pipeline`
+- `35-puppet-configuration-management`
+
 ## Mental Model
 
 ```text
