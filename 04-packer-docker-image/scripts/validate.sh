@@ -20,6 +20,7 @@ for variant in explainer problem solution; do
 done
 
 if command -v packer >/dev/null 2>&1; then
+  packer init . >/dev/null
   packer fmt -check .
   packer validate .
   echo "ok docker-nginx.pkr.hcl"

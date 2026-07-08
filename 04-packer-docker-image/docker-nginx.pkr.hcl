@@ -8,8 +8,8 @@ packer {
 }
 
 source "docker" "ubuntu" {
-  image   = "ubuntu:24.04"
-  commit  = true
+  image  = "ubuntu:24.04"
+  commit = true
   changes = [
     "EXPOSE 80",
     "CMD [\"nginx\", \"-g\", \"daemon off;\"]"
