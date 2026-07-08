@@ -39,6 +39,22 @@ The numbered lesson folders stay stable so links and exercises do not move, but 
 | Distributed application architecture | `19`, `20`, `27`, `29`, `30`, `31` |
 | Data engineering | `34` |
 
+## Suggested Learning Path
+
+If you want a practical default path instead of choosing lessons by number alone, use this sequence:
+
+1. Foundations: `00` to `05`
+2. Core delivery and platform flow: `06` to `12`
+3. Security, identity, and packaging: `13` to `16`
+4. Runtime, systems, and application architecture: `17` to `20`
+5. Cloud and platform comparison: `21` to `26`
+6. Reliability, patterns, and data: `27` to `34`
+7. Extended platform topics:
+   - `35` Puppet after `03` if you want deeper configuration management
+   - `36` Chef after `03` if you want cookbook and Policyfile workflows
+   - `37` TeamCity after `07` and `08` if you want another enterprise CI model
+   - `38` OpenStack after `21` and `25` if you want private-cloud platform context
+
 ## Curriculum Coverage
 
 | Lessons | Coverage | Notes |
