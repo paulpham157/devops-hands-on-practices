@@ -52,7 +52,7 @@ Sample Kubernetes files     kubernetes/
 Generated local files       ignored by git
 ```
 
-The lab uses Vault dev mode only for learning. Do not use Vault dev mode in production.
+The lab uses Vault dev mode only for learning and local automation practice. Vault dev mode starts unsealed with a known root token and in-memory storage, so do not use it in production.
 
 ## Prerequisites
 
@@ -184,6 +184,7 @@ CI pipeline credential            -> CI/CD secret store with tight workflow perm
 For production:
 
 - Encrypt secrets at rest.
+- Run Vault with durable storage, seal/unseal design, TLS, audit devices, and a real auth method instead of dev mode.
 - Keep secrets out of images and Git history.
 - Prefer short-lived credentials over static passwords.
 - Use least-privilege access policies.

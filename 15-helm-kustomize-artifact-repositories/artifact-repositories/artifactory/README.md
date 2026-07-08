@@ -57,6 +57,8 @@ helm push artifacts/course-web-0.1.0.tgz oci://artifactory.company.example/helm-
 helm upgrade --install course-web oci://artifactory.company.example/helm-local/course-web --version 0.1.0
 ```
 
+For Helm OCI charts, the registry reference uses the chart name as the basename and the chart semantic version as the tag. Do not design a `latest` chart tag workflow.
+
 ## Docker Image Flow
 
 ```text
@@ -109,4 +111,3 @@ Keep deploy credentials read-only.
 - Scan before promotion to production.
 - Use retention rules for old dev builds.
 - Avoid mutable production tags.
-

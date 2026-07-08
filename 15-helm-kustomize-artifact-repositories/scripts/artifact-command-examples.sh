@@ -10,6 +10,7 @@ curl -u "$REPO_USER:$REPO_PASSWORD" --upload-file artifacts/course-web-0.1.0.tgz
 # Helm OCI flow:
 helm registry login artifact.example.com
 helm push artifacts/course-web-0.1.0.tgz oci://artifact.example.com/helm
+# Helm OCI chart tags are inferred from Chart.yaml version, not from latest.
 
 # Docker image flow:
 docker login artifact.example.com

@@ -64,6 +64,8 @@ helm push artifacts/course-web-0.1.0.tgz oci://nexus.company.example/helm-hosted
 helm upgrade --install course-web oci://nexus.company.example/helm-hosted/course-web --version 0.1.0
 ```
 
+For Helm OCI charts, the registry reference uses the chart name as the basename and the chart semantic version as the tag. Do not design a `latest` chart tag workflow.
+
 ## Docker Image Flow
 
 ```text
@@ -97,4 +99,3 @@ Avoid giving broad admin credentials to CI jobs.
 - Make repository credentials scoped and revocable.
 - Record the artifact version used by each deployment.
 - Do not rely on local machine artifacts for deployment.
-

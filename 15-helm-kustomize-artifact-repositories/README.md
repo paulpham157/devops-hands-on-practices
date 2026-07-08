@@ -164,6 +164,8 @@ helm push artifacts/course-web-0.1.0.tgz oci://artifact.example.com/helm
 helm install course-web oci://artifact.example.com/helm/course-web --version 0.1.0
 ```
 
+For Helm OCI registries, the chart reference basename is inferred from the chart name and the tag is inferred from the chart semantic version. Do not use `latest` for Helm OCI charts.
+
 Docker image:
 
 ```text
