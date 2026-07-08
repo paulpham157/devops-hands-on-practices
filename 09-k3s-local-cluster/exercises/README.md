@@ -16,6 +16,7 @@
 
 4. `04-operations`
    - Scale and roll out the demo app.
+   - Debug rollout events and failing Pod status.
 
 ## Completion Target
 

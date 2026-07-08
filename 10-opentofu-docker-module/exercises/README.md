@@ -17,6 +17,7 @@
 4. `04-migration-and-hardening`
    - Compare the Terraform lesson with this OpenTofu lesson.
    - Plan a cautious migration workflow.
+   - Plan remote state, locking, and team-safe change control.
 
 ## Completion Target
 

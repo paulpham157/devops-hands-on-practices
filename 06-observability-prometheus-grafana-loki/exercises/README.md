@@ -20,6 +20,7 @@ docker compose up --build
    - Tune alert thresholds.
 4. `04-incident-workflow`
    - Correlate metrics and logs during an incident.
+   - Review alert context and choose the next operator action.
 
 ## Completion Target
 

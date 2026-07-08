@@ -31,6 +31,7 @@ admin / admin
 3. `03-pipeline-hardening`
    - Archive build metadata.
    - Add timeouts and cleanup controls.
+   - Limit concurrency and reduce stale failed build state.
 
 ## Completion Target
 

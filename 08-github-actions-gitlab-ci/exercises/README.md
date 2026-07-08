@@ -16,6 +16,7 @@
 
 4. `04-ci-hardening`
    - Use artifacts, cache, rules, permissions, and secrets safely.
+   - Compare GitHub Actions and GitLab CI security controls.
 
 ## Suggested Flow
 
