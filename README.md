@@ -9,7 +9,7 @@ The labs are designed to be runnable locally first. Cloud accounts are optional 
 | Area | Path | Purpose |
 | --- | --- | --- |
 | Docker foundations | `00-docker-fundamentals` | Optional Vagrant VM, first images, Dockerfiles, multi-stage builds, distroless, layer, and cache examples |
-| Main DevOps labs | `01-*` to `34-*` | Numbered hands-on lessons grouped by DevOps domain |
+| Main DevOps labs | `01-*` to `38-*` | Numbered hands-on lessons grouped by DevOps domain |
 
 Start by opening any numbered lesson folder from the repository root.
 
@@ -31,10 +31,11 @@ The numbered lesson folders stay stable so links and exercises do not move, but 
 | --- | --- |
 | Container foundations | `00`, `01`, `17`, `18` |
 | Infrastructure automation and IaC | `03`, `04`, `05`, `10`, `23` |
-| CI/CD, GitOps, and supply chain | `07`, `08`, `11`, `12`, `15`, `24`, `33` |
+| CI/CD, GitOps, and supply chain | `07`, `08`, `11`, `12`, `15`, `24`, `33`, `37` |
 | Kubernetes and platform engineering | `02`, `09`, `25`, `26` |
 | Observability and reliability | `06`, `16`, `28`, `32` |
-| Cloud and identity | `13`, `14`, `21`, `22` |
+| Cloud and identity | `13`, `14`, `21`, `22`, `38` |
+| Configuration management | `03`, `35`, `36` |
 | Distributed application architecture | `19`, `20`, `27`, `29`, `30`, `31` |
 | Data engineering | `34` |
 
@@ -46,6 +47,7 @@ The numbered lesson folders stay stable so links and exercises do not move, but 
 | `06-14` | Platform labs, exercises, validation | Observability, CI/CD, K3s, OpenTofu, DevSecOps, GitOps, secrets, AWS identity |
 | `15-24` | Advanced tooling, exercises, validation | Helm, Kustomize, artifacts, OTel, runtimes, Linux, protocols, cloud, serverless, IaC, Artifactory |
 | `25-34` | Architecture and reliability patterns, exercises, validation | Managed platforms, service mesh, data management, availability, network, backend, SLOs, security quality gates, data pipeline |
+| `35-38` | Additional platform and operations coverage, exercises, validation | Puppet, Chef, TeamCity, and OpenStack private cloud fundamentals |
 
 ## Lesson Maturity Matrix
 
@@ -57,6 +59,7 @@ The numbered lesson folders stay stable so links and exercises do not move, but 
 | `16-20` | Mostly yes | Yes | Yes | Optional | Telemetry, runtimes, Linux, caching, load balancing, and protocols |
 | `21-24` | Offline-first | Yes | Yes | Yes | Cloud, serverless, IaC platforms, and artifact repository scenarios |
 | `25-34` | Offline-first | Yes | Yes | Yes | Platform selection, architecture, reliability, network, backend, SLO, quality, and data pipeline patterns |
+| `35-38` | Offline-first | Yes | Yes | Optional | Configuration management, enterprise CI, and private cloud platform patterns |
 
 Use `Runnable local` for lessons that can be executed mainly with local tools. Use `Offline-first` for lessons where the core exercise is design, reading, validation, or scenario analysis without requiring paid cloud resources.
 
