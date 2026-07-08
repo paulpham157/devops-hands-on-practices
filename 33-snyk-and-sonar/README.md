@@ -65,8 +65,9 @@ Snyk is commonly used for:
 
 Common CLI workflow:
 
-- `snyk test`
-- `snyk container test`
+- `snyk test` for dependency and license checks
+- `snyk container test` for quick container checks
+- `snyk container monitor` for ongoing container posture
 - `snyk iac test`
 - `snyk monitor`
 
@@ -80,6 +81,8 @@ Sonar is commonly used for:
 - quality gates on new code
 
 The most useful Sonar setups emphasize clean new code rather than demanding a perfect legacy codebase before any progress can happen.
+
+For SonarQube Server 2026.1 and newer, teams that use AI-generated code should also review AI Code Assurance gates instead of assuming the default quality gate covers that governance need.
 
 ## Combined Pipeline Thinking
 
@@ -139,4 +142,4 @@ The exercises cover tool positioning, shift-left practice, Snyk scan types, Sona
 - Snyk Code and IaC: https://docs.snyk.io/scan-with-snyk
 - SonarQube documentation: https://docs.sonarsource.com/sonarqube-server/
 - SonarQube quality gates: https://docs.sonarsource.com/sonarqube-server/latest/quality-standards-administration/managing-quality-gates/introduction-to-quality-gates/
-
+- SonarQube AI Code Assurance quality gates: https://docs.sonarsource.com/sonarqube-server/2026.1/quality-standards-administration/ai-code-assurance/quality-gates-for-ai-code

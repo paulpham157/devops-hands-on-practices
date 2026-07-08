@@ -113,6 +113,8 @@ Pipelines need more than SQL or code transforms. They also need:
 
 Without these, the pipeline is fragile even if the transformation logic is correct.
 
+Current pipeline stacks commonly separate orchestration, transformation, quality, and lineage. Airflow 3.x is a major-generation orchestration baseline, dbt Fusion is the newer dbt execution engine path, GX Core is a common open source quality framework, and OpenLineage is a common standard for lineage events.
+
 ## Production Questions
 
 Before designing a pipeline, answer:
@@ -155,4 +157,6 @@ The exercises cover ETL versus ELT, batch versus streaming, ingestion and landin
 - Azure architecture data guide: https://learn.microsoft.com/azure/architecture/data-guide/
 - Apache Airflow documentation: https://airflow.apache.org/docs/
 - dbt documentation: https://docs.getdbt.com/
-
+- dbt Fusion engine: https://docs.getdbt.com/docs/fusion
+- OpenLineage documentation: https://openlineage.io/docs/
+- GX Core: https://greatexpectations.io/

@@ -88,6 +88,8 @@ The example files in `istio/` show:
 - `PeerAuthentication` for mTLS posture
 - `AuthorizationPolicy` for service-to-service access control
 
+Istio can run with sidecar mode or ambient mode. Sidecar mode attaches Envoy per workload, while ambient mode uses shared Layer 4 node proxies and optional waypoint proxies for Layer 7 features. Treat data-plane mode as an adoption decision, not an implementation detail.
+
 ## Linkerd Notes
 
 Linkerd emphasizes a simpler operational experience and secure-by-default service-to-service communication. It is often attractive when the team wants:
@@ -141,9 +143,9 @@ The exercises cover mesh fundamentals, control plane and data plane roles, Istio
 ## References
 
 - Istio documentation: https://istio.io/latest/docs/
+- Istio ambient mode: https://istio.io/latest/docs/ambient/
 - Istio traffic management: https://istio.io/latest/docs/concepts/traffic-management/
 - Istio security concepts: https://istio.io/latest/docs/concepts/security/
 - Linkerd documentation: https://linkerd.io/2/overview/
 - Linkerd security model: https://linkerd.io/2/features/automatic-mtls/
 - Consul service mesh documentation: https://developer.hashicorp.com/consul/docs/connect
-
