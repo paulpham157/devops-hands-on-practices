@@ -15,6 +15,12 @@ for file in $required_files; do
   echo "ok $file"
 done
 
+for variant in explainer problem solution; do
+  count=$(find exercises -path "*/$variant/readme.md" -type f | wc -l | tr -d ' ')
+  [ "$count" -ge 8 ]
+  echo "ok exercises $variant readmes: $count"
+done
+
 find scripts -name '*.sh' ! -name validate.sh -exec sh -n {} \;
 echo "ok shell scripts"
 

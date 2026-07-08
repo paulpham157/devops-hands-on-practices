@@ -1,6 +1,29 @@
 #!/usr/bin/env sh
 set -eu
 
+required_files="
+README.md
+charts/course-web/Chart.yaml
+charts/course-web/values.yaml
+kustomize/base/kustomization.yaml
+kustomize/overlays/dev/kustomization.yaml
+kustomize/overlays/prod/kustomization.yaml
+artifact-repositories/nexus/README.md
+artifact-repositories/artifactory/README.md
+exercises/README.md
+"
+
+for file in $required_files; do
+  test -f "$file"
+  echo "ok $file"
+done
+
+for variant in explainer problem solution; do
+  count=$(find exercises -path "*/$variant/readme.md" -type f | wc -l | tr -d ' ')
+  [ "$count" -ge 8 ]
+  echo "ok exercises $variant readmes: $count"
+done
+
 sh -n scripts/*.sh
 
 if command -v helm >/dev/null 2>&1; then
