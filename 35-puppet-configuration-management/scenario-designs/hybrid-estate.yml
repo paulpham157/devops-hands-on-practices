@@ -1,0 +1,10 @@
+scenario: hybrid-estate-transition
+team: infrastructure-modernization
+constraints:
+  - mix of legacy VMs and newer immutable images
+  - gradual migration from ad hoc shell scripts
+  - limited appetite for full agent rollout on ephemeral nodes
+recommended_fit:
+  - puppet for stable legacy fleet
+  - image pipelines for ephemeral platforms
+  - ansible for short-lived orchestration tasks
