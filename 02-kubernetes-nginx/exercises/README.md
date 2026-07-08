@@ -4,12 +4,15 @@
 
 1. `01-workloads`
    - Scale a Deployment and watch rollout behavior.
+   - Read rollout status and pod replacement details.
 2. `02-configuration`
    - Update content through a ConfigMap.
+   - Trace a ConfigMap key to the mounted file inside the container.
 3. `03-debugging`
    - Diagnose an image pull failure.
 4. `04-networking`
    - Trace Service ports to container ports.
+   - Debug label selector or port mapping mismatches.
 5. `05-policy`
    - Explain NetworkPolicy intent and limits.
 

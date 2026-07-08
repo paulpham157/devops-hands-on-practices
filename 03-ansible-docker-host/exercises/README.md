@@ -4,12 +4,15 @@
 
 1. `01-connectivity`
    - Verify inventory, SSH, and Python access.
+   - Read inventory values and gather host facts.
 2. `02-idempotence`
    - Add package management and compare check mode with apply.
 3. `03-filesystem`
    - Create managed host directories.
+   - Manage file content idempotently on the target host.
 4. `04-handlers`
    - Add a Docker daemon change with a restart handler.
+   - Explain exactly when handlers run and why.
 5. `05-roles`
    - Split the playbook into a reusable role.
 

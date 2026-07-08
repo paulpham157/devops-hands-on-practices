@@ -4,14 +4,17 @@
 
 1. `01-plan-apply`
    - Change a variable and inspect the plan before applying.
+   - Read a plan diff and predict the outcome before `apply`.
 2. `02-resource-lifecycle`
    - Observe how resource identity affects replacement.
+   - Force replacement safely and verify what changed.
 3. `03-outputs`
    - Add useful outputs for operators and scripts.
 4. `04-validation`
    - Add input validation for safer changes.
 5. `05-state`
    - Destroy, recreate, and inspect local state.
+   - Protect local state and explain why it must stay out of Git.
 
 ## Suggested Flow
 
