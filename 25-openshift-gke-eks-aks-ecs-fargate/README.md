@@ -86,9 +86,9 @@ All three expose the Kubernetes API, but the operational defaults differ.
 
 GKE offers Standard and Autopilot modes. Autopilot shifts more node and cluster operations to Google, but teams still design Kubernetes workloads, identity, networking, and release workflows.
 
-EKS keeps the Kubernetes API on AWS and integrates with AWS identity, networking, and load balancing patterns. Teams still choose more of the operational stack themselves; for EKS on Fargate, Fargate profiles decide which pods run without managed worker nodes.
+EKS keeps the Kubernetes API on AWS and integrates with AWS identity, networking, and load balancing patterns. Teams can choose managed node groups, self-managed nodes, Fargate profiles, or EKS Auto Mode depending on how much data-plane automation they want.
 
-AKS integrates with Azure networking, identity, and node pool management while keeping the standard Kubernetes API surface.
+AKS integrates with Azure networking, identity, and node pool management while keeping the standard Kubernetes API surface. AKS Automatic is the more opinionated path for teams that want Azure to preconfigure more cluster operations.
 
 Do not treat them as interchangeable only because all three are Kubernetes. Identity, network architecture, ingress, observability, and upgrade workflows still differ.
 

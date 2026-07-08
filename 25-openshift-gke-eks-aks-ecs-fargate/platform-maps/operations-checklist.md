@@ -24,7 +24,6 @@ Use this checklist before choosing a container platform.
 ## Platform Operations
 
 - Who upgrades worker nodes and add-ons?
-- Is serverless container compute preferred over worker node pools?
+- Is serverless or automated container compute preferred over worker node pools, such as GKE Autopilot, EKS Auto Mode, AKS Automatic, ECS on Fargate, or EKS on Fargate?
 - What is the logging, metrics, and tracing path?
 - How will drift between platform stacks be controlled?
-

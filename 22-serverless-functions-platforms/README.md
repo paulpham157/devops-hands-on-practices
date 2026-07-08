@@ -122,6 +122,7 @@ Costs and risks:
 
 For production serverless:
 
+- use currently supported managed runtimes, for example Node.js 24 where the provider supports it.
 - keep functions small and single-purpose.
 - make handlers idempotent.
 - set timeouts intentionally.
@@ -134,7 +135,7 @@ For production serverless:
 - avoid doing long-running work in request-response functions.
 - test event payloads and retry behavior.
 - keep dependencies small to reduce cold start impact.
-- check provider runtime lifecycle pages before starting new work; supported runtimes and timeout/concurrency limits change over time.
+- check provider runtime lifecycle pages before starting new work; supported runtimes, plans, timeout limits, concurrency behavior, and compatibility-date behavior change over time.
 
 ## Validate
 

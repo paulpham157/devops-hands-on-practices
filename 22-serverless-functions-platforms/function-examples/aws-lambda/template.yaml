@@ -4,11 +4,10 @@ Resources:
   HelloFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Runtime: nodejs20.x
+      Runtime: nodejs24.x
       Handler: index.handler
       Timeout: 5
       MemorySize: 128
       Events:
         HttpApi:
           Type: HttpApi
-

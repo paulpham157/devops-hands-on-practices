@@ -143,6 +143,9 @@ JFrog Xray is commonly used with Artifactory to scan artifacts and dependencies 
 - malicious package signals.
 - license violations.
 - operational risk such as unapproved package sources.
+- SBOM and base-image impact, where the platform has the related Xray/Security features enabled.
+
+JFrog has been moving some remote-repository blocking capabilities toward JFrog Curation, so treat download-blocking policy design as version- and product-plan-sensitive instead of assuming every Xray gate is enforced the same way.
 
 The policy examples in `policies/` model the decision logic without requiring a live Xray instance.
 
@@ -182,4 +185,3 @@ The exercises cover repository types, package mapping, repository design, access
 - Build promotion: https://jfrog.com/help/r/jfrog-artifactory-documentation/build-promotion
 - JFrog Xray: https://jfrog.com/help/r/jfrog-security-documentation/jfrog-xray
 - JFrog CLI: https://jfrog.com/help/r/jfrog-cli
-

@@ -96,6 +96,7 @@ Choose Pulumi when:
 - the team wants TypeScript, Python, Go, C#, Java, or YAML for IaC.
 - application developers will own infrastructure code.
 - multi-cloud resources need a consistent programming model.
+- Pulumi ESC fits the organization's model for centralized environment configuration and secrets.
 
 Choose Terraform/OpenTofu when:
 
