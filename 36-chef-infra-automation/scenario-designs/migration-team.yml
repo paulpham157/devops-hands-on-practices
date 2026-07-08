@@ -1,0 +1,10 @@
+scenario: migration-from-shell-scripts
+team: infrastructure-automation
+constraints:
+  - inconsistent shell-based provisioning on long-lived servers
+  - desire for reusable templates and cookbook packaging
+  - limited appetite for a large central control plane
+recommended_fit:
+  - start with chef zero style local testing
+  - adopt policyfiles before broad server rollout
+  - compare operational overhead with ansible

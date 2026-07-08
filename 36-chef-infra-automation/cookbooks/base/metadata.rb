@@ -1,0 +1,7 @@
+name 'base'
+maintainer 'DevOps Course'
+maintainer_email 'devops-course@example.invalid'
+license 'Apache-2.0'
+description 'Base workstation and server configuration'
+version '0.1.0'
+chef_version '>= 18.0'

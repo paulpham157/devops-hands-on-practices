@@ -1,0 +1,10 @@
+scenario: retail-platform-standardization
+team: platform-engineering
+constraints:
+  - multiple application teams share a base Linux image
+  - infrastructure code needs repeatable policy promotion
+  - cookbook testing discipline is required before rollout
+recommended_fit:
+  - shared base cookbook
+  - policyfiles per environment
+  - test kitchen for convergence tests
