@@ -2,25 +2,20 @@
 
 Work through these exercises after reading the lesson README.
 
-## Exercise Map
+## Sections
 
-1. `01-runtime-models/01.01-compare-language-runtimes`
+1. `01-runtime-models`
    - Compare interpreted, JVM, and compiled runtime models.
-
-2. `01-runtime-models/01.02-read-dockerfiles`
-   - Read the Dockerfiles and identify caching, build, and runtime stages.
-
-3. `02-build-and-run/02.01-build-five-images`
+   - Read Dockerfiles and identify caching, build, and runtime stages.
+2. `02-build-and-run`
    - Build each service image and compare build behavior.
-
-4. `02-build-and-run/02.02-test-http-contract`
    - Run the services and test their shared HTTP contract.
-
-5. `03-production-readiness/03.01-optimize-cache-and-size`
+3. `03-production-readiness`
    - Improve Docker layer caching and reason about image size.
-
-6. `03-production-readiness/03.02-choose-runtime-for-a-service`
    - Choose a runtime for practical service scenarios.
+4. `04-container-hardening`
+   - Review non-root runtime users.
+   - Compare healthcheck and startup behavior across runtimes.
 
 ## Suggested Workflow
 
@@ -36,4 +31,3 @@ docker compose down
 ```
 
 Full image builds can take time because Java, Go, and Rust builder images are larger than the Python and Ruby examples.
-

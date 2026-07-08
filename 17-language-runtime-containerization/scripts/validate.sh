@@ -4,6 +4,12 @@ set -eu
 sh -n scripts/*.sh
 python3 -m py_compile apps/python-flask/app.py
 
+for variant in explainer problem solution; do
+  count=$(find exercises -path "*/$variant/readme.md" -type f | wc -l | tr -d ' ')
+  [ "$count" -ge 8 ]
+  echo "ok exercises $variant readmes: $count"
+done
+
 if [ "${RUN_TOOLCHAIN_VALIDATION:-0}" = "1" ] && command -v go >/dev/null 2>&1; then
   (cd apps/go-http && go test ./...)
 else

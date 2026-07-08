@@ -8,6 +8,12 @@ for file in compose.yaml nginx/default.conf redis/redis.conf notes/cache-and-loa
   test -s "$file"
 done
 
+for variant in explainer problem solution; do
+  count=$(find exercises -path "*/$variant/readme.md" -type f | wc -l | tr -d ' ')
+  [ "$count" -ge 8 ]
+  echo "ok exercises $variant readmes: $count"
+done
+
 ruby -e 'require "yaml"; YAML.load_file("compose.yaml"); puts "ok compose.yaml"'
 
 if command -v docker >/dev/null 2>&1; then
@@ -17,4 +23,3 @@ else
 fi
 
 echo "Validation passed"
-
