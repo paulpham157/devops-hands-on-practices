@@ -1,0 +1,10 @@
+scenario: hybrid-runner-estate
+team: developer-platform
+constraints:
+  - gpu builds and internal package mirrors require custom agents
+  - several teams need reusable pipeline templates
+  - migration from a heavily customized jenkins setup is under review
+recommended_fit:
+  - agent pools by workload type
+  - vcs roots and templates per platform
+  - staged migration with parallel pipeline validation
