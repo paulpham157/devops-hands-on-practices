@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redis:7.4-alpine
+    image: redis:8.8.0-alpine
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     ports:
       - "6379:6379"
@@ -62,4 +62,3 @@ services:
 
 volumes:
   redis-data:
-

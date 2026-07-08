@@ -1,4 +1,4 @@
-asyncapi: 3.0.0
+asyncapi: 3.1.0
 info:
   title: Catalog Events API
   version: 1.0.0
@@ -35,4 +35,3 @@ components:
           occurredAt:
             type: string
             format: date-time
-

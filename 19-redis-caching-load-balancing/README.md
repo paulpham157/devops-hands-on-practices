@@ -173,6 +173,7 @@ For short requests, round-robin is often enough. For uneven request duration, le
 
 For production:
 
+- Check Redis release notes and client compatibility before moving between major versions; this lab uses a pinned Redis 8 image for repeatability.
 - Set memory limits intentionally.
 - Choose an eviction policy that matches the workload.
 - Use TTLs for cache entries.
@@ -229,4 +230,3 @@ The exercises cover cache-aside, TTL, invalidation, cache hit/miss behavior, NGI
 - Redis eviction docs: https://redis.io/docs/latest/develop/reference/eviction/
 - NGINX load balancing docs: https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
 - NGINX upstream module docs: https://nginx.org/en/docs/http/ngx_http_upstream_module.html
-

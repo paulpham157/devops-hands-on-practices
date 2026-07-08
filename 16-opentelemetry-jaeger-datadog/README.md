@@ -194,6 +194,7 @@ This checks:
 For production:
 
 - Keep instrumentation vendor-neutral when possible.
+- Pin Collector and backend image versions for repeatable labs and upgrades; do not depend on `latest`.
 - Send telemetry to a local or node-local collector, not directly from every app to the internet.
 - Use environment variables or secret managers for API keys.
 - Set sampling intentionally.
@@ -220,4 +221,3 @@ The exercises cover OTel pipeline reading, span instrumentation, local Jaeger tr
 - OpenTelemetry Python documentation: https://opentelemetry.io/docs/languages/python/
 - Jaeger documentation: https://www.jaegertracing.io/docs/
 - Datadog OpenTelemetry documentation: https://docs.datadoghq.com/opentelemetry/
-

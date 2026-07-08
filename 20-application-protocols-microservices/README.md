@@ -208,6 +208,8 @@ exercises/README.md
 
 The exercises cover protocol comparison, contracts, REST, gRPC, WebSocket, SSE, AsyncAPI, protocol selection, versioning, security, and observability.
 
+The AsyncAPI example uses specification version `3.1.0`, which is the current minor release in the AsyncAPI 3 line.
+
 ## References
 
 - OpenAPI Specification: https://spec.openapis.org/oas/latest.html
@@ -217,4 +219,3 @@ The exercises cover protocol comparison, contracts, REST, gRPC, WebSocket, SSE, 
 - MDN WebSocket API: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
 - MDN Server-Sent Events: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events
 - AsyncAPI documentation: https://www.asyncapi.com/docs
-
