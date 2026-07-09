@@ -9,9 +9,11 @@ workspace-blueprints/generator-map.md
 
 Answer:
 
-1. What does Nx contribute to the workflow?
-2. What does `@aws/nx-plugin` contribute?
+1. Which AWS-specific project types can `@aws/nx-plugin` generate?
+2. Which parts are application code, infrastructure code, auth wiring, or project connections?
 3. Why should generated files still be reviewed?
 4. Which generated boundaries are most security-sensitive?
+5. Which Nx fundamentals should a learner review in `40-nx-workspace` if this contract is unclear?
 
-Completion rule: you can separate the workspace orchestration role from the AWS generator role.
+Completion rule: you can explain the AWS plugin contract without re-teaching the
+whole Nx workspace model.

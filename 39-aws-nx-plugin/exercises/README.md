@@ -2,10 +2,14 @@
 
 Work through these exercises after reading the lesson README.
 
+This exercise set assumes the learner can recognize basic Nx terms. For the
+full explanation of projects, targets, graphs, caching, and plugin categories,
+use `40-nx-workspace`.
+
 ## Exercise Map
 
 1. `01-plugin-foundations/01.01-map-the-plugin-contract`
-   - Identify what `@aws/nx-plugin` generates and what Nx contributes.
+   - Identify what `@aws/nx-plugin` adds on top of an existing Nx workspace model.
 
 2. `01-plugin-foundations/01.02-choose-workspace-iac`
    - Choose CDK or Terraform for a workspace scenario.

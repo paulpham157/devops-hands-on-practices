@@ -2,12 +2,18 @@
 
 ## Goal
 
-Learn how `@aws/nx-plugin` uses Nx generators to scaffold cloud-native AWS applications, connect frontend and backend projects, and attach CDK or Terraform infrastructure.
+Learn how `@aws/nx-plugin` applies Nx generators to scaffold cloud-native AWS
+applications, connect frontend and backend projects, and attach CDK or
+Terraform infrastructure.
+
+This is an AWS plugin case study, not the main Nx workspace lesson. If the
+learner does not yet understand projects, targets, inferred tasks, project
+graphs, task graphs, caching, or plugin selection, use `40-nx-workspace` first.
 
 This lesson teaches:
 
 - where `@aws/nx-plugin` fits in an AWS application platform workflow.
-- how Nx workspaces organize generated apps, APIs, agents, shared constructs, and infrastructure projects.
+- how generated AWS apps, APIs, agents, shared constructs, and infrastructure projects fit inside an Nx workspace.
 - how generators such as `ts#website`, `ts#api`, `ts#infra`, `terraform#project`, and `connection` compose a full-stack app.
 - how local development differs from deploying generated cloud resources.
 - why teams should review generated IaC, IAM permissions, environment configuration, and connections before deployment.
@@ -19,6 +25,7 @@ No AWS account is required for the core exercises. This lesson is offline-first 
 
 - Previous lesson: `38-openstack-private-cloud`
 - Next lesson: `40-nx-workspace`
+- Concept prerequisite: `40-nx-workspace` for Nx fundamentals.
 
 ## Related Lessons
 
@@ -32,7 +39,7 @@ No AWS account is required for the core exercises. This lesson is offline-first 
 ## Mental Model
 
 ```text
-workspace -> generator commands -> connected projects -> local dev loop -> IaC review -> deploy with controlled credentials
+AWS app shape -> @aws/nx-plugin generators -> connected projects -> local dev loop -> IaC review -> deploy with controlled credentials
 ```
 
 The plugin is useful when a team wants repeatable AWS application scaffolding rather than hand-assembling every frontend, backend, auth, and infrastructure boundary.
@@ -101,7 +108,9 @@ Start here:
 exercises/README.md
 ```
 
-The exercises cover Nx workspace purpose, generator command planning, frontend/backend connection, local development, infrastructure review, and production adoption tradeoffs.
+The exercises cover AWS generator command planning, frontend/backend connection,
+local development, infrastructure review, and production adoption tradeoffs.
+Use `40-nx-workspace` for the general Nx workspace model.
 
 ## References
 
