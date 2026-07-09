@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v0.1.0 - 2026-07-10
 
 This release turns the course into a more explicit AI-collaborative learning
 workspace. Learners can ask an AI agent to guide study, explain lessons,

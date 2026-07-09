@@ -1,8 +1,23 @@
-# Release Notes: AI-Collaborative DevOps Learning
+# Release Notes: v0.1.0 - AI-Collaborative DevOps Learning
+
+## Naming Convention
+
+- Version: `0.1.0`
+- Git tag: `v0.1.0`
+- GitHub release title: `v0.1.0 - AI-Collaborative DevOps Learning`
+- Changelog heading: `## v0.1.0 - 2026-07-10`
+
+Use semantic versioning for course releases:
+
+- Patch: corrections, typo fixes, validation fixes, small lesson clarifications.
+- Minor: new lessons, new agent skills, new learning paths, or substantial
+  curriculum improvements.
+- Major: breaking lesson structure changes, renamed lesson folders, removed
+  lessons, or incompatible workflow changes.
 
 This release prepares the course for a more collaborative learning workflow
 between the learner and an AI agent. The repository now includes agent-facing
-skills, new Nx-focused lessons, and release notes for the next version bump.
+skills, new Nx-focused lessons, and release notes for version `v0.1.0`.
 
 ## What Is New
 
