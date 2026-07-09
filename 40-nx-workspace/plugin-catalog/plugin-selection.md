@@ -33,6 +33,22 @@ Prefer an official plugin when it covers the tool. Use a community plugin when
 it is actively maintained and fits a real gap. Build a custom plugin only when
 the workflow is repeated, owned, and specific enough to justify maintenance.
 
+## Registry Due Diligence
+
+The Nx plugin registry is not just a list of package names. Use it to verify:
+
+- whether the plugin is Nx Open Source, community-maintained, or third-party
+- supported Nx version range
+- last update date
+- download and star signals
+- whether multiple plugins solve the same problem
+- whether the plugin links to Nx docs or an external repository
+
+For example, searching the registry for `aws` shows several AWS CDK community
+plugins plus `@aws/nx-plugin`. Treat that as a selection exercise: compare the
+plugin purpose, compatibility range, maintenance signal, and whether the team
+needs CDK-only support or broader AWS application scaffolding.
+
 ## Common Plugin Families
 
 | Family | Typical plugins | Use when |
@@ -62,6 +78,7 @@ Ask:
 7. Is it official, community-maintained, or internal?
 8. Who will maintain generated code and migrations?
 9. Does it need to be registered in `nx.json` to infer tasks?
+10. What does the plugin registry say about version compatibility and maintenance?
 
 ## Capability Checklist
 

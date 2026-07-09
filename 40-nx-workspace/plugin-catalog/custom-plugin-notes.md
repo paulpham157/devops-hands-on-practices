@@ -49,3 +49,21 @@ Use `@nx/plugin` when building custom plugin features such as:
 
 Before creating a custom plugin, check whether an official Nx plugin or a
 well-maintained community plugin already solves the problem.
+
+## Organization-Specific Plugin Workflow
+
+A common first custom plugin is not a complex executor. It is a local generator
+that encodes repository conventions:
+
+- call an official generator with approved defaults
+- add required tags such as `scope:*`
+- place projects in expected folders
+- update test, lint, or build configuration after files are generated
+- run formatting and any post-generation tasks in order
+
+This is different from documentation. Documentation tells developers what to do;
+the generator makes the default path match the standard.
+
+Escalate to a local executor, inferred task, or project graph plugin only when
+the team has custom tooling or dependency discovery that normal generators and
+official plugins cannot model.
