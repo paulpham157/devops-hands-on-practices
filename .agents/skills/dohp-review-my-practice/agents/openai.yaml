@@ -1,0 +1,10 @@
+interface:
+  display_name: "DOHP Review My Practice"
+  short_description: "Review learner practice in the DOHP course"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#DC2626"
+  default_prompt: "Use $dohp-review-my-practice to review my attempt in this repository and tell me exactly what is missing or wrong."
+
+policy:
+  allow_implicit_invocation: true
