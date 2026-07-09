@@ -18,7 +18,7 @@ No AWS account is required for the core exercises. This lesson is offline-first 
 ## Navigation
 
 - Previous lesson: `38-openstack-private-cloud`
-- Next lesson: none
+- Next lesson: `40-nx-workspace`
 
 ## Related Lessons
 
@@ -27,6 +27,7 @@ No AWS account is required for the core exercises. This lesson is offline-first 
 - `22-serverless-functions-platforms`
 - `23-iac-cdk-cloudformation-pulumi-terraform`
 - `31-backend-for-frontend`
+- `40-nx-workspace`
 
 ## Mental Model
 

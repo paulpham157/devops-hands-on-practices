@@ -113,6 +113,7 @@ Expand with:
 - `37-teamcity-ci-pipelines` for an additional enterprise CI model.
 - `13-vaults-and-secrets-managers` for secret handling in delivery flows.
 - `16-opentelemetry-jaeger-datadog` for release observability.
+- `40-nx-workspace` for monorepo task orchestration, caching, affected CI, and plugin selection.
 - `39-aws-nx-plugin` for generated AWS app, API, auth, and IaC workspace workflows.
 
 Completion target: you can design a pipeline that builds, tests, scans, packages, publishes, and deploys software with clear promotion gates.
@@ -242,6 +243,7 @@ Expand with:
 - `16-opentelemetry-jaeger-datadog` to trace distributed systems.
 - `32-sla-sli-slo` to connect architecture to reliability targets.
 - `34-data-pipeline` when data movement and analytics are part of the system.
+- `40-nx-workspace` when app architecture spans many packages, libraries, and generated tasks.
 
 Completion target: you can reason about caching, load balancing, protocol choices, data ownership, availability, networking, BFF patterns, and operational tradeoffs.
 

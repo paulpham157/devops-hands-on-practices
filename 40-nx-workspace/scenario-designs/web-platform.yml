@@ -1,0 +1,15 @@
+scenario: web-platform-monorepo
+goal: "A frontend platform team supports multiple React apps, shared UI libraries, Playwright e2e tests, and Storybook docs."
+recommended_plugins:
+  - "@nx/react"
+  - "@nx/vite"
+  - "@nx/playwright"
+  - "@nx/storybook"
+review_focus:
+  - "project graph between apps and shared UI libraries"
+  - "affected test and build behavior"
+  - "cache inputs for Vite builds and Playwright tests"
+  - "module boundary rules for shared UI"
+risk:
+  - "e2e tests may need environment inputs that are not safe to cache blindly"
+  - "too many shared libraries can create broad affected sets"
