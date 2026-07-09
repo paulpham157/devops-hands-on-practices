@@ -20,6 +20,7 @@ This lesson focuses on tool selection and production workflow, not cloud deploym
 
 - `05-terraform-docker-container`
 - `10-opentofu-docker-module`
+- `39-aws-nx-plugin`
 - `38-openstack-private-cloud`
 
 ## Mental Model

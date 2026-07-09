@@ -113,6 +113,7 @@ Expand with:
 - `37-teamcity-ci-pipelines` for an additional enterprise CI model.
 - `13-vaults-and-secrets-managers` for secret handling in delivery flows.
 - `16-opentelemetry-jaeger-datadog` for release observability.
+- `39-aws-nx-plugin` for generated AWS app, API, auth, and IaC workspace workflows.
 
 Completion target: you can design a pipeline that builds, tests, scans, packages, publishes, and deploys software with clear promotion gates.
 
@@ -137,6 +138,7 @@ Expand with:
 - `35-puppet-configuration-management` for Puppet.
 - `36-chef-infra-automation` for Chef.
 - `38-openstack-private-cloud` for private cloud context.
+- `39-aws-nx-plugin` for AWS app scaffolding that connects generated code with CDK or Terraform.
 
 Completion target: you can explain when to use image baking, configuration management, Terraform/OpenTofu modules, cloud-native IaC tools, and secrets systems.
 
@@ -213,6 +215,7 @@ Expand with:
 - `09-k3s-local-cluster` before managed Kubernetes comparisons if Kubernetes is new.
 - `26-service-mesh` after platform selection if service-to-service operations matter.
 - `28-availability-patterns` for resilient cloud architecture.
+- `39-aws-nx-plugin` after `22` and `23` if you want AWS full-stack scaffolding with generated IaC.
 
 Completion target: you can compare managed Kubernetes, managed containers, serverless functions, IaC approaches, identity models, and private cloud options.
 

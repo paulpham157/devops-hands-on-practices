@@ -18,7 +18,7 @@ No OpenStack cluster is required for the core exercises. The lesson is offline-f
 ## Navigation
 
 - Previous lesson: `37-teamcity-ci-pipelines`
-- Next lesson: none
+- Next lesson: `39-aws-nx-plugin`
 
 ## Related Lessons
 

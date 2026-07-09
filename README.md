@@ -9,7 +9,7 @@ The labs are designed to be runnable locally first. Cloud accounts are optional 
 | Area | Path | Purpose |
 | --- | --- | --- |
 | Docker foundations | `00-docker-fundamentals` | Optional Vagrant VM, first images, Dockerfiles, multi-stage builds, distroless, layer, and cache examples |
-| Main DevOps labs | `01-*` to `38-*` | Numbered hands-on lessons grouped by DevOps domain |
+| Main DevOps labs | `01-*` to `39-*` | Numbered hands-on lessons grouped by DevOps domain |
 
 Start by opening any numbered lesson folder from the repository root.
 
@@ -40,6 +40,7 @@ The numbered lesson folders stay stable so links and exercises do not move, but 
 | Configuration management | `03`, `35`, `36` |
 | Distributed application architecture | `19`, `20`, `27`, `29`, `30`, `31` |
 | Data engineering | `34` |
+| AWS application scaffolding | `39` |
 
 ## Suggested Learning Path
 
@@ -56,6 +57,7 @@ If you want a practical default path instead of choosing lessons by number alone
    - `36` Chef after `03` if you want cookbook and Policyfile workflows
    - `37` TeamCity after `07` and `08` if you want another enterprise CI model
    - `38` OpenStack after `21` and `25` if you want private-cloud platform context
+   - `39` AWS Nx Plugin after `21`, `22`, and `23` if you want AWS full-stack app scaffolding
 
 ## Curriculum Coverage
 
@@ -65,7 +67,7 @@ If you want a practical default path instead of choosing lessons by number alone
 | `06-14` | Platform labs, exercises, validation | Observability, CI/CD, K3s, OpenTofu, DevSecOps, GitOps, secrets, AWS identity |
 | `15-24` | Advanced tooling, exercises, validation | Helm, Kustomize, artifacts, OTel, runtimes, Linux, protocols, cloud, serverless, IaC, Artifactory |
 | `25-34` | Architecture and reliability patterns, exercises, validation | Managed platforms, service mesh, data management, availability, network, backend, SLOs, security quality gates, data pipeline |
-| `35-38` | Additional platform and operations coverage, exercises, validation | Puppet, Chef, TeamCity, and OpenStack private cloud fundamentals |
+| `35-39` | Additional platform and operations coverage, exercises, validation | Puppet, Chef, TeamCity, OpenStack private cloud, and AWS Nx Plugin fundamentals |
 
 ## Lesson Maturity Matrix
 
@@ -77,7 +79,7 @@ If you want a practical default path instead of choosing lessons by number alone
 | `16-20` | Mostly yes | Yes | Yes | Optional | Telemetry, runtimes, Linux, caching, load balancing, and protocols |
 | `21-24` | Offline-first | Yes | Yes | Yes | Cloud, serverless, IaC platforms, and artifact repository scenarios |
 | `25-34` | Offline-first | Yes | Yes | Yes | Platform selection, architecture, reliability, network, backend, SLO, quality, and data pipeline patterns |
-| `35-38` | Offline-first | Yes | Yes | Optional | Configuration management, enterprise CI, and private cloud platform patterns |
+| `35-39` | Offline-first | Yes | Yes | Optional | Configuration management, enterprise CI, private cloud platform patterns, and AWS app scaffolding |
 
 Use `Runnable local` for lessons that can be executed mainly with local tools. Use `Offline-first` for lessons where the core exercise is design, reading, validation, or scenario analysis without requiring paid cloud resources.
 

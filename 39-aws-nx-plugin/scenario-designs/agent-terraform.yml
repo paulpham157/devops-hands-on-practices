@@ -1,0 +1,15 @@
+scenario: agent-terraform-platform-team
+goal: "A platform team wants to scaffold an AI agent service and keep infrastructure in Terraform."
+recommended_sequence:
+  - "pnpm create @aws/nx-workspace agent-platform --iac=terraform"
+  - "pnpm nx g @aws/nx-plugin:py#project"
+  - "pnpm nx g @aws/nx-plugin:py#agent"
+  - "pnpm nx g @aws/nx-plugin:terraform#project --name=infra"
+review_focus:
+  - "Python dependency management and runtime packaging"
+  - "Terraform provider and state backend expectations"
+  - "environment variables and secret boundaries"
+  - "observability and rollback path"
+risk:
+  - "generated agent code may still need domain-specific safety and evaluation"
+  - "Terraform state design must be decided before shared deployment"
