@@ -11,8 +11,12 @@ scenario-designs/polyglot-platform.yml
 For each scenario, answer:
 
 1. Which plugins fit?
-2. What tasks should they help model?
-3. What graph relationships matter?
-4. What cache or CI risks remain?
+2. Are they official Nx plugins, community plugins, or custom internal plugins?
+3. What tasks should they help model?
+4. What cache inputs, outputs, or task dependencies should they configure?
+5. What graph relationships matter?
+6. What migration or upgrade support do you need from the plugin?
+7. What cache, CI, or maintenance risks remain?
 
-Completion rule: you can choose plugins by workflow fit instead of popularity.
+Completion rule: choose plugins by workflow fit, maintenance ownership, and the
+specific Nx capabilities they provide instead of popularity.
