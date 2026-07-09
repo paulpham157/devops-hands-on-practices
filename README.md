@@ -13,6 +13,8 @@ The labs are designed to be runnable locally first. Cloud accounts are optional 
 
 Start by opening any numbered lesson folder from the repository root.
 
+For goal-specific study plans, see [Goal-Oriented Learning Paths](LEARNING_PATHS.md).
+
 ## Validate the Lessons
 
 Run all available lesson checks from the repository root:
