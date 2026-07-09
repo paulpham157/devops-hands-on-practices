@@ -13,5 +13,6 @@ For each case, choose standard plugin, custom plugin, or no plugin:
 3. An internal API schema file should create project graph dependencies.
 4. A standard Nx plugin already supports the test tool.
 5. A platform team needs migrations for generated service templates.
+6. A team wants to configure default generator options for an existing official plugin.
 
 Completion rule: you can justify custom plugin maintenance cost.

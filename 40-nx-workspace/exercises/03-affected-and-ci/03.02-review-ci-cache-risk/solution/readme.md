@@ -5,5 +5,6 @@
 3. Missing env inputs can produce unsafe cache hits.
 4. Missing graph edges can skip dependent project tasks.
 5. Deployment tasks should be environment-aware and often should not reuse generic cached output blindly.
+6. Distributed execution can run the wrong work in the wrong order if task dependencies are incomplete.
 
 The common theme is that Nx can optimize only the model it sees.

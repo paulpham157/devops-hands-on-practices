@@ -28,6 +28,7 @@ Not every plugin provides every capability. Choose based on the job you need.
 | Non-JS ecosystems | `@nx/gradle`, `@nx/maven`, `@nx/dotnet`, community plugins | You need Java, JVM, .NET, or mixed-language graph support |
 | Containers | `@nx/docker` | You need container build tasks in the graph |
 | Cloud or platform | `@aws/nx-plugin`, community plugins | You need cloud-specific app and infrastructure scaffolding |
+| Plugin authoring | `@nx/plugin` | You need to create custom generators, executors, migrations, or graph integrations |
 
 ## Selection Questions
 
@@ -39,9 +40,21 @@ Ask:
 4. Does it improve project graph accuracy?
 5. Does it support the team's CI and caching model?
 6. Who will maintain generated code and migrations?
+7. Does it need to be registered in `nx.json` to infer tasks?
 
 ## Scoping Plugins
 
 Use `nx.json` plugin configuration to include or exclude paths when a plugin should apply only to part of the repo.
 
 This matters in mixed workspaces where one tool should not infer tasks for every package.
+
+## Release And Docker
+
+Nx release can coordinate versioning, changelog, and publishing workflows. With Docker support, projects with Dockerfiles can participate in image build and publishing flows.
+
+Treat release automation as production workflow code:
+
+- review versioning strategy
+- review package or image publishing credentials
+- review generated changelogs
+- review Docker tags and repository names

@@ -11,6 +11,7 @@ This lesson teaches:
 - how plugins infer tasks from tool config files and add generators, executors, graph integrations, and migrations.
 - how `nx affected` uses Git changes and the project graph to run only relevant tasks.
 - how local and remote caching change CI behavior.
+- how `nx.json` controls plugins, target defaults, named inputs, release, sync, and Nx Cloud settings.
 - how to choose plugin categories across frontend, backend, test tools, build tools, language ecosystems, containers, and cloud-specific workflows.
 - when Nx is a good fit and when it adds unnecessary process.
 
@@ -60,6 +61,10 @@ exercises/            Structured hands-on practice
 | Computation hash | Inputs Nx uses to decide cache validity | Lets Nx skip repeat work safely |
 | Generator | Code or config scaffolding command | Creates projects, libraries, configs, and migrations consistently |
 | Executor | Encapsulated task runner | Gives Nx a standard way to run a tool |
+| `nx.json` | Root workspace configuration file | Marks a directory as an Nx workspace and configures plugins, defaults, inputs, release, sync, and cloud settings |
+| Nx Daemon | Local background graph process | Speeds project graph computation on developer machines |
+| Nx Cloud | Remote cache and CI acceleration service | Shares cache and can distribute tasks across agents |
+| Nx Release | Versioning, changelog, and publishing workflow | Helps coordinate releases for packages and Docker images |
 
 ## Plugin Categories
 
@@ -74,7 +79,21 @@ Nx has a broad plugin ecosystem. Treat plugins as adapters between Nx's graph/ta
 | Build tools | `@nx/vite`, `@nx/webpack`, `@nx/rspack`, `@nx/esbuild`, `@nx/rollup` | Build and dev-server integration |
 | Languages and ecosystems | `@nx/gradle`, `@nx/maven`, `@nx/dotnet`, community plugins | Bring non-JS projects into the graph |
 | Containers and deployment | `@nx/docker`, cloud-specific plugins | Container builds and deployment workflows |
+| Plugin authoring | `@nx/plugin` | Custom generators, executors, migrations, and plugin features |
 | Custom plugins | local or published plugins | Add repo-specific generators, inferred tasks, or graph nodes |
+
+## Workspace Shape Notes
+
+Modern Nx docs emphasize enabling the features that fit a repository instead of forcing a hard split between old "integrated" and "package-based" categories.
+
+Nx can be added to:
+
+- a standalone application
+- a package-manager workspace
+- a large monorepo
+- a polyglot repo with JavaScript, Java, .NET, containers, and other ecosystems
+
+The practical question is which features should be adopted first: caching, task orchestration, plugins, affected CI, remote cache, release automation, conformance, or custom generators.
 
 ## Safe Practice Rules
 
@@ -100,6 +119,7 @@ Optional local inspection commands:
 
 ```bash
 sed -n '1,220p' workspace-maps/mental-model.md
+sed -n '1,220p' workspace-maps/nx-json-and-boundaries.md
 sed -n '1,220p' plugin-catalog/plugin-selection.md
 ```
 
@@ -123,3 +143,7 @@ The exercises cover Nx workspace modeling, project and task graphs, inferred tas
 - Nx plugin registry: https://nx.dev/docs/plugin-registry
 - Extending Nx with plugins: https://nx.dev/docs/extending-nx/intro
 - `nx.json` reference: https://nx.dev/docs/reference/nx-json
+- Project configuration reference: https://nx.dev/docs/reference/project-configuration
+- Inputs and named inputs: https://nx.dev/docs/reference/inputs
+- Nx daemon: https://nx.dev/docs/concepts/nx-daemon
+- Nx release: https://nx.dev/docs/guides/nx-release

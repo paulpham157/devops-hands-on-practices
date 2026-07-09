@@ -28,6 +28,12 @@ Work through these exercises after reading the lesson README.
 8. `04-plugin-ecosystem/04.02-decide-when-to-write-a-custom-plugin`
    - Decide when custom plugin maintenance is justified.
 
+Extra reading after the core exercises:
+
+- `workspace-maps/nx-json-and-boundaries.md`
+- `workspace-maps/ci-workflow.md`
+- `plugin-catalog/plugin-selection.md`
+
 ## Suggested Workflow
 
 From the lesson directory:

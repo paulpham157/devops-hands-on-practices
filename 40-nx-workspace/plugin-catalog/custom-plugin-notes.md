@@ -10,6 +10,7 @@ Custom plugins are useful when a repo repeats the same workflow often enough to 
 - infer tasks for an internal tool
 - add project graph edges for files Nx cannot understand by default
 - wrap a fragile command behind a stable executor
+- maintain migrations when generated project shapes evolve
 
 ## Bad Reasons To Create A Custom Plugin
 
@@ -29,3 +30,9 @@ Custom plugins become part of the platform contract. They need:
 - examples
 - owner review
 - compatibility checks when Nx changes
+
+## Useful Starting Point
+
+Use `@nx/plugin` when building custom plugin features such as generators, executors, and migrations.
+
+Before creating a custom plugin, check whether an official Nx plugin or a well-maintained community plugin already solves the problem.

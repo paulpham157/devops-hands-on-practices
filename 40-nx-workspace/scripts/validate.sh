@@ -10,6 +10,7 @@ for file in \
   workspace-maps/mental-model.md \
   workspace-maps/command-map.md \
   workspace-maps/ci-workflow.md \
+  workspace-maps/nx-json-and-boundaries.md \
   plugin-catalog/plugin-selection.md \
   plugin-catalog/custom-plugin-notes.md \
   scenario-designs/web-platform.yml \
