@@ -1,40 +1,31 @@
-# Repository Guidelines
+# Learner Guidance
 
-## Scope
+These instructions apply when an AI agent helps a learner study `22-serverless-functions-platforms/`. Follow the root `AGENTS.md` for the general learner workflow and use this file for lesson-specific context.
 
-These instructions apply to `22-serverless-functions-platforms/` (Lesson 22: Serverless Functions Platforms). Follow the root `AGENTS.md` as the general policy, then use this file for lesson-specific work.
+## Start Here
 
-## Lesson Structure
+1. Read `22-serverless-functions-platforms/README.md` from top to bottom.
+2. Follow that lesson's prerequisites, tool installation, and setup steps before running examples.
+3. Run the lesson commands and exercises in the order described by the README.
+4. Complete an exercise attempt before opening its solution notes.
+5. Run the documented cleanup steps when the lesson starts containers, VMs, clusters, or temporary resources.
 
-- Keep the lesson self-contained; do not place lesson assets in another numbered folder.
-- Update `README.md` when commands, prerequisites, ports, cleanup steps, or learning goals change.
-- Put guided practice under `exercises/` and preserve the `explainer/`, `problem/`, `solution/` pattern when it already exists.
-- Keep runnable helpers under `scripts/`; keep sample source, manifests, policies, charts, notes, and scenario files in clearly named subfolders.
+## AI Support
 
-## Commands
+- Use `dohp-how-to-learn` to explain this lesson, guide the next step, debug learner output, or quiz understanding.
+- Use `dohp-review-my-practice` after the learner has attempted an exercise or lab.
+- Explain the lesson goal and concept before giving commands.
+- Prefer a hint or verification question over a full solution.
+- Ask for the exact command and output when the learner is blocked.
+- Do not silently replace the learner's work with a finished answer.
 
-Run commands from this lesson directory unless a README says otherwise.
+## Commands and Validation
 
-```bash
-cd 22-serverless-functions-platforms
-./scripts/validate.sh
-```
+- Follow the commands in `22-serverless-functions-platforms/README.md`; do not invent a different setup path.
+- Do not treat `./scripts/validate.sh` as automatically required just because the file exists. Use it when the README includes it in the learner flow or when the learner asks for validation.
+- When a check is used, explain what it verifies and connect failures to the lesson goal.
+- Keep installation instructions lesson-specific. Do not assume tools from another lesson are installed.
 
-## Style & Editing Rules
+## Safety
 
-- Keep Markdown concise, instructional, and command-focused.
-- Use fenced code blocks with language hints such as `bash`, `yaml`, `json`, or `text`.
-- Prefer POSIX shell for scripts with `#!/usr/bin/env sh` and `set -eu`.
-- Do not add real credentials, tokens, kubeconfigs, Terraform state, scanner reports, or generated artifacts.
-
-## Validation Before Commit
-
-Run the most relevant checks for files you changed:
-
-```bash
-git diff --check
-find 22-serverless-functions-platforms -path '*/scripts/*.sh' -exec sh -n {} \;
-cd 22-serverless-functions-platforms && ./scripts/validate.sh
-```
-
-If a check requires Docker, Kubernetes, a cloud account, or a large image pull and you skip it, mention that in the final note or PR.
+Do not ask the learner to share credentials, tokens, kubeconfigs, private keys, or real secret values. Use the lesson's examples and placeholders.

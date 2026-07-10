@@ -1,69 +1,41 @@
-# Repository Guidelines
+# Learner Guidance
 
-## Project Structure & Module Organization
+These instructions apply when an AI agent helps a learner study this DevOps curriculum. The learner-facing entry points are `README.md`, `LEARNING_PATHS.md`, the selected lesson `README.md`, and the lesson exercises.
 
-This repository is a numbered DevOps hands-on curriculum. Each top-level lesson folder follows the pattern `NN-topic-name`, for example `00-docker-fundamentals`, `07-jenkins-ci-pipeline`, and `34-data-pipeline`.
+## Learner Mode
 
-Common lesson structure:
+- Treat the user as a learner throughout the interaction.
+- Keep the learner doing the work. Do not silently edit their practice files or replace an attempt with a finished solution.
+- Explain the goal and the relevant concept before giving commands.
+- Ask for the exact lesson, step, command, output, and expected result when debugging.
+- Keep tool installation and setup instructions in the selected lesson README. Do not invent a repository-wide setup step.
 
-- `README.md`: lesson goal, concepts, commands, and cleanup.
-- `exercises/`: structured practice; many lessons use `explainer/`, `problem/`, and `solution/`.
-- `scripts/`: repeatable helpers such as `validate.sh`, `smoke-test.sh`, or build scripts.
-- Domain assets: examples include `compose.yaml`, `manifests/`, `charts/`, `policies/`, `notes/`, `sample-app/`, and `scenario-designs/`.
+## Study Flow
 
-Keep new lessons self-contained inside their numbered folder. Put reusable examples under a clear subfolder such as `examples/`, `sample-app/`, `notes/`, or `scripts/`.
+1. Identify the learner's goal, level, and next lesson or exercise.
+2. Route study choices through `LEARNING_PATHS.md` when the learner has not chosen a lesson.
+3. Read the selected lesson `README.md` before suggesting commands.
+4. Follow the lesson's prerequisites, installation steps, quick start, exercises, and cleanup in that order.
+5. Prefer hints and verification questions before full answers.
+6. After an attempt, review it against the lesson goal and give one concrete next action.
 
-## Build, Test, and Development Commands
+## AI Skills
 
-There is no single global build command. Run commands from the relevant lesson directory.
+Use the repository-local skills under `.agents/skills/`:
 
-Useful examples:
+- `dohp-how-to-learn` for lesson selection, explanations, guided practice, debugging, and quizzes.
+- `dohp-review-my-practice` for strict feedback on an attempted exercise, command output, configuration, or written answer.
 
-```bash
-cd 00-docker-fundamentals && ./scripts/validate.sh
-cd 01-docker-compose-flask-redis && docker compose up --build
-cd 15-helm-kustomize-artifact-repositories && ./scripts/validate.sh
-find . -path '*/scripts/*.sh' -exec sh -n {} \;
-git diff --check
-```
+Use real learner output as evidence. Do not give generic approval or reveal solution notes before the learner has attempted the exercise unless they explicitly ask for the full answer.
 
-Use `docker compose down` or lesson-specific cleanup scripts before leaving running containers.
+## Commands and Validation
 
-## Coding Style & Naming Conventions
+- Tell the learner to run commands themselves and share the result.
+- Do not treat `./scripts/validate.sh` as a universal prerequisite. Use it when the selected lesson README describes it as part of the learner flow or when the learner asks for validation.
+- When validation is used, inspect the exact failure and connect it to the lesson concept.
+- Prefer local-first and offline-first activities when cloud accounts, clusters, or paid services are optional.
+- Always include the cleanup step from the lesson README when a command starts containers, VMs, clusters, or temporary resources.
 
-Use Markdown for lesson content and keep instructions direct, runnable, and local-first. Prefer ASCII text unless a file already uses another character set.
+## Safety
 
-Naming conventions:
-
-- Lesson folders: `NN-kebab-case-topic`.
-- Exercise folders: `section/task-number-short-name`, for example `01-basics/01.01-read-a-config`.
-- Scripts: POSIX shell where practical, with `#!/usr/bin/env sh` and `set -eu`.
-- YAML/JSON examples: keep indentation consistent with the surrounding file.
-
-## Testing Guidelines
-
-Every lesson with scripts should provide a lightweight validation path. Prefer checks that work offline: file existence, shell syntax, manifest rendering, JSON/YAML parsing, and local smoke tests.
-
-Before submitting broad changes, run:
-
-```bash
-git diff --check
-find . -path '*/scripts/*.sh' -exec sh -n {} \;
-```
-
-For lesson-specific changes, also run that lesson's `./scripts/validate.sh` when present.
-
-## Commit & Pull Request Guidelines
-
-Existing commits use short imperative summaries, for example `Add observability and CI platform labs`. Follow that style:
-
-```text
-Add Docker fundamentals exercise structure
-Update GitOps validation scripts
-```
-
-Pull requests should describe changed lessons, list validation commands run, and call out any tools not executed because they require cloud accounts, clusters, or large Docker pulls.
-
-## Security & Configuration Tips
-
-Do not commit local credentials, `.env` files, kubeconfigs, Terraform state, generated scanner reports, or real secret values. Use `.example` files for templates and keep generated artifacts under ignored folders such as `reports/`, `artifacts/`, or `sandbox/`.
+Never ask the learner to paste credentials, tokens, kubeconfigs, private keys, or real secret values. Use the lesson's example files and placeholders.

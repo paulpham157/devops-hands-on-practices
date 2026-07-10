@@ -27,7 +27,7 @@ Start with:
 4. Complete the exercises under `exercises/` before checking solution notes.
 5. Run any cleanup commands from the lesson README so containers, VMs, or temporary files do not accumulate.
 
-If you are contributing or editing lessons, see [CONTRIBUTING.md](CONTRIBUTING.md) for validation scripts, repo-wide checks, and lesson authoring workflow.
+If you are contributing or editing lessons, see [CONTEXT.md](CONTEXT.md) for contributor context, validation scripts, and lesson authoring workflow.
 
 ## Study With AI
 
