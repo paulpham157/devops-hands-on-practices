@@ -62,6 +62,29 @@ Optional:
 
 Use Vagrant only if you want a disposable Linux VM. You can complete most of this lesson directly on your workstation.
 
+### Install Required Docker Tools
+
+Before starting, install one of these Docker runtimes:
+
+- [Docker Desktop](https://docs.docker.com/desktop/) on macOS or Windows.
+- [Docker Engine](https://docs.docker.com/engine/install/) on Linux, including the [Compose plugin](https://docs.docker.com/compose/install/linux/).
+
+Confirm the installation before continuing:
+
+```bash
+docker version
+docker compose version
+```
+
+### Install Optional VM Tools
+
+If you want to use the Vagrant VM, install these tools before continuing:
+
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads). Administrator permission is required to install it.
+- [Vagrant](https://developer.hashicorp.com/vagrant/downloads).
+
+Restart the workstation after installing VirtualBox and Vagrant.
+
 ## Quick Start
 
 From this lesson directory:
@@ -92,7 +115,7 @@ Stop the container with `Ctrl+C`.
 
 ## Optional Vagrant VM
 
-Start the VM:
+From this lesson directory, start the VM:
 
 ```bash
 cd examples/lab-setup
