@@ -15,6 +15,123 @@ Start by opening any numbered lesson folder from the repository root.
 
 For goal-specific study plans, see [Goal-Oriented Learning Paths](LEARNING_PATHS.md).
 
+## How To Use This Repository
+
+Use the root repository as a map, then work lesson by lesson inside the numbered folders.
+
+Before starting:
+
+- Install the local tools required by the lesson you want to study, such as `docker`, `kubectl`, `terraform`, `ansible`, or `packer`.
+- Read the lesson `README.md` first to understand the goal, prerequisites, commands, and cleanup steps.
+- Prefer lessons with local validation or offline exercises before moving to cloud-dependent topics.
+
+Recommended lesson workflow:
+
+1. Pick a lesson from the default sequence below or from [Goal-Oriented Learning Paths](LEARNING_PATHS.md).
+2. Read that lesson's `README.md` from top to bottom before running commands.
+3. Run `./scripts/validate.sh` inside the lesson directory when the script exists.
+4. Complete the exercises under `exercises/` before checking solution notes.
+5. Run any cleanup commands from the lesson README so containers, VMs, or temporary files do not accumulate.
+
+Use the repository-level `./scripts/validate-all.sh` when you want a broad curriculum check. Use lesson-level validation when you are actively working on one topic and want faster feedback.
+
+## Study With AI
+
+This repository includes two local Codex skills for AI-assisted learning under `.agents/skills/`.
+
+### `dohp-how-to-learn`
+
+Use this skill when you want learning guidance during a lesson.
+
+What it is good for:
+
+- choosing the right lesson or learning path
+- explaining the lesson goal in plain language
+- giving a short pre-lab checklist
+- guiding you through `./scripts/validate.sh`
+- debugging command failures step by step
+- giving hints before full answers
+- ending with a recap, quiz, and next-lesson recommendation
+
+Use it for requests like:
+
+- "What lesson should I study next?"
+- "Explain this lesson in simpler language."
+- "Help me debug `./scripts/validate.sh`."
+- "Quiz me after I finish this lesson."
+
+### `dohp-review-my-practice`
+
+Use this skill after you have already attempted an exercise or lab and want strict feedback.
+
+What it is good for:
+
+- reviewing command output, manifests, configs, or written answers
+- comparing your attempt against the lesson goal
+- identifying missing steps or missing verification
+- pointing out concept mistakes, not just syntax issues
+- deciding whether the exercise passes yet
+- telling you the next concrete fix
+
+Use it for requests like:
+
+- "Review my work for this exercise."
+- "Does this attempt meet the lesson goal?"
+- "Show me what is missing in this manifest or config."
+- "Grade this strictly against the exercise requirements."
+
+### Recommended Workflow
+
+Use the two skills in this order:
+
+1. Start with `dohp-how-to-learn` to choose the lesson, understand the goal, and get a pre-lab checklist.
+2. Read the lesson `README.md`.
+3. Run the lesson steps and `./scripts/validate.sh` when available.
+4. If you get blocked, keep using `dohp-how-to-learn` for hints and debugging.
+5. After you finish your attempt, switch to `dohp-review-my-practice` for a strict review.
+6. Check the solution notes only after you have tried the exercise yourself or explicitly want the full answer.
+
+### How To Ask For Help Well
+
+When using either skill, include:
+
+- the lesson folder, such as `12-argocd-gitops`
+- the exact exercise or step
+- the command you ran
+- the real output or failing line
+- what you expected instead
+
+Good example:
+
+```text
+Use dohp-how-to-learn for lesson 12-argocd-gitops.
+I ran ./scripts/validate.sh and got "kubectl not found".
+Explain the lesson goal, then give me the next debugging step without giving the full solution.
+```
+
+Good review example:
+
+```text
+Use dohp-review-my-practice for my attempt in 15-helm-kustomize-artifact-repositories/exercises.
+Here is my manifest and validate.sh output.
+Tell me whether it meets the lesson goal, list the gaps first, and give me the next fix.
+```
+
+Weak example:
+
+```text
+This lesson is broken. Fix it.
+```
+
+### Learning Rules
+
+- Use AI as a learning partner, not as a shortcut to skip the lab.
+- Read the lesson `README.md` before asking for help.
+- Run the commands yourself instead of asking for answers first.
+- Prefer hints before full solutions.
+- Use real `validate.sh` output as evidence when asking for debugging help.
+- Ask for review only after you have a real attempt to inspect.
+
 ## Validate the Lessons
 
 Run all available lesson checks from the repository root:
