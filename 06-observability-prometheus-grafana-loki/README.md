@@ -11,6 +11,17 @@ Run a local observability stack for one sample app:
 
 Promtail is intentionally not used because it reached end-of-life on 2026-03-02. Alloy is the supported Grafana collector path for new lessons.
 
+## Navigation
+
+- Previous lesson: `05-terraform-docker-container`
+- Next lesson: `07-jenkins-ci-pipeline`
+
+## Related Lessons
+
+- `11-devsecops-container-pipeline`
+- `16-opentelemetry-jaeger-datadog`
+- `32-sla-sli-slo`
+
 ## Components
 
 | Service | URL | Purpose |

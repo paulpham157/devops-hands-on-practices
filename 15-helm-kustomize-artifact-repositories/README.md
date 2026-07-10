@@ -15,6 +15,17 @@ This lesson teaches:
 - Hosted, proxy, and group repository patterns
 - How artifact repositories fit into CI/CD and GitOps
 
+## Navigation
+
+- Previous lesson: `14-aws-identity`
+- Next lesson: `16-opentelemetry-jaeger-datadog`
+
+## Related Lessons
+
+- `12-argocd-gitops`
+- `24-jfrog-artifactory`
+- `25-openshift-gke-eks-aks-ecs-fargate`
+
 ## Mental Model
 
 ```text

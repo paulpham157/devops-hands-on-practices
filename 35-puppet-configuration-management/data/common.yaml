@@ -1,0 +1,5 @@
+---
+profile::base::packages:
+  - curl
+  - git
+  - jq

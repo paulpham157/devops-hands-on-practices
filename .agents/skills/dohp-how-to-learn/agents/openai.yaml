@@ -1,0 +1,10 @@
+interface:
+  display_name: "DOHP How To Learn"
+  short_description: "Guide learners through the DOHP course"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#2563EB"
+  default_prompt: "Use $dohp-how-to-learn to guide me through this repository as a learner, with hints, validation steps, and quizzes."
+
+policy:
+  allow_implicit_invocation: true

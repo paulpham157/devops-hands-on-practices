@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="DOHP Review My Practice">
+  <rect width="256" height="256" rx="48" fill="#DC2626"/>
+  <path d="M70 44h91l31 31v137H70V44z" fill="#FEF2F2"/>
+  <path d="M161 44v38h31" fill="#FECACA"/>
+  <path d="M98 112h66M98 146h50" stroke="#7F1D1D" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="175" cy="178" r="32" fill="#FDE047"/>
+  <path d="M160 178l12 12 25-34" fill="none" stroke="#713F12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

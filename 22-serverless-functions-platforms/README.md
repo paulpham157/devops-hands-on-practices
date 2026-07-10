@@ -24,6 +24,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `21-aws-azure-gcp-cloud-fundamentals`
+- Next lesson: `23-iac-cdk-cloudformation-pulumi-terraform`
+
+## Related Lessons
+
+- `14-aws-identity`
+- `21-aws-azure-gcp-cloud-fundamentals`
+- `23-iac-cdk-cloudformation-pulumi-terraform`
+
 ## Mental Model
 
 ```text

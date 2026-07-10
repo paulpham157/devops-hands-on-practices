@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="DOHP How To Learn">
+  <rect width="256" height="256" rx="48" fill="#2563EB"/>
+  <path d="M58 76c0-16.6 13.4-30 30-30h96v140H88c-16.6 0-30-13.4-30-30V76z" fill="#EFF6FF"/>
+  <path d="M88 46v140" stroke="#1D4ED8" stroke-width="12"/>
+  <path d="M112 86h46M112 118h46M112 150h31" stroke="#1E3A8A" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="185" cy="186" r="29" fill="#FACC15"/>
+  <path d="M173 185l9 9 17-21" fill="none" stroke="#713F12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

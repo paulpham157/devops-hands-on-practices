@@ -17,6 +17,17 @@ This lesson covers:
 
 The typo `rGPC` is usually written as `gRPC`.
 
+## Navigation
+
+- Previous lesson: `19-redis-caching-load-balancing`
+- Next lesson: `21-aws-azure-gcp-cloud-fundamentals`
+
+## Related Lessons
+
+- `19-redis-caching-load-balancing`
+- `27-data-management`
+- `31-backend-for-frontend`
+
 ## Mental Model
 
 ```text

@@ -16,6 +16,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `33-snyk-and-sonar`
+- Next lesson: `35-puppet-configuration-management`
+
+## Related Lessons
+
+- `23-iac-cdk-cloudformation-pulumi-terraform`
+- `27-data-management`
+- `28-availability-patterns`
+
 ## Mental Model
 
 ```text

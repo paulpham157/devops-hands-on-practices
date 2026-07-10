@@ -16,6 +16,17 @@ This lesson avoids cloud resources. It still teaches the infrastructure-as-code 
 - `tofu test`
 - `tofu destroy`
 
+## Navigation
+
+- Previous lesson: `09-k3s-local-cluster`
+- Next lesson: `11-devsecops-container-pipeline`
+
+## Related Lessons
+
+- `05-terraform-docker-container`
+- `21-aws-azure-gcp-cloud-fundamentals`
+- `23-iac-cdk-cloudformation-pulumi-terraform`
+
 ## What Is OpenTofu
 
 OpenTofu is an open source infrastructure-as-code tool that uses HCL configuration, providers, modules, state, plans, and apply/destroy workflows.

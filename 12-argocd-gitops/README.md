@@ -14,6 +14,17 @@ This lesson teaches:
 - How automated sync, prune, and self-heal behave
 - How to create drift and let Argo CD repair it
 
+## Navigation
+
+- Previous lesson: `11-devsecops-container-pipeline`
+- Next lesson: `13-vaults-and-secrets-managers`
+
+## Related Lessons
+
+- `09-k3s-local-cluster`
+- `15-helm-kustomize-artifact-repositories`
+- `26-service-mesh`
+
 ## Why Argo CD
 
 Argo CD is a Kubernetes-native GitOps controller.

@@ -17,6 +17,17 @@ This lesson teaches:
 
 This lesson does not require real cloud credentials. It is designed as a safe planning and comparison lab.
 
+## Navigation
+
+- Previous lesson: `20-application-protocols-microservices`
+- Next lesson: `22-serverless-functions-platforms`
+
+## Related Lessons
+
+- `14-aws-identity`
+- `22-serverless-functions-platforms`
+- `38-openstack-private-cloud`
+
 ## Mental Model
 
 ```text

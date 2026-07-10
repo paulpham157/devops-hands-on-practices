@@ -15,6 +15,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `30-network-patterns`
+- Next lesson: `32-sla-sli-slo`
+
+## Related Lessons
+
+- `20-application-protocols-microservices`
+- `29-design-and-implementation-patterns`
+- `30-network-patterns`
+
 ## Mental Model
 
 ```text

@@ -16,6 +16,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `29-design-and-implementation-patterns`
+- Next lesson: `31-backend-for-frontend`
+
+## Related Lessons
+
+- `19-redis-caching-load-balancing`
+- `26-service-mesh`
+- `31-backend-for-frontend`
+
 ## Mental Model
 
 ```text

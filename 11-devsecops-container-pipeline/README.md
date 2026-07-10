@@ -16,6 +16,17 @@ This lesson teaches:
 - SBOM generation
 - A basic policy gate for pull requests or release pipelines
 
+## Navigation
+
+- Previous lesson: `10-opentofu-docker-module`
+- Next lesson: `12-argocd-gitops`
+
+## Related Lessons
+
+- `07-jenkins-ci-pipeline`
+- `08-github-actions-gitlab-ci`
+- `33-snyk-and-sonar`
+
 ## What Is DevSecOps
 
 DevSecOps means security checks are part of the normal delivery workflow instead of a separate late-stage review.

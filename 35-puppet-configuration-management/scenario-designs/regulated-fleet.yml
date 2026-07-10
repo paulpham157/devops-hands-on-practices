@@ -1,0 +1,10 @@
+scenario: regulated-linux-fleet
+team: platform-operations
+constraints:
+  - audit evidence for configuration changes
+  - recurring drift correction on long-lived virtual machines
+  - central role ownership with environment-specific data
+recommended_fit:
+  - puppet roles and profiles
+  - hiera-backed environment data
+  - external secrets integration

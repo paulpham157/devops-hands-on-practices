@@ -17,6 +17,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `26-service-mesh`
+- Next lesson: `28-availability-patterns`
+
+## Related Lessons
+
+- `20-application-protocols-microservices`
+- `29-design-and-implementation-patterns`
+- `34-data-pipeline`
+
 ## Mental Model
 
 ```text

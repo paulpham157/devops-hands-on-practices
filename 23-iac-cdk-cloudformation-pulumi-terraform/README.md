@@ -11,6 +11,18 @@ Learn how major Infrastructure as Code tools model infrastructure:
 
 This lesson focuses on tool selection and production workflow, not cloud deployment. No AWS account or cloud credentials are required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `22-serverless-functions-platforms`
+- Next lesson: `24-jfrog-artifactory`
+
+## Related Lessons
+
+- `05-terraform-docker-container`
+- `10-opentofu-docker-module`
+- `39-aws-nx-plugin`
+- `38-openstack-private-cloud`
+
 ## Mental Model
 
 ```text

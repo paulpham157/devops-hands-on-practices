@@ -14,6 +14,17 @@ This lesson teaches:
 
 No account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `32-sla-sli-slo`
+- Next lesson: `34-data-pipeline`
+
+## Related Lessons
+
+- `11-devsecops-container-pipeline`
+- `16-opentelemetry-jaeger-datadog`
+- `24-jfrog-artifactory`
+
 ## Mental Model
 
 ```text

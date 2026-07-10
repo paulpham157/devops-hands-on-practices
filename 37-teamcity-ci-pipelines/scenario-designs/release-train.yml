@@ -1,0 +1,10 @@
+scenario: regulated-release-train
+team: central-release-engineering
+constraints:
+  - many services share standard approval stages
+  - self-hosted agents are required for internal network access
+  - release artifacts need explicit upstream traceability
+recommended_fit:
+  - kotlin dsl templates
+  - build chains with snapshot dependencies
+  - protected parameters and manual approvals

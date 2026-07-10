@@ -16,6 +16,17 @@ This lesson teaches:
 
 No Kubernetes cluster is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `25-openshift-gke-eks-aks-ecs-fargate`
+- Next lesson: `27-data-management`
+
+## Related Lessons
+
+- `12-argocd-gitops`
+- `25-openshift-gke-eks-aks-ecs-fargate`
+- `30-network-patterns`
+
 ## Mental Model
 
 ```text

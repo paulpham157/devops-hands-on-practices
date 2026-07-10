@@ -23,6 +23,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `24-jfrog-artifactory`
+- Next lesson: `26-service-mesh`
+
+## Related Lessons
+
+- `09-k3s-local-cluster`
+- `21-aws-azure-gcp-cloud-fundamentals`
+- `38-openstack-private-cloud`
+
 ## Mental Model
 
 ```text

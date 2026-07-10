@@ -15,6 +15,17 @@ This lesson teaches:
 - How to keep vendor-neutral instrumentation while exporting to a vendor backend
 - Safe handling of Datadog API keys
 
+## Navigation
+
+- Previous lesson: `15-helm-kustomize-artifact-repositories`
+- Next lesson: `17-language-runtime-containerization`
+
+## Related Lessons
+
+- `06-observability-prometheus-grafana-loki`
+- `32-sla-sli-slo`
+- `33-snyk-and-sonar`
+
 ## Mental Model
 
 ```text

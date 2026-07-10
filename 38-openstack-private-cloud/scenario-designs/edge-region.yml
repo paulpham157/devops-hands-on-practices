@@ -1,0 +1,10 @@
+scenario: edge-region-control
+team: edge-infrastructure
+constraints:
+  - remote sites have intermittent uplink to central regions
+  - data locality and low latency are required
+  - teams need api-driven provisioning on owned hardware
+recommended_fit:
+  - openstack for edge vm orchestration
+  - local quota and network segmentation
+  - clear failure-domain planning

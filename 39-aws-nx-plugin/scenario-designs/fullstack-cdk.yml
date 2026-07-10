@@ -1,0 +1,17 @@
+scenario: fullstack-cdk-product-team
+goal: "A TypeScript product team wants a React website, tRPC API, Cognito auth, and AWS CDK infrastructure."
+recommended_sequence:
+  - "pnpm create @aws/nx-workspace product-app --iac=cdk"
+  - "pnpm nx g @aws/nx-plugin:ts#website --name=web"
+  - "pnpm nx g @aws/nx-plugin:ts#website#auth --project=@product-app/web --cognitoDomain=product-demo"
+  - "pnpm nx g @aws/nx-plugin:ts#api --name=api --framework=trpc --auth=iam"
+  - "pnpm nx g @aws/nx-plugin:ts#infra --name=infra"
+  - "pnpm nx g @aws/nx-plugin:connection --sourceProject=@product-app/web --targetProject=@product-app/api"
+review_focus:
+  - "generated CDK stacks and IAM permissions"
+  - "Cognito callback URLs and domain naming"
+  - "frontend-to-api connection contract"
+  - "local dev parity with deployed endpoints"
+risk:
+  - "scaffolded speed can hide generated infrastructure complexity"
+  - "auth defaults still need environment-specific review"

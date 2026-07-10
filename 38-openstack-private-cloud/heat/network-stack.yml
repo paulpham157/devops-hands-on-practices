@@ -1,0 +1,35 @@
+heat_template_version: 2018-08-31
+
+description: Example network stack for a tenant application
+
+parameters:
+  external_network:
+    type: string
+    default: public
+
+resources:
+  app_net:
+    type: OS::Neutron::Net
+    properties:
+      name: app-net
+
+  app_subnet:
+    type: OS::Neutron::Subnet
+    properties:
+      name: app-subnet
+      network_id: { get_resource: app_net }
+      cidr: 10.42.0.0/24
+      ip_version: 4
+
+  app_router:
+    type: OS::Neutron::Router
+    properties:
+      name: app-router
+      external_gateway_info:
+        network: { get_param: external_network }
+
+  app_router_interface:
+    type: OS::Neutron::RouterInterface
+    properties:
+      router_id: { get_resource: app_router }
+      subnet: { get_resource: app_subnet }

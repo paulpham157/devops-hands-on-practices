@@ -10,6 +10,17 @@ The default inventory targets the VM from `../00-docker-fundamentals/examples/la
 192.168.201.10
 ```
 
+## Navigation
+
+- Previous lesson: `02-kubernetes-nginx`
+- Next lesson: `04-packer-docker-image`
+
+## Related Lessons
+
+- `04-packer-docker-image`
+- `35-puppet-configuration-management`
+- `36-chef-infra-automation`
+
 ## Start the VM
 
 ```bash

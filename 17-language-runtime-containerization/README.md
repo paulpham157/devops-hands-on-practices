@@ -14,6 +14,17 @@ This lesson compares:
 
 The point is not to decide that one language is always best. The point is to understand runtime shape, Dockerfile pattern, dependency caching, image size, startup behavior, and operational tradeoffs.
 
+## Navigation
+
+- Previous lesson: `16-opentelemetry-jaeger-datadog`
+- Next lesson: `18-linux-unix-fundamentals`
+
+## Related Lessons
+
+- `00-docker-fundamentals`
+- `04-packer-docker-image`
+- `18-linux-unix-fundamentals`
+
 ## Mental Model
 
 ```text

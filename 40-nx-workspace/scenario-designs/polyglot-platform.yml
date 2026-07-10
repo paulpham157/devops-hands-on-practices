@@ -1,0 +1,15 @@
+scenario: polyglot-platform-monorepo
+goal: "A platform team wants one repo with TypeScript services, Java services, Docker builds, and shared CI orchestration."
+recommended_plugins:
+  - "@nx/js"
+  - "@nx/node"
+  - "@nx/gradle"
+  - "@nx/docker"
+review_focus:
+  - "whether non-JS projects appear correctly in the project graph"
+  - "task dependencies between app builds and container builds"
+  - "cache inputs for language-specific build outputs"
+  - "CI base/head configuration for affected commands"
+risk:
+  - "mixed ecosystems need explicit ownership for dependency and release policy"
+  - "container tasks can be expensive or unsafe to cache without correct inputs"

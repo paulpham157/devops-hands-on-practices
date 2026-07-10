@@ -16,6 +16,17 @@ This lesson teaches:
 
 No cloud account is required for the core exercises.
 
+## Navigation
+
+- Previous lesson: `27-data-management`
+- Next lesson: `29-design-and-implementation-patterns`
+
+## Related Lessons
+
+- `19-redis-caching-load-balancing`
+- `30-network-patterns`
+- `32-sla-sli-slo`
+
 ## Mental Model
 
 ```text

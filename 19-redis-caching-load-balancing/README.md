@@ -16,6 +16,17 @@ This lesson teaches:
 - memory limits, eviction policy, and persistence choices
 - failure modes when Redis or backend services are unhealthy
 
+## Navigation
+
+- Previous lesson: `18-linux-unix-fundamentals`
+- Next lesson: `20-application-protocols-microservices`
+
+## Related Lessons
+
+- `20-application-protocols-microservices`
+- `28-availability-patterns`
+- `30-network-patterns`
+
 ## Mental Model
 
 Without cache:

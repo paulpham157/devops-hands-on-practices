@@ -17,6 +17,17 @@ This lesson teaches:
 
 No JFrog account is required for the core exercises. The scripts in this lesson simulate repository lifecycle behavior locally.
 
+## Navigation
+
+- Previous lesson: `23-iac-cdk-cloudformation-pulumi-terraform`
+- Next lesson: `25-openshift-gke-eks-aks-ecs-fargate`
+
+## Related Lessons
+
+- `15-helm-kustomize-artifact-repositories`
+- `33-snyk-and-sonar`
+- `37-teamcity-ci-pipelines`
+
 ## Mental Model
 
 ```text
