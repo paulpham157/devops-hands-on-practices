@@ -13,6 +13,6 @@ for variant in explainer problem solution; do
   echo "ok exercises $variant readmes: $count"
 done
 
-ruby -e 'require "yaml"; ARGV.each { |f| YAML.load_file(f); puts "ok #{f}" }'   heat/network-stack.yml   heat/instance-stack.yml   scenario-designs/private-cloud-platform.yml   scenario-designs/edge-region.yml
+ruby -e 'require "yaml"; ARGV.each { |f| YAML.parse_file(f); puts "ok #{f}" }'   heat/network-stack.yml   heat/instance-stack.yml   scenario-designs/private-cloud-platform.yml   scenario-designs/edge-region.yml
 
 echo "Validation passed"
