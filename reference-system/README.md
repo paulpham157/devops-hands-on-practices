@@ -53,6 +53,8 @@ Prometheus UI: <http://localhost:9098>.
 
 Detailed game days and capstone assessments are still being added. Do not treat this reference system as a production deployment template.
 
+The first runnable scenario is [Game Day 01: Redis Dependency Outage](game-days/01-redis-dependency-outage/README.md). It is a production-owner preparation exercise, not a certification.
+
 ## Service Objectives
 
 [`slo/order-flow.yml`](slo/order-flow.yml) declares the local order-flow objectives and their deliberate limitations. It is a learning policy connected to lesson 32, not a customer-facing SLA or a claim that the local Compose stack enforces production objectives.
