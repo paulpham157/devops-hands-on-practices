@@ -87,6 +87,19 @@ Core sequence:
 13. `15-helm-kustomize-artifact-repositories`
 14. `16-opentelemetry-jaeger-datadog`
 
+### Cross-Lesson Delivery Project
+
+After completing the core sequence, run the [reference order-flow system](reference-system/README.md). It reuses the lesson 01 API and composes the delivery, queue, gateway, metric, and SLO concepts into one local system.
+
+Before treating Level 2 as complete, retain:
+
+1. output from `reference-system/scripts/check.sh`;
+2. the rendered/validated delivery or IaC artifact from the lessons you used;
+3. one trace, metric query, or dashboard observation tied to the order flow;
+4. the cleanup result from `reference-system/scripts/cleanup.sh`.
+
+The reference system is a local learning project, not a production deployment template. Its gateway identity boundary and at-most-once queue are intentional gaps for later production-owner work.
+
 Practitioner evidence:
 
 - an IaC plan and reusable module change;
