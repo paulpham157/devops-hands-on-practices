@@ -11,7 +11,7 @@ Start every lesson by reading its `README.md`. Run the lesson's `./scripts/valid
 | Use a terminal but are new to delivery and operations | Foundations | `18`, `00`, `01` |
 | Build and run a containerized app and want repeatable delivery | Delivery practitioner | `03`, `05`, `08` |
 | Can show the Level 2 evidence below and need production decision practice | Production-owner preparation | `19`, `20`, `21`, `22` |
-| Have real production ownership and want a structured portfolio | Senior-capstone preparation | Shared core plus a specialization overlay; capstone is being built |
+| Have real production ownership and want a structured portfolio | Senior-capstone preparation | Shared core plus a specialization overlay; structured capstone pilot |
 
 If you are unsure, begin with the Foundations entry check below. Do not skip a prerequisite because a tool name is familiar; skip it only when you can demonstrate the stated outcome.
 
@@ -24,7 +24,7 @@ Each level asks for different evidence:
 | Foundations | You can safely complete guided local labs and explain the mental model. |
 | Delivery practitioner | You can independently assemble and validate a delivery workflow using existing lessons. |
 | Production-owner preparation | You can reason about failures, signals, recovery, and tradeoffs using existing scenario exercises. Dedicated game days are planned, not yet a completion claim. |
-| Senior-capstone preparation | You can collect the prerequisites for a future reviewed capstone. The capstone does not yet exist in this repository. |
+| Senior-capstone preparation | You can collect prerequisites for a structured, two-reviewer capstone pilot. It is not a senior-job certification. |
 
 Finishing lessons does not by itself make someone a Senior DevOps engineer. Seniority also requires repeated production ownership, communication, and judgment in real team environments.
 
@@ -35,7 +35,7 @@ Finishing lessons does not by itself make someone a Senior DevOps engineer. Seni
 | Level 1 | Foundation evidence and safe local workflow | Level 2 | None: every learner enters the shared core. |
 | Level 2 | IaC, CI, deployment, secrets, telemetry, and cleanup evidence | Level 3 | Choose an overlay after identifying the Level 3 evidence it needs. |
 | Level 3 | Scenario, SLO, recovery, network, and architecture evidence | Level 4 preparation | Add an overlay to deepen the same operational evidence. |
-| Level 4 preparation | Cross-domain portfolio and reviewer feedback | Future capstone | Wait for published capstone and game-day artifacts. |
+| Level 4 preparation | Cross-domain portfolio and reviewer feedback | Capstone pilot | Use the public brief and two-reviewer protocol. |
 
 The `Previous lesson` and `Next lesson` links inside legacy lesson READMEs preserve the original numbered browsing order. The level paths above are the redesign's prerequisite routes; they explicitly name their entry checks and shared-core crossover points.
 
@@ -139,7 +139,7 @@ Build on Level 3 by retaining:
 - a capacity and cost hypothesis;
 - an incident timeline or tabletop exercise record.
 
-The capstone, formal rubric, and design-defense workflow are not available yet. Follow [the curriculum redesign plan](CONTEXT.md#curriculum-redesign-plan) for their scope; do not claim capstone completion until those artifacts are published.
+The [capstone brief and review process](docs/curriculum/capstone/README.md) are available for structured pilot use. Do not claim capstone completion until two reviewers apply the rubric and record calibration feedback; a pass remains evidence of curriculum-level production judgment, not a senior-job title.
 
 ## Specialization Overlays
 

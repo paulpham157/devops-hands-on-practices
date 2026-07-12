@@ -13,6 +13,12 @@ workstream-register.md
 templates/lesson-contract.md
 templates/exercise-contract.md
 templates/assessment-rubric.md
+capstone/README.md
+capstone/system-brief.md
+capstone/required-artifacts.md
+capstone/rubric.md
+capstone/design-defense.md
+capstone/pilot-calibration.md
 "
 
 for file in $required_files; do
