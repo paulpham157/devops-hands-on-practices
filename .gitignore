@@ -81,3 +81,6 @@ kubeconfig.*
 # Packer local output
 packer_cache/
 *.pkrvars.hcl
+
+# Reference-system backup drill output
+reference-system/dr/backups/

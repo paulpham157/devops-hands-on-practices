@@ -3,7 +3,7 @@ set -eu
 
 ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 
-for file in README.md compose.yaml gateway/nginx.conf prometheus/prometheus.yml slo/order-flow.yml scripts/up.sh scripts/check.sh scripts/cleanup.sh; do
+for file in README.md compose.yaml gateway/nginx.conf prometheus/prometheus.yml slo/order-flow.yml scripts/up.sh scripts/check.sh scripts/check-observability.sh scripts/cleanup.sh; do
   if [ ! -f "$ROOT_DIR/$file" ]; then
     echo "Missing reference-system file: $file" >&2
     exit 1
@@ -17,7 +17,14 @@ for file in game-days/01-redis-dependency-outage/README.md game-days/01-redis-de
   fi
 done
 
-sh -n "$ROOT_DIR/scripts/up.sh" "$ROOT_DIR/scripts/check.sh" "$ROOT_DIR/scripts/cleanup.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/inject-redis-outage.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/recover-redis.sh"
+for file in dr/README.md dr/rpo-rto-template.md dr/scripts/backup-redis.sh dr/scripts/restore-redis.sh; do
+  if [ ! -f "$ROOT_DIR/$file" ]; then
+    echo "Missing disaster-recovery file: $file" >&2
+    exit 1
+  fi
+done
+
+sh -n "$ROOT_DIR/scripts/up.sh" "$ROOT_DIR/scripts/check.sh" "$ROOT_DIR/scripts/check-observability.sh" "$ROOT_DIR/scripts/cleanup.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/inject-redis-outage.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/recover-redis.sh" "$ROOT_DIR/dr/scripts/backup-redis.sh" "$ROOT_DIR/dr/scripts/restore-redis.sh"
 
 if command -v docker >/dev/null 2>&1; then
   (cd "$ROOT_DIR" && docker compose config >/dev/null)

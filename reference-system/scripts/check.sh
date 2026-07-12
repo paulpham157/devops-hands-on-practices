@@ -25,15 +25,4 @@ if [ "$attempt" -eq 10 ]; then
   exit 1
 fi
 
-attempt=0
-while [ "$attempt" -lt 15 ]; do
-  if curl --fail --silent --show-error 'http://127.0.0.1:9098/api/v1/query?query=orders_queued_total' | grep -q 'orders_queued_total'; then
-    echo "Reference-system check passed: worker processed $order_id and Prometheus scraped the API metric."
-    exit 0
-  fi
-  attempt=$((attempt + 1))
-  sleep 1
-done
-
-echo "Prometheus did not scrape orders_queued_total." >&2
-exit 1
+echo "Reference-system check passed: worker processed $order_id."

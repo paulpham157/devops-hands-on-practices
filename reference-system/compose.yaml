@@ -47,6 +47,7 @@ services:
 
   prometheus:
     image: prom/prometheus:v2.54.1
+    profiles: ["observability"]
     ports:
       - "9098:9090"
     volumes:
@@ -57,7 +58,7 @@ services:
 
   redis:
     image: redis:7.2-alpine
-    command: ["redis-server", "--appendonly", "yes"]
+    command: ["redis-server", "--save", "60", "1"]
     volumes:
       - order-data:/data
     healthcheck:

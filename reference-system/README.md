@@ -10,7 +10,7 @@ client -> gateway -> order API -> Redis cache / order queue -> worker
 
 - **Gateway** is a deliberately small identity boundary: it requires an `X-Role` request header before forwarding traffic. It demonstrates a boundary only; it is not real authentication or authorization.
 - **Order API** reuses lesson 01's Flask application, its `/healthz` endpoint, and its `POST /orders` queue endpoint.
-- **Redis** provides cache state, a locally persistent queue list, and worker-result counters. The initial worker uses at-most-once `BLPOP`; it is deliberately not a durable acknowledged-delivery design. A later recovery module will replace or extend it with an acknowledgement/requeue pattern.
+- **Redis** provides cache state, a locally persistent queue list, and worker-result counters. It uses explicit snapshot backup/restore for the local DR drill. The initial worker uses at-most-once `BLPOP`; it is deliberately not a durable acknowledged-delivery design. A later recovery module will replace or extend it with an acknowledgement/requeue pattern.
 - **Worker** consumes queue messages and records completed work.
 - **Prometheus** scrapes API metrics for local observability practice.
 
@@ -30,6 +30,13 @@ The system is intentionally small. Production modules add observability, deliver
 ```
 
 The check sends an order request through the gateway using the demo boundary, then confirms that the worker processed the queued order.
+
+For the optional Prometheus overlay, which pulls an additional image:
+
+```sh
+./scripts/up.sh --observability
+./scripts/check-observability.sh
+```
 
 ## Inspect
 
