@@ -17,6 +17,13 @@ for file in game-days/01-redis-dependency-outage/README.md game-days/01-redis-de
   fi
 done
 
+for file in game-days/02-worker-interruption/README.md game-days/02-worker-interruption/rubric.md game-days/02-worker-interruption/facilitator-notes.md game-days/02-worker-interruption/scripts/inject-worker-interruption.sh game-days/02-worker-interruption/scripts/recover-worker.sh; do
+  if [ ! -f "$ROOT_DIR/$file" ]; then
+    echo "Missing game-day file: $file" >&2
+    exit 1
+  fi
+done
+
 for file in dr/README.md dr/rpo-rto-template.md dr/scripts/backup-redis.sh dr/scripts/restore-redis.sh; do
   if [ ! -f "$ROOT_DIR/$file" ]; then
     echo "Missing disaster-recovery file: $file" >&2
@@ -38,7 +45,7 @@ for file in migration/README.md migration/migration-decision-template.md migrati
   fi
 done
 
-sh -n "$ROOT_DIR/scripts/up.sh" "$ROOT_DIR/scripts/check.sh" "$ROOT_DIR/scripts/check-observability.sh" "$ROOT_DIR/scripts/cleanup.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/inject-redis-outage.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/recover-redis.sh" "$ROOT_DIR/dr/scripts/backup-redis.sh" "$ROOT_DIR/dr/scripts/restore-redis.sh" "$ROOT_DIR/capacity/scripts/load-orders.sh" "$ROOT_DIR/migration/scripts/requeue-processing.sh"
+sh -n "$ROOT_DIR/scripts/up.sh" "$ROOT_DIR/scripts/check.sh" "$ROOT_DIR/scripts/check-observability.sh" "$ROOT_DIR/scripts/cleanup.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/inject-redis-outage.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/recover-redis.sh" "$ROOT_DIR/game-days/02-worker-interruption/scripts/inject-worker-interruption.sh" "$ROOT_DIR/game-days/02-worker-interruption/scripts/recover-worker.sh" "$ROOT_DIR/dr/scripts/backup-redis.sh" "$ROOT_DIR/dr/scripts/restore-redis.sh" "$ROOT_DIR/capacity/scripts/load-orders.sh" "$ROOT_DIR/migration/scripts/requeue-processing.sh"
 
 if command -v docker >/dev/null 2>&1; then
   (cd "$ROOT_DIR" && docker compose config >/dev/null)

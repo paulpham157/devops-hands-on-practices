@@ -62,6 +62,8 @@ Detailed game days and capstone assessments are still being added. Do not treat 
 
 The first runnable scenario is [Game Day 01: Redis Dependency Outage](game-days/01-redis-dependency-outage/README.md). It is a production-owner preparation exercise, not a certification.
 
+[Game Day 02: Worker Interruption](game-days/02-worker-interruption/README.md) adds safe replay and queue-migration reasoning.
+
 For performance and FinOps reasoning, use the [capacity and cost exercise](capacity/README.md). It uses bounded local load only and requires explicit assumptions rather than claiming a production capacity number.
 
 For delivery semantics and rollback reasoning, use the [queue migration exercise](migration/README.md).
