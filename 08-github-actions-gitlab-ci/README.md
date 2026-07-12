@@ -23,6 +23,13 @@ This lesson teaches:
 - `11-devsecops-container-pipeline`
 - `37-teamcity-ci-pipelines`
 
+## Prerequisites and Entry Check
+
+- Completion of `07-jenkins-ci-pipeline`, or equivalent ability to read a CI pipeline and run local tests.
+- Docker Engine and Python available for the local simulation; GitHub/GitLab accounts are optional.
+
+Entry check: identify the difference between a workflow, job, step, artifact, and a secret in CI configuration.
+
 ## Why These Platforms
 
 GitHub Actions and GitLab CI are CI/CD systems built into source control platforms.
@@ -156,6 +163,16 @@ exercises/README.md
 ```
 
 The exercises cover reading pipeline YAML, running local CI, creating GitHub Actions workflows, creating GitLab CI pipelines, Docker image jobs, artifacts, cache, and secrets.
+
+## Cleanup
+
+The local simulation uses disposable containers. Remove any container/image created during an optional local run with:
+
+```bash
+docker compose down --remove-orphans
+```
+
+Do not delete GitHub/GitLab project settings, registries, or secrets as a general cleanup step.
 
 ## References
 

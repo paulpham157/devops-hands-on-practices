@@ -50,7 +50,7 @@ create cluster -> deploy manifests -> test app -> delete cluster
 
 No host-level K3s service is installed.
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Install:
 
@@ -65,6 +65,8 @@ docker version
 kubectl version --client
 k3d version
 ```
+
+Entry check: explain the difference between a local k3d cluster and a managed production Kubernetes service, and confirm Docker can start containers.
 
 ## Run
 
@@ -202,6 +204,14 @@ exercises/README.md
 ```
 
 The exercises cover K3s vs k3d, cluster creation, Traefik Ingress, Service types, packaged AddOns, local-path storage, scaling, and rollouts.
+
+## Cleanup
+
+```bash
+./scripts/cleanup.sh
+```
+
+Confirm the k3d cluster is gone before continuing; it can consume local Docker resources even after the lesson commands finish.
 
 ## References
 

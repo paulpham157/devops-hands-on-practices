@@ -68,7 +68,7 @@ Default app URL when running locally:
 http://localhost:8098
 ```
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Install:
 
@@ -86,6 +86,8 @@ Check:
 ```bash
 docker version
 ```
+
+Entry check: identify one secret-handling risk, one image-vulnerability risk, and why a security gate needs a documented exception path.
 
 ## Run the App
 
@@ -187,6 +189,14 @@ exercises/README.md
 ```
 
 The exercises cover the DevSecOps feedback loop, threat modeling, Dockerfile linting, repository scanning, image scanning, SBOM review, policy gates, and CI translation.
+
+## Cleanup
+
+```bash
+docker compose down --remove-orphans
+```
+
+Generated scanner output is local evidence. Remove it only after recording the findings needed for your exercise; never commit real secrets or scanner caches.
 
 ## References
 

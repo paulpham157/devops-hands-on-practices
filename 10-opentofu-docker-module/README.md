@@ -48,7 +48,7 @@ This lesson repeats the same local idea with OpenTofu, then adds structure that 
 
 OpenTofu is designed to be broadly compatible with Terraform configuration, but the migration step should still be tested on a copy of code and state before changing production workflows.
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Install:
 
@@ -67,6 +67,8 @@ On macOS with Homebrew:
 ```bash
 brew install opentofu
 ```
+
+Entry check: explain what a module input, output, state file, and `tofu plan` represent before applying changes.
 
 ## Run the Fast Checks
 
