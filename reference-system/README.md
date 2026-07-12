@@ -62,6 +62,8 @@ Detailed game days and capstone assessments are still being added. Do not treat 
 
 The first runnable scenario is [Game Day 01: Redis Dependency Outage](game-days/01-redis-dependency-outage/README.md). It is a production-owner preparation exercise, not a certification.
 
+For performance and FinOps reasoning, use the [capacity and cost exercise](capacity/README.md). It uses bounded local load only and requires explicit assumptions rather than claiming a production capacity number.
+
 ## Service Objectives
 
 [`slo/order-flow.yml`](slo/order-flow.yml) declares the local order-flow objectives and their deliberate limitations. It is a learning policy connected to lesson 32, not a customer-facing SLA or a claim that the local Compose stack enforces production objectives.

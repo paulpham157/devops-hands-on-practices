@@ -26,7 +26,7 @@ This matrix defines what the curriculum can demonstrate. It does not claim that 
 | Reliability and incident management | 28, 32 with supporting 06, 16 | Conceptual / practitioner | On-call, incident command, communications, postmortem ownership | Game day, incident record, postmortem |
 | Data durability and disaster recovery | 27, 28, 34 | Conceptual | Verified backup/restore, RPO/RTO, regional failure | Restore drill and DR decision record |
 | Performance and capacity | 19, 28, 32 | Conceptual | Load test, bottleneck analysis, autoscaling, capacity model | Load-test report and capacity plan |
-| FinOps and cost-aware design | Indirect cloud comparisons only | Missing | Allocation, budget, unit cost, guardrails | Cost model and guardrail policy |
+| FinOps and cost-aware design | Indirect cloud comparisons plus `reference-system/capacity` | Foundation | Allocation, budget, unit cost, guardrails in a production scenario | Cost model and guardrail policy |
 | Platform engineering and developer experience | 12, 15, 24, 25, 39, 40 | Conceptual | Golden paths, self-service, platform metrics | Platform API/design and adoption measure |
 | Architecture communication and tradeoffs | 19–32, 38 | Conceptual | Explicit ADRs, alternatives, constraints, decision review | ADR set and design defense |
 | Technical leadership and toil reduction | Indirectly in 32, 37, 40 | Missing | Mentoring, stakeholder communication, prioritization, toil economics | Improvement roadmap and incident communication |
