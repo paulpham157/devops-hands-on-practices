@@ -13,7 +13,7 @@ The labs are designed to be runnable locally first. Cloud accounts are optional 
 
 Start by opening any numbered lesson folder from the repository root.
 
-For goal-specific study plans, see [Goal-Oriented Learning Paths](LEARNING_PATHS.md).
+For level-based study plans, specialization overlays, and resume guidance, see [Learning Paths](LEARNING_PATHS.md).
 
 ## How To Use This Repository
 
@@ -21,7 +21,7 @@ Use the root repository as a map, then work lesson by lesson inside the numbered
 
 Start with:
 
-1. Pick a lesson from the default sequence below or from [Goal-Oriented Learning Paths](LEARNING_PATHS.md).
+1. Pick a starting level from [Learning Paths](LEARNING_PATHS.md); add a specialization overlay after the shared core.
 2. Read that lesson's `README.md` from top to bottom before running commands.
 3. Run the lesson commands, examples, or exercises in the order described by the lesson.
 4. Complete the exercises under `exercises/` before checking solution notes.

@@ -1,6 +1,6 @@
 # Learner Progress Migration
 
-This guide prevents the redesign from invalidating learner progress. Until redesigned paths are published, continue using the existing numbered lesson order and goal-oriented paths.
+This guide prevents the redesign from invalidating learner progress. The learner-facing [Learning Paths](../../LEARNING_PATHS.md) document is now level-based; this document records the maintainer policy behind its resume guidance.
 
 ## Mapping Principles
 
@@ -9,15 +9,15 @@ This guide prevents the redesign from invalidating learner progress. Until redes
 3. Replaced or split lessons must keep a visible note in the old README pointing to the successor material.
 4. Every new path must include a “resume from existing progress” table before it becomes the default learner route.
 
-## Initial Resume Map
+## Published Resume Map
 
 | Existing progress | Redesigned next step | Why |
 | --- | --- | --- |
-| Lessons 00–02 | Delivery practitioner core: 03, 05, 08, 09 | Learner has container and Kubernetes baseline. |
-| Lessons 03–05 | Delivery practitioner core: 08, 10, 12, 15 | Adds repeatable automation and delivery control. |
-| Lessons 06–16 | Production-owner core: 27, 28, 32, then game day | Existing delivery, security, and telemetry work is ready for operational judgment. |
-| Lessons 17–24 | Choose overlay after shared delivery core | These lessons add runtime, architecture, cloud, and artifact context. |
-| Lessons 25–40 | Production-owner assessment and relevant overlay | Advanced topics need cross-system evidence rather than more isolated tool labs. |
+| Validated `00`–`02` | Complete Foundation gaps `18`, `17`, `20`, `21`; then Level 2. | Existing container/Kubernetes work remains evidence. |
+| Validated `03`–`05` | Continue Level 2 at `06`, then complete the numbered sequence through `16`. | Existing automation work remains evidence. |
+| Validated `06`–`16` | Complete missing Level 2 core, then Level 3 sequentially from `19` through `32`. | Production-owner preparation is not a certification. |
+| Validated `17`–`24` | Use as Foundation or overlay evidence; complete missing Level 2 core. | These lessons do not replace shared delivery evidence. |
+| Validated `25`–`40` | Select the corresponding overlay and collect Level 3 evidence. | Avoid repeating tools without an evidence gap. |
 
 ## Required Migration Record for Any Changed Lesson
 

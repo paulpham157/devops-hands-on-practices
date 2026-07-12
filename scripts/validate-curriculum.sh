@@ -39,6 +39,14 @@ if ! grep -q '^| Workstream | Accountable owner | Depends on | Rough size | Deli
   exit 1
 fi
 
+for heading in "## Path Dependencies and Crossovers" "## Level 1: Foundations" "## Level 2: Delivery Practitioner Shared Core" "## Level 3: Production-Owner Preparation" "## Specialization Overlays" "## Goal-Oriented Routes" "## Resume From Existing Progress"; do
+  if ! grep -q "$heading" "$ROOT_DIR/LEARNING_PATHS.md"; then
+    echo "Learning Paths is missing required section: $heading" >&2
+    exit 1
+  fi
+done
+
+
 lesson_count=$(find "$ROOT_DIR" -maxdepth 1 -type d -name '[0-9][0-9]-*' | wc -l | tr -d ' ')
 inventory_count=$(awk '/^\| [0-9][0-9] \|/ { count += 1 } END { print count + 0 }' "$CURRICULUM_DIR/lesson-inventory.md")
 

@@ -17,40 +17,64 @@ class LearningPath:
 
 PATHS = (
     LearningPath(
-        "New To DevOps",
+        "Level 1: Foundations",
         ("new", "beginner", "foundation", "basic", "start", "linux", "terminal"),
         ("18-linux-unix-fundamentals", "00-docker-fundamentals", "01-docker-compose-flask-redis"),
-        "Build basic Linux, container, and local workflow confidence.",
+        "Build safe Linux, container, and local workflow confidence before choosing an overlay.",
     ),
     LearningPath(
-        "Job-Ready Junior DevOps",
+        "Level 2: Delivery Practitioner Shared Core",
         ("job", "junior", "interview", "intern", "career", "practical", "devops"),
-        ("00-docker-fundamentals", "01-docker-compose-flask-redis", "02-kubernetes-nginx"),
-        "Practice the core tools expected in an entry-level DevOps flow.",
+        ("03-ansible-docker-host", "05-terraform-docker-container", "08-github-actions-gitlab-ci"),
+        "Build repeatable infrastructure, delivery, deployment, and observability evidence.",
     ),
     LearningPath(
-        "Docker And Kubernetes First",
-        ("docker", "container", "kubernetes", "k8s", "helm", "platform"),
-        ("00-docker-fundamentals", "01-docker-compose-flask-redis", "17-language-runtime-containerization"),
-        "Build container fluency before moving into orchestration and packaging.",
+        "Level 3: Production-Owner Preparation",
+        ("production", "incident", "on-call", "reliability", "slo", "availability", "operate"),
+        ("19-redis-caching-load-balancing", "27-data-management", "28-availability-patterns"),
+        "Connect delivery work to failure, recovery, service objectives, and tradeoff decisions.",
     ),
     LearningPath(
-        "CI/CD And Release Engineering",
+        "CI/CD and Release Engineering Overlay",
         ("ci", "cd", "pipeline", "release", "jenkins", "github", "gitlab", "artifact"),
-        ("00-docker-fundamentals", "04-packer-docker-image", "07-jenkins-ci-pipeline"),
-        "Learn how teams validate, package, secure, and promote changes.",
+        ("04-packer-docker-image", "07-jenkins-ci-pipeline", "24-jfrog-artifactory"),
+        "Add promotion, artifact, and rollback reasoning after the shared delivery core.",
     ),
     LearningPath(
-        "Infrastructure As Code And Automation",
+        "Infrastructure as Code and Automation Overlay",
         ("iac", "terraform", "opentofu", "ansible", "packer", "automation", "provision"),
         ("03-ansible-docker-host", "04-packer-docker-image", "05-terraform-docker-container"),
-        "Build repeatable infrastructure and configuration management judgment.",
+        "Add infrastructure and configuration-management depth after the shared delivery core.",
     ),
     LearningPath(
-        "Platform Engineering And SRE",
+        "Platform Engineering and SRE Overlay",
         ("sre", "reliability", "observability", "slo", "platform", "gitops", "operate"),
         ("02-kubernetes-nginx", "06-observability-prometheus-grafana-loki", "09-k3s-local-cluster"),
-        "Connect platform operations, observability, and reliability thinking.",
+        "Add platform operations and reliability depth after the shared delivery core.",
+    ),
+    LearningPath(
+        "DevSecOps Overlay",
+        ("security", "devsecops", "supply", "sbom", "secret", "identity", "compliance"),
+        ("11-devsecops-container-pipeline", "13-vaults-and-secrets-managers", "14-aws-identity"),
+        "Add security, identity, and supply-chain evidence after the shared delivery core.",
+    ),
+    LearningPath(
+        "Cloud Architecture Overlay",
+        ("cloud", "aws", "azure", "gcp", "serverless", "architecture", "landing"),
+        ("21-aws-azure-gcp-cloud-fundamentals", "22-serverless-functions-platforms", "23-iac-cdk-cloudformation-pulumi-terraform"),
+        "Add cloud-platform and architecture tradeoff evidence after the shared delivery core.",
+    ),
+    LearningPath(
+        "Distributed Application Architecture Overlay",
+        ("distributed", "microservice", "protocol", "redis", "network", "bff", "data"),
+        ("19-redis-caching-load-balancing", "20-application-protocols-microservices", "27-data-management"),
+        "Add data, protocol, and application-architecture tradeoff evidence after the shared delivery core.",
+    ),
+    LearningPath(
+        "Data Reliability Overlay",
+        ("data", "pipeline", "etl", "streaming", "recovery", "backup", "restore"),
+        ("27-data-management", "28-availability-patterns", "32-sla-sli-slo"),
+        "Add data-quality, reliability, and recovery reasoning after the shared delivery core.",
     ),
 )
 
@@ -66,12 +90,18 @@ def main() -> int:
     args = parser.parse_args()
 
     words = {word.strip(".,:;!?()[]{}").lower() for word in args.goal.split()}
-    ranked = sorted(PATHS, key=lambda path: score_path(path, words), reverse=True)
+    beginner_words = {"new", "beginner", "foundation", "basic", "start", "linux", "terminal"}
+    if words & beginner_words:
+        ranked = [PATHS[0]]
+    else:
+        ranked = sorted(PATHS, key=lambda path: score_path(path, words), reverse=True)
     chosen = [path for path in ranked if score_path(path, words) > 0] or ranked[:1]
 
     for index, path in enumerate(chosen[: args.limit], start=1):
         print(f"{index}. {path.name}")
         print(f"   Outcome: {path.outcome}")
+        if path.name != "Level 1: Foundations":
+            print("   Before this: verify the required level evidence in LEARNING_PATHS.md; an overlay does not bypass the shared core.")
         print(f"   Start with: {', '.join(path.lessons)}")
     return 0
 

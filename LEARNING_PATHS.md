@@ -1,300 +1,204 @@
-# Goal-Oriented Learning Paths
+# Learning Paths
 
-Use these paths when the learner has a specific outcome in mind. Each path lists the core lessons first, then optional expansion lessons. Start every lesson by reading its `README.md`, run `./scripts/validate.sh` when available, complete the exercises, then review the solution notes only after trying the problem.
+This repository is being redesigned around capabilities and evidence, not a checklist of tools. Choose a level first, then add a specialization overlay that matches your goal. Every numbered lesson remains valid while the redesign is in progress.
 
-For AI-guided study, use this loop:
+Start every lesson by reading its `README.md`. Run the lesson's `./scripts/validate.sh` when the README asks for it, complete the exercises before opening solutions, retain the required evidence, and run cleanup for temporary resources.
 
-1. Ask the AI to explain the lesson goal and prerequisites in plain language.
-2. Ask for a short pre-lab checklist before running commands.
-3. Run the lesson validation script and paste errors back into the AI.
-4. Complete each exercise from `problem/readme.md` before opening `solution/readme.md`.
-5. End the lesson by asking the AI to quiz you on the concepts and ask one production-style design question.
+## Choose Your Starting Point
 
-## Path 1: New To DevOps
+| If you can already… | Start at | First lessons |
+| --- | --- | --- |
+| Use a terminal but are new to delivery and operations | Foundations | `18`, `00`, `01` |
+| Build and run a containerized app and want repeatable delivery | Delivery practitioner | `03`, `05`, `08` |
+| Can show the Level 2 evidence below and need production decision practice | Production-owner preparation | `19`, `20`, `21`, `22` |
+| Have real production ownership and want a structured portfolio | Senior-capstone preparation | Shared core plus a specialization overlay; capstone is being built |
 
-Goal: build a practical base without jumping too early into cloud or platform comparisons.
+If you are unsure, begin with the Foundations entry check below. Do not skip a prerequisite because a tool name is familiar; skip it only when you can demonstrate the stated outcome.
 
-Best for: learners who know basic terminal usage but have not worked deeply with containers, infrastructure automation, or CI/CD.
+## Evidence Rules
+
+Each level asks for different evidence:
+
+| Level | What completion means now |
+| --- | --- |
+| Foundations | You can safely complete guided local labs and explain the mental model. |
+| Delivery practitioner | You can independently assemble and validate a delivery workflow using existing lessons. |
+| Production-owner preparation | You can reason about failures, signals, recovery, and tradeoffs using existing scenario exercises. Dedicated game days are planned, not yet a completion claim. |
+| Senior-capstone preparation | You can collect the prerequisites for a future reviewed capstone. The capstone does not yet exist in this repository. |
+
+Finishing lessons does not by itself make someone a Senior DevOps engineer. Seniority also requires repeated production ownership, communication, and judgment in real team environments.
+
+## Path Dependencies and Crossovers
+
+| From | Required evidence before moving on | Leads to | Crossover choice |
+| --- | --- | --- | --- |
+| Level 1 | Foundation evidence and safe local workflow | Level 2 | None: every learner enters the shared core. |
+| Level 2 | IaC, CI, deployment, secrets, telemetry, and cleanup evidence | Level 3 | Choose an overlay after identifying the Level 3 evidence it needs. |
+| Level 3 | Scenario, SLO, recovery, network, and architecture evidence | Level 4 preparation | Add an overlay to deepen the same operational evidence. |
+| Level 4 preparation | Cross-domain portfolio and reviewer feedback | Future capstone | Wait for published capstone and game-day artifacts. |
+
+The `Previous lesson` and `Next lesson` links inside legacy lesson READMEs preserve the original numbered browsing order. The level paths above are the redesign's prerequisite routes; they explicitly name their entry checks and shared-core crossover points.
+
+## Level 1: Foundations
+
+Goal: understand the system layers that delivery and operations depend on.
+
+Entry check: you can navigate files, edit text, and run a command in a shell. If not, start directly with `18-linux-unix-fundamentals`.
 
 Core sequence:
 
 1. `18-linux-unix-fundamentals`
 2. `00-docker-fundamentals`
 3. `01-docker-compose-flask-redis`
-4. `02-kubernetes-nginx`
-5. `03-ansible-docker-host`
-6. `04-packer-docker-image`
-7. `05-terraform-docker-container`
-8. `07-jenkins-ci-pipeline`
-9. `08-github-actions-gitlab-ci`
+4. `17-language-runtime-containerization`
+5. `02-kubernetes-nginx`
+6. `20-application-protocols-microservices`
+7. `21-aws-azure-gcp-cloud-fundamentals`
 
-Expand with:
+Foundation evidence:
 
-- `06-observability-prometheus-grafana-loki` after the first CI/CD lessons.
-- `11-devsecops-container-pipeline` after you understand image builds and CI jobs.
-- `21-aws-azure-gcp-cloud-fundamentals` when you are ready for cloud vocabulary.
+- a validated Linux and container lab;
+- one running multi-service Compose application;
+- one inspected Kubernetes workload;
+- a concise explanation of request flow, runtime tradeoffs, and cloud primitives.
 
-Completion target: you can explain how code becomes a container image, how it is run locally, how infrastructure is described, and how a CI pipeline validates changes.
+Next step: Level 2. Add a specialization overlay only after completing the Level 2 shared core.
 
-## Path 2: Job-Ready Junior DevOps
+## Level 2: Delivery Practitioner Shared Core
 
-Goal: cover the tools and workflows commonly expected in entry-level DevOps work.
+Goal: build a repeatable path from application source to a monitored deployment.
 
-Best for: learners preparing for interviews, internships, or a first DevOps/platform role.
-
-Core sequence:
-
-1. `00-docker-fundamentals`
-2. `01-docker-compose-flask-redis`
-3. `02-kubernetes-nginx`
-4. `03-ansible-docker-host`
-5. `05-terraform-docker-container`
-6. `06-observability-prometheus-grafana-loki`
-7. `08-github-actions-gitlab-ci`
-8. `09-k3s-local-cluster`
-9. `11-devsecops-container-pipeline`
-10. `12-argocd-gitops`
-11. `13-vaults-and-secrets-managers`
-12. `15-helm-kustomize-artifact-repositories`
-
-Expand with:
-
-- `04-packer-docker-image` for image-building workflows.
-- `10-opentofu-docker-module` for reusable IaC module structure.
-- `16-opentelemetry-jaeger-datadog` for tracing and telemetry.
-- `33-snyk-and-sonar` for code quality and security gates.
-
-Completion target: you can walk through a realistic delivery flow from source code to container, CI check, Kubernetes deployment, GitOps sync, secrets handling, and monitoring.
-
-## Path 3: Docker And Kubernetes First
-
-Goal: focus on containers, local orchestration, manifests, packaging, and platform choices.
-
-Best for: backend developers, students, or operators who want container fluency before broader DevOps topics.
-
-Core sequence:
-
-1. `00-docker-fundamentals`
-2. `01-docker-compose-flask-redis`
-3. `17-language-runtime-containerization`
-4. `02-kubernetes-nginx`
-5. `09-k3s-local-cluster`
-6. `15-helm-kustomize-artifact-repositories`
-7. `26-service-mesh`
-
-Expand with:
-
-- `11-devsecops-container-pipeline` for container scanning and SBOMs.
-- `25-openshift-gke-eks-aks-ecs-fargate` for managed platform comparison.
-- `24-jfrog-artifactory` for container and artifact repository workflows.
-
-Completion target: you can build container images, reason about Dockerfiles, run multi-service apps locally, deploy to Kubernetes, render manifests with Helm/Kustomize, and compare container platforms.
-
-## Path 4: CI/CD And Release Engineering
-
-Goal: learn how teams validate, package, secure, and promote changes.
-
-Best for: learners who care about pipelines, release gates, artifact flow, and developer productivity.
-
-Core sequence:
-
-1. `00-docker-fundamentals`
-2. `04-packer-docker-image`
-3. `07-jenkins-ci-pipeline`
-4. `08-github-actions-gitlab-ci`
-5. `11-devsecops-container-pipeline`
-6. `12-argocd-gitops`
-7. `15-helm-kustomize-artifact-repositories`
-8. `24-jfrog-artifactory`
-9. `33-snyk-and-sonar`
-
-Expand with:
-
-- `37-teamcity-ci-pipelines` for an additional enterprise CI model.
-- `13-vaults-and-secrets-managers` for secret handling in delivery flows.
-- `16-opentelemetry-jaeger-datadog` for release observability.
-- `40-nx-workspace` for monorepo task orchestration, caching, affected CI, and plugin selection.
-- `39-aws-nx-plugin` for generated AWS app, API, auth, and IaC workspace workflows.
-
-Completion target: you can design a pipeline that builds, tests, scans, packages, publishes, and deploys software with clear promotion gates.
-
-## Path 5: Infrastructure As Code And Automation
-
-Goal: build skill in repeatable infrastructure provisioning and configuration.
-
-Best for: learners focused on Terraform/OpenTofu, configuration management, and infrastructure automation.
+Prerequisite: the Level 1 outcomes, or equivalent evidence from your own work.
 
 Core sequence:
 
 1. `03-ansible-docker-host`
 2. `04-packer-docker-image`
 3. `05-terraform-docker-container`
-4. `10-opentofu-docker-module`
-5. `13-vaults-and-secrets-managers`
-6. `21-aws-azure-gcp-cloud-fundamentals`
-7. `23-iac-cdk-cloudformation-pulumi-terraform`
+4. `06-observability-prometheus-grafana-loki`
+5. `07-jenkins-ci-pipeline`
+6. `08-github-actions-gitlab-ci`
+7. `09-k3s-local-cluster`
+8. `10-opentofu-docker-module`
+9. `11-devsecops-container-pipeline`
+10. `12-argocd-gitops`
+11. `13-vaults-and-secrets-managers`
+12. `14-aws-identity`
+13. `15-helm-kustomize-artifact-repositories`
+14. `16-opentelemetry-jaeger-datadog`
 
-Expand with:
+Practitioner evidence:
 
-- `35-puppet-configuration-management` for Puppet.
-- `36-chef-infra-automation` for Chef.
-- `38-openstack-private-cloud` for private cloud context.
-- `39-aws-nx-plugin` for AWS app scaffolding that connects generated code with CDK or Terraform.
+- an IaC plan and reusable module change;
+- a CI workflow that builds, tests, and applies security checks;
+- a GitOps-rendered Kubernetes deployment with secrets handled safely;
+- a dashboard or trace that explains an application request;
+- a cleanup record for the temporary resources you created.
 
-Completion target: you can explain when to use image baking, configuration management, Terraform/OpenTofu modules, cloud-native IaC tools, and secrets systems.
+Next step: choose an overlay and complete the production-owner preparation core.
 
-## Path 6: Platform Engineering And SRE
+## Level 3: Production-Owner Preparation
 
-Goal: learn how to operate platforms, measure reliability, and reason about production systems.
+Goal: connect delivery work to availability, data, network, security, scale, and business constraints.
 
-Best for: learners targeting platform engineering, SRE, infrastructure operations, or production ownership.
+Entry check: show the five Level 2 evidence items above, or share equivalent work for review. Tool familiarity alone is not equivalent evidence.
 
-Core sequence:
+Core sequence available today:
 
-1. `02-kubernetes-nginx`
-2. `06-observability-prometheus-grafana-loki`
-3. `09-k3s-local-cluster`
-4. `12-argocd-gitops`
-5. `16-opentelemetry-jaeger-datadog`
-6. `25-openshift-gke-eks-aks-ecs-fargate`
-7. `26-service-mesh`
-8. `28-availability-patterns`
-9. `30-network-patterns`
-10. `32-sla-sli-slo`
+1. `19-redis-caching-load-balancing`
+2. `20-application-protocols-microservices`
+3. `21-aws-azure-gcp-cloud-fundamentals`
+4. `22-serverless-functions-platforms`
+5. `23-iac-cdk-cloudformation-pulumi-terraform`
+6. `24-jfrog-artifactory`
+7. `25-openshift-gke-eks-aks-ecs-fargate`
+8. `26-service-mesh`
+9. `27-data-management`
+10. `28-availability-patterns`
+11. `29-design-and-implementation-patterns`
+12. `30-network-patterns`
+13. `31-backend-for-frontend`
+14. `32-sla-sli-slo`
 
-Expand with:
+Add `33-snyk-and-sonar` for delivery policy and quality gates, and `34-data-pipeline` for data reliability.
 
-- `13-vaults-and-secrets-managers` for platform security.
-- `24-jfrog-artifactory` for internal platform artifact services.
-- `38-openstack-private-cloud` for private cloud operations.
+Current evidence: scenario answers, SLO/error-budget decisions, network and availability tradeoff notes, and a recovery plan. The incident game days, load/capacity, FinOps, restore drills, and migration modules described in [CONTEXT.md](CONTEXT.md#curriculum-redesign-plan) are planned work; do not present this level as a completed production-owner certification yet.
 
-Completion target: you can discuss platform tradeoffs, observability signals, deployment control, networking patterns, availability design, and SLO-based operations.
+## Level 4: Senior-Capstone Preparation
 
-## Path 7: DevSecOps And Supply Chain Security
+Goal: prepare the cross-domain evidence needed for the future capstone.
 
-Goal: add security checks and governance into normal delivery workflows.
+Entry check: retain the Level 3 scenario evidence, including an SLO decision, recovery rationale, and one architecture tradeoff. Ask a reviewer to identify the largest evidence gap before treating this as capstone preparation.
 
-Best for: learners interested in secure CI/CD, scanning, secrets, SBOMs, quality gates, and release policy.
+Build on Level 3 by retaining:
 
-Core sequence:
+- a small set of architecture decisions and rejected alternatives;
+- an SLO and alert rationale for a critical user journey;
+- a delivery, rollback, and recovery plan;
+- a threat model and identity boundary description;
+- a capacity and cost hypothesis;
+- an incident timeline or tabletop exercise record.
 
-1. `00-docker-fundamentals`
-2. `04-packer-docker-image`
-3. `08-github-actions-gitlab-ci`
-4. `11-devsecops-container-pipeline`
-5. `13-vaults-and-secrets-managers`
-6. `14-aws-identity`
-7. `15-helm-kustomize-artifact-repositories`
-8. `24-jfrog-artifactory`
-9. `33-snyk-and-sonar`
+The capstone, formal rubric, and design-defense workflow are not available yet. Follow [the curriculum redesign plan](CONTEXT.md#curriculum-redesign-plan) for their scope; do not claim capstone completion until those artifacts are published.
 
-Expand with:
+## Specialization Overlays
 
-- `12-argocd-gitops` for deployment policy and GitOps control.
-- `25-openshift-gke-eks-aks-ecs-fargate` for platform security tradeoffs.
-- `26-service-mesh` for service-to-service policy and traffic control.
+Overlays add depth after the Level 2 shared core. They do not replace it.
 
-Completion target: you can design a security-aware delivery pipeline with secret scanning, image scanning, SBOM generation, artifact controls, identity boundaries, and quality gates.
+| Goal | Entry level | Required shared core | Overlay lessons | Evidence to collect |
+| --- | --- | --- | --- | --- |
+| CI/CD and release engineering | Level 2 | Level 3 delivery/reliability decisions | `04`, `07`, `24`, `33`, `37`, `40` | Promotion gates, artifact flow, rollback rationale. |
+| Infrastructure as code and automation | Level 2 | Level 3 architecture/recovery decisions | `04`, `10`, `14`, `23`, `35`, `36`, `38` | Module boundaries, identity model, environment decision. |
+| Platform engineering | Level 2 | Level 3 service/reliability decisions | `25`, `26`, `24`, `40` | Platform tradeoff and developer workflow design. |
+| SRE and reliability | Level 2 | All Level 3 lessons | `06`, `16`, `19`, `28`, `30`, `32` | Signal choice, SLO policy, mitigation and recovery rationale. |
+| DevSecOps | Level 2 | Level 3 identity and delivery decisions | `11`, `13`, `14`, `24`, `33` | Threat/risk assessment, exception and evidence workflow. |
+| Cloud architecture | Level 2 | Level 3 cloud and architecture decisions | `14`, `21`, `22`, `23`, `25`, `38` | Provider selection and boundary ADR. |
+| Distributed application architecture | Level 2 | Level 3 data/network/reliability decisions | `19`, `20`, `27`, `29`, `30`, `31` | Data, protocol, and availability tradeoff notes. |
+| Data reliability | Level 2 | Level 3 data/reliability decisions | `27`, `28`, `32`, `34` | Data failure handling, quality, and recovery decision. |
 
-## Path 8: Cloud And Platform Selection
+## Goal-Oriented Routes
 
-Goal: understand how cloud platforms, container services, serverless, and private cloud options compare.
+Use these intent routes alongside the level progression. Each route tells you where to enter the canonical model; it does not bypass prerequisites.
 
-Best for: learners who need architectural judgment more than one specific CLI workflow.
+| Learner goal | Enter through | Then add |
+| --- | --- | --- |
+| New to DevOps | Level 1 | Level 2 shared core. |
+| Job-ready junior DevOps | Level 1 or validated equivalent | Level 2 shared core, then one overlay. |
+| Docker and Kubernetes first | Level 1: `00`, `01`, `17`, `02` | Level 2 before advanced Kubernetes. |
+| CI/CD and release engineering | Level 1 or validated equivalent | CI/CD overlay after Level 2. |
+| IaC and automation | Level 1 or validated equivalent | IaC overlay after Level 2. |
+| Platform engineering and SRE | Level 1 or validated equivalent | Platform or SRE overlay after Level 2 and Level 3. |
+| DevSecOps | Level 1 or validated equivalent | DevSecOps overlay after Level 2. |
+| Cloud and platform selection | Level 1 cloud vocabulary | Cloud architecture overlay after Level 2. |
+| Application architecture | Level 1 runtime/protocol work | Distributed architecture overlay after Level 2. |
+| Data and reliability | Level 1 or validated equivalent | Data reliability overlay after Level 2 and Level 3. |
 
-Core sequence:
+## Resume From Existing Progress
 
-1. `21-aws-azure-gcp-cloud-fundamentals`
-2. `14-aws-identity`
-3. `22-serverless-functions-platforms`
-4. `23-iac-cdk-cloudformation-pulumi-terraform`
-5. `25-openshift-gke-eks-aks-ecs-fargate`
-6. `38-openstack-private-cloud`
+Validated work remains valid. Use this map rather than restarting:
 
-Expand with:
+| You have completed | Resume at |
+| --- | --- |
+| `00`–`02` | Finish Foundation gaps: `18`, `17`, `20`, `21`; then Level 2. |
+| `03`–`05` | Continue Level 2 at `06`, then continue sequentially through `16`. |
+| `06`–`16` | Finish any missing Level 2 core, then start Level 3 sequentially at `19` through `32`. |
+| `17`–`24` | Treat these as Foundation or overlay evidence; complete the missing Level 2 shared core. |
+| `25`–`40` | Use the relevant overlay, then collect Level 3 evidence rather than taking more isolated tools by default. |
 
-- `09-k3s-local-cluster` before managed Kubernetes comparisons if Kubernetes is new.
-- `26-service-mesh` after platform selection if service-to-service operations matter.
-- `28-availability-patterns` for resilient cloud architecture.
-- `39-aws-nx-plugin` after `22` and `23` if you want AWS full-stack scaffolding with generated IaC.
+## Short Routes
 
-Completion target: you can compare managed Kubernetes, managed containers, serverless functions, IaC approaches, identity models, and private cloud options.
-
-## Path 9: Application Architecture And Distributed Systems
-
-Goal: understand how application architecture choices affect operations.
-
-Best for: backend developers, tech leads, and DevOps learners who need to connect app design to infrastructure behavior.
-
-Core sequence:
-
-1. `17-language-runtime-containerization`
-2. `19-redis-caching-load-balancing`
-3. `20-application-protocols-microservices`
-4. `27-data-management`
-5. `28-availability-patterns`
-6. `29-design-and-implementation-patterns`
-7. `30-network-patterns`
-8. `31-backend-for-frontend`
-
-Expand with:
-
-- `06-observability-prometheus-grafana-loki` to observe runtime behavior.
-- `16-opentelemetry-jaeger-datadog` to trace distributed systems.
-- `32-sla-sli-slo` to connect architecture to reliability targets.
-- `34-data-pipeline` when data movement and analytics are part of the system.
-- `40-nx-workspace` when app architecture spans many packages, libraries, and generated tasks.
-
-Completion target: you can reason about caching, load balancing, protocol choices, data ownership, availability, networking, BFF patterns, and operational tradeoffs.
-
-## Path 10: Data And Reliability Track
-
-Goal: connect data pipeline design with reliability and operations.
-
-Best for: learners working near analytics platforms, batch jobs, data services, or reliability-sensitive data workflows.
-
-Core sequence:
-
-1. `21-aws-azure-gcp-cloud-fundamentals`
-2. `27-data-management`
-3. `28-availability-patterns`
-4. `32-sla-sli-slo`
-5. `34-data-pipeline`
-
-Expand with:
-
-- `06-observability-prometheus-grafana-loki` for operational dashboards and alerting.
-- `16-opentelemetry-jaeger-datadog` for telemetry concepts.
-- `23-iac-cdk-cloudformation-pulumi-terraform` for provisioning data platform resources.
-- `30-network-patterns` for connectivity and isolation concerns.
-
-Completion target: you can explain ingestion, ETL/ELT, orchestration, validation, lineage, failure handling, and reliability expectations for data workflows.
-
-## Fast Tracks
-
-Use these when time is limited.
+Use these only when you need a focused introduction, not as proof of a level.
 
 | Goal | Lessons |
 | --- | --- |
-| Weekend Docker basics | `00`, `01`, `17` |
-| Kubernetes crash course | `00`, `02`, `09`, `15` |
-| CI/CD crash course | `00`, `08`, `11`, `12`, `15` |
-| Terraform/OpenTofu crash course | `05`, `10`, `23` |
-| Observability crash course | `06`, `16`, `32` |
-| Security crash course | `11`, `13`, `14`, `33` |
-| Cloud comparison crash course | `21`, `22`, `25`, `38` |
+| Docker basics | `18`, `00`, `01` |
+| Kubernetes basics | `00`, `02`, `09`, `15` |
+| CI/CD basics | `00`, `08`, `11`, `12`, `15` |
+| IaC basics | `05`, `10`, `23` |
+| Observability basics | `06`, `16`, `32` |
+| Security basics | `11`, `13`, `14`, `33` |
+| Cloud comparison | `21`, `22`, `25`, `38` |
 
-## Choosing The Right Path
+## Learn With AI
 
-| Learner goal | Recommended path |
-| --- | --- |
-| "I am new and want the least confusing order." | Path 1: New To DevOps |
-| "I want to prepare for a junior DevOps role." | Path 2: Job-Ready Junior DevOps |
-| "I mostly need Docker and Kubernetes." | Path 3: Docker And Kubernetes First |
-| "I care about pipelines and releases." | Path 4: CI/CD And Release Engineering |
-| "I want Terraform, OpenTofu, and automation." | Path 5: Infrastructure As Code And Automation |
-| "I want platform/SRE skills." | Path 6: Platform Engineering And SRE |
-| "I want DevSecOps and supply chain security." | Path 7: DevSecOps And Supply Chain Security |
-| "I need cloud and platform selection judgment." | Path 8: Cloud And Platform Selection |
-| "I am a backend developer learning ops impact." | Path 9: Application Architecture And Distributed Systems |
-| "I work with data workflows." | Path 10: Data And Reliability Track |
+Use `dohp-how-to-learn` to choose a starting level, explain prerequisites, guide an attempted exercise, and quiz you from real evidence. Use `dohp-review-my-practice` only after you have a real attempt, command output, configuration, or written decision to review.
