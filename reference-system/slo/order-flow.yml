@@ -1,0 +1,16 @@
+service: reference-order-flow
+window: 30d
+objectives:
+  - name: order-api-availability
+    user_journey: submit an order through the gateway
+    indicator: successful gateway requests divided by all gateway requests
+    target: 99.9
+    error_budget_percent: 0.1
+    current_local_proxy_signal: Prometheus up{job="order-api"} plus gateway smoke check
+    limitation: Local Compose does not provide a production-grade request-rate data source; this is a learning policy, not an enforced SLA.
+  - name: queued-order-processing
+    user_journey: accepted order is observed as processed by the worker
+    indicator: correlated order ID appears in processed_order_ids
+    target: 99.0
+    error_budget_percent: 1.0
+    limitation: The initial BLPOP worker is at-most-once and is intentionally unsuitable for a durability SLO.

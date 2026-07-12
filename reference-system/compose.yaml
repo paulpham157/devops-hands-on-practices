@@ -45,6 +45,16 @@ services:
       redis:
         condition: service_healthy
 
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    ports:
+      - "9098:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      api:
+        condition: service_healthy
+
   redis:
     image: redis:7.2-alpine
     command: ["redis-server", "--appendonly", "yes"]

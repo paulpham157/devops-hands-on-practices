@@ -1,6 +1,7 @@
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, Response, render_template, request
+from prometheus_client import CONTENT_TYPE_LATEST, Counter, generate_latest
 from redis import Redis
 
 
@@ -10,6 +11,11 @@ redis_client = Redis(
     host=os.environ.get("REDIS_HOST", "localhost"),
     port=int(os.environ.get("REDIS_PORT", "6379")),
     decode_responses=True,
+)
+
+orders_queued_total = Counter(
+    "orders_queued_total",
+    "Orders accepted by the local reference-system API.",
 )
 
 
@@ -33,7 +39,13 @@ def create_order():
         return {"error": "JSON field 'id' must be a non-empty string"}, 400
 
     redis_client.lpush("order_queue", order_id)
+    orders_queued_total.inc()
     return {"status": "queued", "id": order_id}, 202
+
+
+@app.get("/metrics")
+def metrics():
+    return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 
 
 if __name__ == "__main__":

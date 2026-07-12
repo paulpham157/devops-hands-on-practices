@@ -14,12 +14,26 @@ curl --fail --silent --show-error --retry 10 --retry-connrefused \
 attempt=0
 while [ "$attempt" -lt 10 ]; do
   if docker compose exec -T redis redis-cli LRANGE processed_order_ids 0 -1 | tr -d '\r' | grep -Fx "$order_id" >/dev/null; then
-    echo "Reference-system check passed: worker processed $order_id."
+    break
+  fi
+  attempt=$((attempt + 1))
+  sleep 1
+done
+
+if [ "$attempt" -eq 10 ]; then
+  echo "Worker did not process the queued order." >&2
+  exit 1
+fi
+
+attempt=0
+while [ "$attempt" -lt 15 ]; do
+  if curl --fail --silent --show-error 'http://127.0.0.1:9098/api/v1/query?query=orders_queued_total' | grep -q 'orders_queued_total'; then
+    echo "Reference-system check passed: worker processed $order_id and Prometheus scraped the API metric."
     exit 0
   fi
   attempt=$((attempt + 1))
   sleep 1
 done
 
-echo "Worker did not process the queued order." >&2
+echo "Prometheus did not scrape orders_queued_total." >&2
 exit 1

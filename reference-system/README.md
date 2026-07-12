@@ -12,6 +12,7 @@ client -> gateway -> order API -> Redis cache / order queue -> worker
 - **Order API** reuses lesson 01's Flask application, its `/healthz` endpoint, and its `POST /orders` queue endpoint.
 - **Redis** provides cache state, a locally persistent queue list, and worker-result counters. The initial worker uses at-most-once `BLPOP`; it is deliberately not a durable acknowledged-delivery design. A later recovery module will replace or extend it with an acknowledgement/requeue pattern.
 - **Worker** consumes queue messages and records completed work.
+- **Prometheus** scrapes API metrics for local observability practice.
 
 The system is intentionally small. Production modules add observability, delivery, policy, recovery, scale, and failure overlays without replacing this system.
 
@@ -38,6 +39,8 @@ docker compose logs gateway api worker
 docker compose exec redis redis-cli get completed_orders
 ```
 
+Prometheus UI: <http://localhost:9098>.
+
 ## Scenario Overlays
 
 | Scenario | Current consumer lessons | Learner evidence |
@@ -49,6 +52,10 @@ docker compose exec redis redis-cli get completed_orders
 | Data recovery | 27, 34 | Backup/restore decision and RPO/RTO rationale. |
 
 Detailed game days and capstone assessments are still being added. Do not treat this reference system as a production deployment template.
+
+## Service Objectives
+
+[`slo/order-flow.yml`](slo/order-flow.yml) declares the local order-flow objectives and their deliberate limitations. It is a learning policy connected to lesson 32, not a customer-facing SLA or a claim that the local Compose stack enforces production objectives.
 
 ## Clean Up
 
