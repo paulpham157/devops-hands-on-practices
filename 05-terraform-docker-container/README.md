@@ -17,6 +17,13 @@ This lesson avoids cloud resources. It still teaches the Terraform workflow: `in
 - `10-opentofu-docker-module`
 - `23-iac-cdk-cloudformation-pulumi-terraform`
 
+## Prerequisites and Entry Check
+
+- Completion of `00-docker-fundamentals` and `04-packer-docker-image`, or equivalent image/container experience.
+- Terraform and Docker installed locally.
+
+Entry check: explain the difference between `plan` and `apply`, and identify why state must not be committed.
+
 ## Initialize
 
 ```bash
@@ -66,4 +73,3 @@ terraform state show docker_container.nginx
 ```bash
 terraform destroy
 ```
-

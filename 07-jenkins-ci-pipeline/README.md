@@ -22,6 +22,13 @@ This lesson teaches:
 - `11-devsecops-container-pipeline`
 - `37-teamcity-ci-pipelines`
 
+## Prerequisites and Entry Check
+
+- Completion of `01-docker-compose-flask-redis` and `06-observability-prometheus-grafana-loki`, or equivalent container/CI basics.
+- Docker Engine with Compose; the local lab uses a privileged Docker-in-Docker sidecar.
+
+Entry check: identify one reason a CI job needs isolated credentials and one reason a pipeline should run tests before publishing an artifact.
+
 ## Why Jenkins
 
 Jenkins is an automation server. In CI/CD work, Jenkins commonly watches code changes, runs tests, builds artifacts or container images, and publishes results.
@@ -107,7 +114,7 @@ List images built by Jenkins:
 docker compose exec docker docker image ls docker-course/jenkins-sample-app
 ```
 
-Clean up:
+## Cleanup
 
 ```bash
 docker compose down --volumes

@@ -17,6 +17,13 @@ Packer is often used to build VM images such as AMIs or VirtualBox boxes. This l
 - `05-terraform-docker-container`
 - `17-language-runtime-containerization`
 
+## Prerequisites and Entry Check
+
+- Completion of `00-docker-fundamentals`, or equivalent ability to inspect and run a Docker image.
+- Packer and Docker installed locally.
+
+Entry check: explain the difference between a baked image and a running container before executing `packer build`.
+
 ## Build
 
 ```bash
@@ -59,4 +66,3 @@ docker run --rm docker-course/packer-nginx:1.0 nginx -v
 ```bash
 docker image rm docker-course/packer-nginx:1.0
 ```
-

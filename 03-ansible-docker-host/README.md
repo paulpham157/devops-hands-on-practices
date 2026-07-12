@@ -21,6 +21,13 @@ The default inventory targets the VM from `../00-docker-fundamentals/examples/la
 - `35-puppet-configuration-management`
 - `36-chef-infra-automation`
 
+## Prerequisites and Entry Check
+
+- Completion of `00-docker-fundamentals` and basic shell access to the local Vagrant lab.
+- Vagrant, a supported VM provider, Ansible, and SSH available locally.
+
+Entry check: explain why `ansible-playbook --check` is useful before changing a host, and confirm `vagrant status` is reachable.
+
 ## Start the VM
 
 ```bash
