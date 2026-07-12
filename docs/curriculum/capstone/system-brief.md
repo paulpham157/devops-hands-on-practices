@@ -1,6 +1,6 @@
 # Capstone System Brief: Order Flow
 
-You inherit the local reference order-flow system. It currently has a gateway, Flask API, Redis-backed cache and queue, one worker, and Prometheus. Its queue is deliberately at-most-once; the gateway's `X-Role` header is a simulated boundary rather than authentication.
+You inherit the local reference order-flow system. It currently has a gateway, Flask API, Redis-backed cache and queue, one worker, and optional Prometheus. Its queue uses a local processing-list acknowledgement pattern, but has no idempotency, retry limit, or poison-message policy; the gateway's `X-Role` header is a simulated boundary rather than authentication.
 
 ## Business Context
 
@@ -15,7 +15,7 @@ You inherit the local reference order-flow system. It currently has a gateway, F
 - Use the declared availability objective as a starting point, then defend changes you make.
 - Replace the simulated identity boundary with a design that has explicit trust boundaries and secret handling.
 - Support a tested backup, restore, and disaster-recovery plan with explicit RPO and RTO.
-- Provide a safe delivery and migration strategy from at-most-once queue handling to an acknowledged/retryable design.
+- Provide a safe delivery and migration strategy from the current processing-list model to an idempotent, retryable production design.
 - Keep local-first learning possible. Cloud choices may be design-only, but their operational consequences must be concrete.
 - Preserve a human-operable fallback when automation or a dependency is degraded.
 

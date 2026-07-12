@@ -31,7 +31,14 @@ for file in capacity/README.md capacity/capacity-decision-template.md capacity/c
   fi
 done
 
-sh -n "$ROOT_DIR/scripts/up.sh" "$ROOT_DIR/scripts/check.sh" "$ROOT_DIR/scripts/check-observability.sh" "$ROOT_DIR/scripts/cleanup.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/inject-redis-outage.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/recover-redis.sh" "$ROOT_DIR/dr/scripts/backup-redis.sh" "$ROOT_DIR/dr/scripts/restore-redis.sh" "$ROOT_DIR/capacity/scripts/load-orders.sh"
+for file in migration/README.md migration/migration-decision-template.md migration/scripts/requeue-processing.sh; do
+  if [ ! -f "$ROOT_DIR/$file" ]; then
+    echo "Missing migration file: $file" >&2
+    exit 1
+  fi
+done
+
+sh -n "$ROOT_DIR/scripts/up.sh" "$ROOT_DIR/scripts/check.sh" "$ROOT_DIR/scripts/check-observability.sh" "$ROOT_DIR/scripts/cleanup.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/inject-redis-outage.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/recover-redis.sh" "$ROOT_DIR/dr/scripts/backup-redis.sh" "$ROOT_DIR/dr/scripts/restore-redis.sh" "$ROOT_DIR/capacity/scripts/load-orders.sh" "$ROOT_DIR/migration/scripts/requeue-processing.sh"
 
 if command -v docker >/dev/null 2>&1; then
   (cd "$ROOT_DIR" && docker compose config >/dev/null)

@@ -33,13 +33,12 @@ services:
       - -ec
       - |
         while true; do
-          redis-cli -h redis --raw BLPOP order_queue 0 | {
-            read -r queue || exit 0
-            read -r order || exit 0
-            redis-cli -h redis INCR completed_orders >/dev/null
-            redis-cli -h redis LPUSH processed_order_ids "$${order}" >/dev/null
-            echo "processed $${order}"
-          }
+          order=$$(redis-cli -h redis --raw BRPOPLPUSH order_queue processing_orders 0)
+          [ -n "$${order}" ] || continue
+          redis-cli -h redis INCR completed_orders >/dev/null
+          redis-cli -h redis LPUSH processed_order_ids "$${order}" >/dev/null
+          redis-cli -h redis LREM processing_orders 1 "$${order}" >/dev/null
+          echo "processed $${order}"
         done
     depends_on:
       redis:

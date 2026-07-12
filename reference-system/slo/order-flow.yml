@@ -13,4 +13,4 @@ objectives:
     indicator: correlated order ID appears in processed_order_ids
     target: 99.0
     error_budget_percent: 1.0
-    limitation: The initial BLPOP worker is at-most-once and is intentionally unsuitable for a durability SLO.
+    limitation: The processing-list worker has no idempotency, automatic retry, or poison-message policy and is intentionally unsuitable for a production durability SLO.

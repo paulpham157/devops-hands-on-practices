@@ -10,7 +10,7 @@ client -> gateway -> order API -> Redis cache / order queue -> worker
 
 - **Gateway** is a deliberately small identity boundary: it requires an `X-Role` request header before forwarding traffic. It demonstrates a boundary only; it is not real authentication or authorization.
 - **Order API** reuses lesson 01's Flask application, its `/healthz` endpoint, and its `POST /orders` queue endpoint.
-- **Redis** provides cache state, a locally persistent queue list, and worker-result counters. It uses explicit snapshot backup/restore for the local DR drill. The initial worker uses at-most-once `BLPOP`; it is deliberately not a durable acknowledged-delivery design. A later recovery module will replace or extend it with an acknowledgement/requeue pattern.
+- **Redis** provides cache state, a locally persistent queue list, and worker-result counters. It uses explicit snapshot backup/restore for the local DR drill. The worker uses a processing-list acknowledgement pattern with a local requeue helper; it remains a simplified learning model, not a complete production queue.
 - **Worker** consumes queue messages and records completed work.
 - **Prometheus** scrapes API metrics for local observability practice.
 
@@ -63,6 +63,8 @@ Detailed game days and capstone assessments are still being added. Do not treat 
 The first runnable scenario is [Game Day 01: Redis Dependency Outage](game-days/01-redis-dependency-outage/README.md). It is a production-owner preparation exercise, not a certification.
 
 For performance and FinOps reasoning, use the [capacity and cost exercise](capacity/README.md). It uses bounded local load only and requires explicit assumptions rather than claiming a production capacity number.
+
+For delivery semantics and rollback reasoning, use the [queue migration exercise](migration/README.md).
 
 ## Service Objectives
 

@@ -1,6 +1,6 @@
 # Capacity and Cost Exercise
 
-This production-owner exercise connects a small local load test to capacity and cost decisions. It does not generate a production capacity number: laptop resources, Docker settings, and the at-most-once worker make that impossible. Its purpose is to form and test a measurable hypothesis.
+This production-owner exercise connects a small local load test to capacity and cost decisions. It does not generate a production capacity number: laptop resources, Docker settings, and the simplified worker make that impossible. Its purpose is to form and test a measurable hypothesis.
 
 ## Prerequisites
 

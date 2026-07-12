@@ -25,4 +25,16 @@ if [ "$attempt" -eq 10 ]; then
   exit 1
 fi
 
-echo "Reference-system check passed: worker processed $order_id."
+attempt=0
+while [ "$attempt" -lt 10 ]; do
+  processing=$(docker compose exec -T redis redis-cli LLEN processing_orders | tr -d '\r')
+  if [ "$processing" = "0" ]; then
+    echo "Reference-system check passed: worker processed $order_id and acknowledged its processing entry."
+    exit 0
+  fi
+  attempt=$((attempt + 1))
+  sleep 1
+done
+
+echo "Worker processed $order_id but did not acknowledge the processing entry." >&2
+exit 1

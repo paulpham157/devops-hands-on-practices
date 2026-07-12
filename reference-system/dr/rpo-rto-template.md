@@ -23,6 +23,6 @@
 
 ## Known Limitations
 
-- The local reference worker is at-most-once and can lose an order after pop.
+- The local reference worker needs manual requeue after an interrupted processing-list entry and has no idempotency guarantee.
 - The drill uses one local Docker volume, not a regional/facility failure.
 - Backup files are unencrypted local artifacts and must never contain real data.
