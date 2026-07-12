@@ -23,6 +23,13 @@ Run a small Flask app and a Redis service together with Docker Compose. The app 
 - `app/requirements.txt`: Python dependencies.
 - `app/templates/index.html`: simple response page.
 
+## Prerequisites and Entry Check
+
+- Docker Engine with `docker compose`.
+- Completion of `00-docker-fundamentals`, or equivalent evidence that you can build and run a Docker image.
+
+Entry check: explain what a service, network, volume, and health check do in a Compose file before starting the lab.
+
 ## Run
 
 ```bash

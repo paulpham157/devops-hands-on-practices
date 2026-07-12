@@ -67,6 +67,13 @@ exercises/         structured hands-on practice
 
 Both services expose a small product catalog use case.
 
+## Prerequisites and Entry Check
+
+- Completion of `01-docker-compose-flask-redis` and `17-language-runtime-containerization`, or equivalent HTTP/container experience.
+- Docker Engine with `docker compose` for the local protocol examples.
+
+Entry check: explain the difference between a synchronous request/response call and an asynchronous event, including one failure mode for each.
+
 ## Run
 
 Start both services:
@@ -220,6 +227,14 @@ exercises/README.md
 The exercises cover protocol comparison, contracts, REST, gRPC, WebSocket, SSE, AsyncAPI, protocol selection, versioning, security, and observability.
 
 The AsyncAPI example uses specification version `3.1.0`, which is the current minor release in the AsyncAPI 3 line.
+
+## Cleanup
+
+```bash
+docker compose down --remove-orphans
+```
+
+Remove generated local client/build output only if the lesson commands created it; do not delete contract source files.
 
 ## References
 

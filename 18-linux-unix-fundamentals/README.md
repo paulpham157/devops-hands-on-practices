@@ -61,6 +61,13 @@ sandbox/           generated practice files, ignored by git
 
 Alpine is intentionally included because many container images are minimal. Some commands and flags available on Ubuntu may not exist in Alpine.
 
+## Prerequisites and Entry Check
+
+- A terminal on Linux, macOS, or WSL.
+- Docker Engine with `docker compose` for the optional isolated lab container.
+
+Entry check: run `pwd`, `ls`, and `echo "$SHELL"`; know which directory you are working in before continuing.
+
 ## Run
 
 Start the lab containers:
@@ -254,6 +261,16 @@ exercises/README.md
 
 The exercises cover Linux vs Unix, filesystem navigation, permissions, processes, text pipelines, shell script safety, network checks, and troubleshooting inside a container-like Linux environment.
 
+## Cleanup
+
+If you started the optional Compose environment, remove it with:
+
+```bash
+docker compose down --remove-orphans
+```
+
+Do not delete host files outside the lesson directory as part of this lab.
+
 ## References
 
 - The Open Group Base Specifications: https://pubs.opengroup.org/onlinepubs/9699919799/
@@ -262,4 +279,3 @@ The exercises cover Linux vs Unix, filesystem navigation, permissions, processes
 - Filesystem Hierarchy Standard: https://refspecs.linuxfoundation.org/fhs.shtml
 - GNU Coreutils manual: https://www.gnu.org/software/coreutils/manual/
 - Bash manual: https://www.gnu.org/software/bash/manual/
-

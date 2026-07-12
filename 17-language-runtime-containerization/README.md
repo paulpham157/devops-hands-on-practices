@@ -73,6 +73,13 @@ GET /healthz
 GET /work
 ```
 
+## Prerequisites and Entry Check
+
+- Completion of `00-docker-fundamentals` and `01-docker-compose-flask-redis`, or equivalent container evidence.
+- Docker Engine with `docker compose` for the optional runtime builds.
+
+Entry check: identify the difference between a build image and a runtime image, and explain why a container should normally run as a non-root user.
+
 ## Run
 
 Build one image:
@@ -149,6 +156,18 @@ exercises/README.md
 
 The exercises cover runtime comparison, Dockerfile reading, image builds, HTTP smoke tests, cache optimization, image-size thinking, and language selection tradeoffs.
 
+## Cleanup
+
+```bash
+docker compose down --remove-orphans
+```
+
+Remove locally built images only when you no longer need them for comparison:
+
+```bash
+docker image prune
+```
+
 ## References
 
 - Python documentation: https://docs.python.org/3/
@@ -157,4 +176,3 @@ The exercises cover runtime comparison, Dockerfile reading, image builds, HTTP s
 - Go documentation: https://go.dev/doc/
 - Rust book: https://doc.rust-lang.org/book/
 - Dockerfile reference: https://docs.docker.com/reference/dockerfile/
-

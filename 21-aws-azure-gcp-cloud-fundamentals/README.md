@@ -78,6 +78,13 @@ High-level examples:
 | Secrets | Secrets Manager / Parameter Store | Key Vault | Secret Manager |
 | Monitoring | CloudWatch | Azure Monitor | Cloud Monitoring |
 
+## Prerequisites and Entry Check
+
+- Completion of `20-application-protocols-microservices`, or equivalent ability to describe a web application and its dependencies.
+- No cloud account is required for the core comparison and design exercises.
+
+Entry check: name a compute, storage, network, and identity concern for a simple web application without selecting a provider yet.
+
 ## CLI Orientation
 
 | Provider | CLI | Login Command |
@@ -175,6 +182,10 @@ exercises/README.md
 ```
 
 The exercises cover provider comparison, resource hierarchy, service mapping, managed service selection, IAM, networking, CLI/tagging practice, cost, reliability, and migration tradeoffs.
+
+## Cleanup
+
+The core lesson is reading/design-first and creates no required cloud resources. If you ran optional CLIs, remove only the local profiles, test projects, or temporary files you created; never delete an unfamiliar cloud resource as cleanup.
 
 ## References
 
