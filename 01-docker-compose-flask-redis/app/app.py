@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from redis import Redis
 
 
@@ -25,8 +25,18 @@ def healthz():
     return {"status": "ok"}
 
 
+@app.post("/orders")
+def create_order():
+    payload = request.get_json(silent=True) or {}
+    order_id = payload.get("id")
+    if not isinstance(order_id, str) or not order_id.strip():
+        return {"error": "JSON field 'id' must be a non-empty string"}, 400
+
+    redis_client.lpush("order_queue", order_id)
+    return {"status": "queued", "id": order_id}, 202
+
+
 if __name__ == "__main__":
     host = os.environ.get("FLASK_HOST", "127.0.0.1")
     port = int(os.environ.get("FLASK_PORT", "5000"))
     app.run(host=host, port=port)
-

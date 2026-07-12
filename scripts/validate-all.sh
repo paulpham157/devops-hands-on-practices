@@ -4,6 +4,7 @@ set -eu
 ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 
 "$ROOT_DIR/scripts/validate-curriculum.sh"
+(cd "$ROOT_DIR/reference-system" && ./scripts/validate.sh)
 
 for script in "$ROOT_DIR"/[0-9][0-9]-*/scripts/validate.sh; do
   [ -f "$script" ] || continue

@@ -47,6 +47,18 @@ docker compose exec redis redis-cli ping
 docker compose exec redis redis-cli get page_hits
 ```
 
+## Optional Queue Endpoint
+
+The reference system introduced for advanced lessons reuses this app's order endpoint. You do not need it for the core Compose lesson, but you can queue a local demo order with:
+
+```bash
+curl --request POST http://localhost:5001/orders \
+  --header 'Content-Type: application/json' \
+  --data '{"id":"demo-order"}'
+```
+
+This only adds an item to Redis list `order_queue`; it does not create a durable acknowledged delivery workflow. The reference system adds a worker to consume it.
+
 ## Practice Tasks
 
 1. Change the host port from `5001` to `8081`.
@@ -66,4 +78,3 @@ Use this when you also want to remove volumes:
 ```bash
 docker compose down --volumes
 ```
-
