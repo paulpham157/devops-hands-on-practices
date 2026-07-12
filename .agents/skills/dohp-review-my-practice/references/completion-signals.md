@@ -14,6 +14,8 @@ Prefer evidence in this order:
 
 The lower the evidence quality, the more careful the verdict should be.
 
+For a game day, an HTTP 200 after recovery is insufficient by itself. Require an incident timeline, impact evidence, mitigation rationale, recovery verification, and follow-up ownership. For a capstone, require artifact-linked rubric evidence and a second reviewer; a pass demonstrates curriculum-level production judgment only.
+
 ## Acceptance Questions
 
 Ask:

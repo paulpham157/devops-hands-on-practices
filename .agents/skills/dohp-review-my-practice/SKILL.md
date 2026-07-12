@@ -16,6 +16,8 @@ Review against the repository artifacts first:
 - exercise `problem/readme.md`
 - exercise `solution/readme.md`
 - `scripts/validate.sh` or other lesson-local checks
+- reference-system scenario brief, incident evidence, and rubric when reviewing a game day
+- capstone brief, required artifacts, rubric, and defense protocol when reviewing a capstone pilot
 
 ## Review Workflow
 
@@ -73,6 +75,12 @@ Always end with one of these:
 - patch one concrete file or manifest
 - attempt the next exercise
 
+### 6. Review production evidence without inventing certification
+
+For a reference-system game day, review the learner's timeline, real request/log/metric evidence, mitigation decision, recovery verification, SLO interpretation, and blameless follow-up. Do not open `facilitator-notes.md` before an attempt unless the learner explicitly asks for the solution path.
+
+For a capstone pilot, use `docs/curriculum/capstone/rubric.md`. Require artifact links for every score, distinguish a bounded uncertainty from unsupported certainty, and note disagreements that need a second reviewer. A capstone review may say the learner demonstrated curriculum-level production judgment; it must never claim that they earned a workplace senior title.
+
 ## Review Rules
 
 - Default to a code-review mindset: findings first, summary second.
@@ -100,6 +108,7 @@ Use bundled scripts when a deterministic review scaffold is useful:
 
 - `scripts/review_checklist.py <lesson-or-exercise-path>` prints a review checklist grounded in the target lesson or exercise.
 - `scripts/extract_completion_rule.py <exercise-path>` extracts explicit completion rules from an exercise problem file when present.
+- `scripts/review_checklist.py <target>` also recognizes reference-system game-day and capstone directories.
 
 ## Read These References When Needed
 
