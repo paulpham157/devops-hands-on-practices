@@ -66,7 +66,7 @@ scripts/             Traffic generation, Jaeger query, and validation helpers
 exercises/           Structured hands-on practice
 ```
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Install:
 
@@ -78,6 +78,8 @@ Optional:
 - `curl`
 - `jq`
 - Datadog account and API key, only for the optional Datadog export path
+
+Entry check: identify a trace, span, and resource attribute, and explain why an API key cannot be committed to an exporter configuration.
 
 ## Run Local Tracing
 
@@ -224,6 +226,14 @@ exercises/README.md
 ```
 
 The exercises cover OTel pipeline reading, span instrumentation, local Jaeger tracing, slow request debugging, Datadog exporter mapping, and safe production export design.
+
+## Cleanup
+
+```bash
+docker compose down --remove-orphans
+```
+
+Remove local telemetry volumes only when you intentionally want to discard the lab traces. Keep any real Datadog API key outside the repository.
 
 ## References
 

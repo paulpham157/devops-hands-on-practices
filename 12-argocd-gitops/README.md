@@ -75,7 +75,7 @@ argocd/
 
 The `gitops-repo` directory is intentionally shaped like a small real GitOps repository. Argo CD should read from Git, not from your local filesystem.
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Install:
 
@@ -91,6 +91,8 @@ docker version
 kubectl version --client
 k3d version
 ```
+
+Entry check: explain why GitOps controllers pull desired state rather than accepting direct CI credentials to a cluster.
 
 ## Fast Local Validation
 

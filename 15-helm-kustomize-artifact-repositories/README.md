@@ -69,7 +69,7 @@ reports/                         Generated rendered YAML, ignored by git
 artifacts/                       Generated packaged charts, ignored by git
 ```
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Install:
 
@@ -83,6 +83,8 @@ Check:
 kubectl version --client
 helm version
 ```
+
+Entry check: explain the difference between rendering a Helm chart, applying a Kustomize overlay, and publishing an immutable artifact.
 
 ## Render the Helm Chart
 
@@ -207,6 +209,14 @@ exercises/README.md
 ```
 
 The exercises cover chart structure, rendering, packaging, overlays, choosing Helm vs Kustomize, combining tools safely, repository modes, and publishing to Nexus or Artifactory.
+
+## Cleanup
+
+```bash
+rm -rf reports/ artifacts/
+```
+
+These paths contain generated lesson output. Do not remove chart, Kustomize, or repository source files.
 
 ## References
 

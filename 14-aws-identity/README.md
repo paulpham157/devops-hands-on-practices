@@ -26,6 +26,13 @@ This lesson teaches:
 - `21-aws-azure-gcp-cloud-fundamentals`
 - `22-serverless-functions-platforms`
 
+## Prerequisites and Entry Check
+
+- Completion of `13-vaults-and-secrets-managers`, or equivalent ability to distinguish human, workload, and application identities.
+- No AWS account is required for the local policy-reading exercises.
+
+Entry check: explain why a short-lived role is normally safer than a long-lived access key for a workload.
+
 ## Why AWS Identity Matters
 
 Most AWS security incidents are not caused by a missing firewall rule. They are often caused by credentials that are too powerful, too long-lived, exposed in logs or Git, or attached to the wrong identity.
@@ -183,6 +190,10 @@ exercises/README.md
 ```
 
 The exercises cover identity classification, human vs workload access, identity policies, trust policies, STS, Identity Center, SCPs, and Cognito.
+
+## Cleanup
+
+The core policy exercises create no cloud resources. If you created optional local files, remove only those test artifacts. Do not delete an IAM principal, policy, or account resource as a generic cleanup action.
 
 ## References
 

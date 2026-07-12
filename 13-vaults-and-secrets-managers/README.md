@@ -65,7 +65,7 @@ Generated local files       ignored by git
 
 The lab uses Vault dev mode only for learning and local automation practice. Vault dev mode starts unsealed with a known root token and in-memory storage, so do not use it in production.
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Install:
 
@@ -79,6 +79,8 @@ Check:
 docker version
 docker compose version
 ```
+
+Entry check: distinguish a secret from ordinary configuration, and state why the known Vault dev token must never be used outside this local lab.
 
 ## Run Vault Locally
 
