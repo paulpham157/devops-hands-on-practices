@@ -6,6 +6,7 @@ This directory is the source of truth for the curriculum redesign described in [
 
 - [Competency matrix](competency-matrix.md): skills, proficiency levels, evidence, current coverage, and gaps.
 - [Lesson inventory](lesson-inventory.md): current lesson disposition and redesign destination.
+- [Lesson metadata manifest](lesson-metadata.tsv): per-lesson owner, level, competency codes, and evidence paths used by validation.
 - [Legacy migration](legacy-migration.md): how existing learner progress maps to the redesigned paths.
 - [Workstream register](workstream-register.md): ownership, dependencies, delivery checks, and rough sizing.
 - [Senior production capstone](capstone/README.md): public brief, artifact contract, rubric, and defense protocol for pilot use.

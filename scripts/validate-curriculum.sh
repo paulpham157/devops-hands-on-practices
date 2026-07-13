@@ -8,6 +8,7 @@ required_files="
 README.md
 competency-matrix.md
 lesson-inventory.md
+lesson-metadata.tsv
 legacy-migration.md
 workstream-register.md
 templates/lesson-contract.md
@@ -55,9 +56,29 @@ done
 
 lesson_count=$(find "$ROOT_DIR" -maxdepth 1 -type d -name '[0-9][0-9]-*' | wc -l | tr -d ' ')
 inventory_count=$(awk '/^\| [0-9][0-9] \|/ { count += 1 } END { print count + 0 }' "$CURRICULUM_DIR/lesson-inventory.md")
+metadata_count=$(awk -F '\t' 'NR > 1 && $1 != "" { count += 1 } END { print count + 0 }' "$CURRICULUM_DIR/lesson-metadata.tsv")
 
 if [ "$lesson_count" -ne "$inventory_count" ]; then
   echo "Lesson inventory has $inventory_count rows, but repository has $lesson_count numbered lessons." >&2
+  exit 1
+fi
+
+if [ "$lesson_count" -ne "$metadata_count" ]; then
+  echo "Lesson metadata has $metadata_count rows, but repository has $lesson_count numbered lessons." >&2
+  exit 1
+fi
+
+metadata_header=$(head -n 1 "$CURRICULUM_DIR/lesson-metadata.tsv")
+expected_metadata_header=$(printf 'lesson\towner\tlevel\tcompetencies\tevidence')
+if [ "$metadata_header" != "$expected_metadata_header" ]; then
+  echo "Lesson metadata header is invalid." >&2
+  exit 1
+fi
+
+if awk -F '\t' 'NR > 1 && ($1 == "" || $2 == "" || $3 == "" || $4 == "" || $5 == "") { bad = 1 } END { exit bad }' "$CURRICULUM_DIR/lesson-metadata.tsv"; then
+  :
+else
+  echo "Lesson metadata contains an empty required field." >&2
   exit 1
 fi
 
@@ -65,6 +86,10 @@ for lesson_dir in "$ROOT_DIR"/[0-9][0-9]-*; do
   lesson=$(basename "$lesson_dir" | cut -d- -f1)
   if ! grep -q "^| $lesson |" "$CURRICULUM_DIR/lesson-inventory.md"; then
     echo "Lesson $lesson is missing from docs/curriculum/lesson-inventory.md" >&2
+    exit 1
+  fi
+  if ! awk -F '\t' -v lesson="$(basename "$lesson_dir")" 'NR > 1 && $1 == lesson { found = 1 } END { exit !found }' "$CURRICULUM_DIR/lesson-metadata.tsv"; then
+    echo "Lesson $lesson is missing from docs/curriculum/lesson-metadata.tsv" >&2
     exit 1
   fi
 
