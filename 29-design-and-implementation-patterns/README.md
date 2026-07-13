@@ -25,6 +25,13 @@ No cloud account is required for the core exercises.
 - `30-network-patterns`
 - `31-backend-for-frontend`
 
+## Prerequisites and Entry Check
+
+- Completion of `27-data-management` and `28-availability-patterns`, or equivalent distributed-design experience.
+- No cloud account is required for the core pattern maps and scenarios.
+
+Entry check: name one change boundary, one ownership boundary, and one rollback concern for a legacy integration.
+
 ## Mental Model
 
 ```text
@@ -148,10 +155,13 @@ exercises/README.md
 
 The exercises cover pattern selection, domain boundaries, Strangler Fig migration, ACL translation, Sidecar responsibilities, ownership, and production tradeoffs.
 
+## Cleanup
+
+The core exercises use design artifacts and example manifests. Remove only generated reports or disposable local resources created during the exercise.
+
 ## References
 
 - Azure Architecture Center Strangler Fig pattern: https://learn.microsoft.com/azure/architecture/patterns/strangler-fig
 - Azure Architecture Center Sidecar pattern: https://learn.microsoft.com/azure/architecture/patterns/sidecar
 - Azure Architecture Center Anti-Corruption Layer pattern: https://learn.microsoft.com/azure/architecture/patterns/anti-corruption-layer
 - Martin Fowler Anti-Corruption Layer: https://martinfowler.com/bliki/AntiCorruptionLayer.html
-

@@ -26,6 +26,13 @@ No cloud account is required for the core exercises.
 - `16-opentelemetry-jaeger-datadog`
 - `28-availability-patterns`
 
+## Prerequisites and Entry Check
+
+- Completion of `06-observability-prometheus-grafana-loki`, `16-opentelemetry-jaeger-datadog`, and `28-availability-patterns`, or equivalent telemetry/reliability experience.
+- No cloud account is required for the core SLI/SLO policy exercises.
+
+Entry check: name one user journey, its good event, target window, and the operational decision an exhausted error budget should trigger.
+
 ## Mental Model
 
 ```text
@@ -141,10 +148,13 @@ exercises/README.md
 
 The exercises cover core definitions, good-event thinking, SLI design, error budgets, burn-rate policy, internal versus external commitments, and choosing practical objectives.
 
+## Cleanup
+
+The core lesson uses policy files and example data only. Remove generated reports or local dashboards created during the exercise; do not change a real customer SLA as a cleanup action.
+
 ## References
 
 - Google SRE workbook on SLOs: https://sre.google/workbook/implementing-slos/
 - Google Cloud service level objectives: https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
 - Google SRE book: https://sre.google/sre-book/service-level-objectives/
 - Datadog SLO guide: https://www.datadoghq.com/knowledge-center/slo/
-

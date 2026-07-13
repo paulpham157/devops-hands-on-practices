@@ -26,6 +26,13 @@ No cloud account is required for the core exercises.
 - `29-design-and-implementation-patterns`
 - `30-network-patterns`
 
+## Prerequisites and Entry Check
+
+- Completion of `20-application-protocols-microservices` and `30-network-patterns`, or equivalent API/gateway experience.
+- No cloud account is required for the core response-shape and scenario exercises.
+
+Entry check: explain when a BFF creates a useful ownership boundary and when it becomes a shared orchestration monolith.
+
 ## Mental Model
 
 ```text
@@ -144,9 +151,12 @@ exercises/README.md
 
 The exercises cover BFF motivation, BFF versus gateway, client-specific response shaping, ownership boundaries, caching and observability, and deciding when BFF is justified.
 
+## Cleanup
+
+The core exercises use example response files and design artifacts. Remove only generated local output; do not delete shared API contracts or source examples.
+
 ## References
 
 - Azure Backends for Frontends pattern: https://learn.microsoft.com/azure/architecture/patterns/backends-for-frontends
 - Sam Newman on BFF: https://samnewman.io/patterns/architectural/bff/
 - Microsoft architecture patterns index: https://learn.microsoft.com/azure/architecture/patterns/
-

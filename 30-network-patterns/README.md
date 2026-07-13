@@ -27,6 +27,13 @@ No cloud account is required for the core exercises.
 - `26-service-mesh`
 - `31-backend-for-frontend`
 
+## Prerequisites and Entry Check
+
+- Completion of `19-redis-caching-load-balancing` and `26-service-mesh`, or equivalent HTTP/network-boundary experience.
+- No cloud account is required for the core pattern maps and scenarios.
+
+Entry check: draw one request path with ingress, egress, trust boundary, and the component responsible for authorization.
+
 ## Mental Model
 
 ```text
@@ -152,6 +159,10 @@ exercises/README.md
 
 The exercises cover pattern purpose, ingress and egress boundaries, gateway responsibilities, gatekeeping, ambassador usage, valet key flow, static delivery, and pattern selection.
 
+## Cleanup
+
+The core exercises use manifests and design files. Remove only generated reports or resources applied to a disposable local environment; verify the target before deleting anything.
+
 ## References
 
 - Azure Architecture Center patterns: https://learn.microsoft.com/azure/architecture/patterns/
@@ -163,4 +174,3 @@ The exercises cover pattern purpose, ingress and egress boundaries, gateway resp
 - Azure Static Content Hosting pattern: https://learn.microsoft.com/azure/architecture/patterns/static-content-hosting
 - Azure Valet Key pattern: https://learn.microsoft.com/azure/architecture/patterns/valet-key
 - Azure Backends for Frontends pattern: https://learn.microsoft.com/azure/architecture/patterns/backends-for-frontends
-
