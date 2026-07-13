@@ -11,6 +11,7 @@ This directory is the source of truth for the curriculum redesign described in [
 - [Workstream register](workstream-register.md): ownership, dependencies, delivery checks, and rough sizing.
 - [Senior production capstone](capstone/README.md): public brief, artifact contract, rubric, and defense protocol for pilot use.
 - [Assessment rubrics](assessments/level-exit-rubrics.md): diagnostic and level exit evidence thresholds.
+- [Learner personas](personas.md): routing assumptions and level boundaries.
 - [Lesson contract template](templates/lesson-contract.md): required shape for new or substantially rewritten lessons.
 
 ## Redesign Boundaries

@@ -22,6 +22,7 @@ capstone/design-defense.md
 capstone/pilot-calibration.md
 assessments/README.md
 assessments/level-exit-rubrics.md
+personas.md
 "
 
 for file in $required_files; do
