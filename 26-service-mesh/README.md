@@ -27,6 +27,13 @@ No Kubernetes cluster is required for the core exercises.
 - `25-openshift-gke-eks-aks-ecs-fargate`
 - `30-network-patterns`
 
+## Prerequisites and Entry Check
+
+- Completion of `09-k3s-local-cluster`, `16-opentelemetry-jaeger-datadog`, and `25-openshift-gke-eks-aks-ecs-fargate`, or equivalent platform/telemetry experience.
+- No Kubernetes cluster is required for the core manifests and design exercises.
+
+Entry check: distinguish edge traffic from east-west traffic, and name one operational cost a mesh introduces.
+
 ## Mental Model
 
 ```text
@@ -150,6 +157,10 @@ exercises/README.md
 ```
 
 The exercises cover mesh fundamentals, control plane and data plane roles, Istio traffic policy, mTLS and authorization, comparing Istio, Linkerd, and Consul, sidecar tradeoffs, observability, failure handling, and platform selection.
+
+## Cleanup
+
+The core exercises render manifests and create no required cluster resources. If you applied a mesh to a disposable cluster, remove only the resources documented by that lab and verify the cluster is clean.
 
 ## References
 

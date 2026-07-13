@@ -34,6 +34,13 @@ No cloud account is required for the core exercises.
 - `21-aws-azure-gcp-cloud-fundamentals`
 - `38-openstack-private-cloud`
 
+## Prerequisites and Entry Check
+
+- Completion of `09-k3s-local-cluster` and `21-aws-azure-gcp-cloud-fundamentals`, or equivalent Kubernetes/cloud platform experience.
+- No provider account is required for the comparison and design exercises.
+
+Entry check: explain which control-plane responsibilities your team owns in a self-managed cluster versus a managed platform.
+
 ## Mental Model
 
 ```text
@@ -149,6 +156,10 @@ exercises/README.md
 ```
 
 The exercises cover platform groups, workload models, OpenShift features, differences across GKE/EKS/AKS, workload portability, ECS/Fargate task design, identity and networking choices, and platform selection.
+
+## Cleanup
+
+The core lesson is comparison/design-first and creates no required cloud resources. Remove only local manifests, rendered files, or disposable clusters you intentionally created; identify the exact resource before any provider deletion.
 
 ## References
 

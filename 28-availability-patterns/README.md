@@ -27,6 +27,13 @@ No cloud account is required for the core exercises.
 - `30-network-patterns`
 - `32-sla-sli-slo`
 
+## Prerequisites and Entry Check
+
+- Completion of `19-redis-caching-load-balancing` and `27-data-management`, or equivalent availability and distributed-data experience.
+- Docker is optional for the core pattern maps and scenario exercises.
+
+Entry check: distinguish liveness, readiness, and deeper dependency health; state one safe degradation for a critical user journey.
+
 ## Mental Model
 
 ```text
@@ -156,6 +163,10 @@ exercises/README.md
 
 The exercises cover availability goals, health checks, queue load leveling, throttling, graceful degradation, overload risks, alerting, and pattern selection.
 
+## Cleanup
+
+The core exercises use local files and scenario artifacts. If you started a temporary Compose or cluster environment, run that lesson's cleanup command and verify no temporary resource remains.
+
 ## References
 
 - Azure Architecture Center health endpoint monitoring pattern: https://learn.microsoft.com/azure/architecture/patterns/health-endpoint-monitoring
@@ -163,4 +174,3 @@ The exercises cover availability goals, health checks, queue load leveling, thro
 - Azure Architecture Center throttling pattern: https://learn.microsoft.com/azure/architecture/patterns/throttling
 - Google Cloud Architecture reliability: https://cloud.google.com/architecture/framework/reliability
 - AWS Well-Architected reliability pillar: https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html
-

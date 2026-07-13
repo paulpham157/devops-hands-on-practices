@@ -28,6 +28,13 @@ No cloud account is required for the core exercises.
 - `29-design-and-implementation-patterns`
 - `34-data-pipeline`
 
+## Prerequisites and Entry Check
+
+- Completion of `20-application-protocols-microservices` and `26-service-mesh`, or equivalent distributed-system communication experience.
+- No cloud account is required for the core pattern and scenario exercises.
+
+Entry check: state the source of truth, consistency expectation, and failure recovery boundary for one cross-service write.
+
 ## Mental Model
 
 ```text
@@ -160,6 +167,10 @@ exercises/README.md
 
 The exercises cover consistency, database-per-service, partitioning, CQRS, event sourcing, saga compensation, synchronization, idempotency, and pattern selection.
 
+## Cleanup
+
+The core exercises use example data and design artifacts. Remove only generated reports or local test data created during the exercises; do not delete a real database or shared dataset as cleanup.
+
 ## References
 
 - Azure Architecture Center CQRS pattern: https://learn.microsoft.com/azure/architecture/patterns/cqrs
@@ -169,4 +180,3 @@ The exercises cover consistency, database-per-service, partitioning, CQRS, event
 - AWS Prescriptive Guidance saga orchestration pattern: https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-orchestration.html
 - Google Cloud Architecture distributed systems: https://cloud.google.com/architecture
 - Martin Fowler CQRS: https://martinfowler.com/bliki/CQRS.html
-
