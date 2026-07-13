@@ -119,6 +119,13 @@ for lesson_dir in "$ROOT_DIR"/[0-9][0-9]-*; do
     echo "Lesson $lesson is missing the standard exercises or validator path." >&2
     exit 1
   fi
+  explainer_count=$(find "$lesson_dir/exercises" -path '*/explainer/readme.md' -type f | wc -l | tr -d ' ')
+  problem_count=$(find "$lesson_dir/exercises" -path '*/problem/readme.md' -type f | wc -l | tr -d ' ')
+  solution_count=$(find "$lesson_dir/exercises" -path '*/solution/readme.md' -type f | wc -l | tr -d ' ')
+  if [ "$explainer_count" -ne "$problem_count" ] || [ "$problem_count" -ne "$solution_count" ]; then
+    echo "Lesson $lesson has unpaired explainer/problem/solution exercise files." >&2
+    exit 1
+  fi
 
   lesson_readme="$lesson_dir/README.md"
   if ! grep -q '^## Prerequisites and Entry Check' "$lesson_readme"; then
