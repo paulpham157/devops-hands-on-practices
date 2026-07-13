@@ -11,6 +11,7 @@ Use this checklist before a manual editorial release. A green repository validat
 - [ ] At least two game days are reviewable with learner evidence and rubrics.
 - [ ] Production modules cover incident, capacity/cost, recovery, migration, policy, and platform decisions.
 - [ ] Capstone pilot has at least three anonymized calibration records and reviewer disagreement notes.
+- [ ] `./scripts/validate-capstone-pilot.sh` passes.
 - [ ] Legacy-to-new resume mapping has been updated for any changed path or lesson.
 - [ ] No credentials, real secrets, private learner data, or generated backup/scanner output are committed.
 - [ ] Curated learner-facing release notes exist under the editorial release workflow.

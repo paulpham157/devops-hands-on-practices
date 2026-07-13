@@ -43,6 +43,9 @@ jobs:
       - name: Run curriculum validation
         run: ./scripts/validate-all.sh
 
+      - name: Require capstone pilot calibration
+        run: ./scripts/validate-capstone-pilot.sh
+
       - name: Create draft GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
