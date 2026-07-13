@@ -68,6 +68,8 @@ For performance and FinOps reasoning, use the [capacity and cost exercise](capac
 
 For delivery semantics and rollback reasoning, use the [queue migration exercise](migration/README.md).
 
+For provider-neutral guardrails and platform-product design, use the [policy-as-code exercise](policy/README.md) and [platform golden-path exercise](platform/README.md).
+
 ## Service Objectives
 
 [`slo/order-flow.yml`](slo/order-flow.yml) declares the local order-flow objectives and their deliberate limitations. It is a learning policy connected to lesson 32, not a customer-facing SLA or a claim that the local Compose stack enforces production objectives.

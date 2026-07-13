@@ -45,6 +45,16 @@ for file in migration/README.md migration/migration-decision-template.md migrati
   fi
 done
 
+for file in policy/README.md policy/input.json policy/validate_policy.py platform/README.md platform/platform-metrics-template.md; do
+  if [ ! -f "$ROOT_DIR/$file" ]; then
+    echo "Missing policy/platform file: $file" >&2
+    exit 1
+  fi
+done
+
+python3 "$ROOT_DIR/policy/validate_policy.py" "$ROOT_DIR/policy/input.json" >/dev/null
+python3 -m py_compile "$ROOT_DIR/policy/validate_policy.py"
+
 sh -n "$ROOT_DIR/scripts/up.sh" "$ROOT_DIR/scripts/check.sh" "$ROOT_DIR/scripts/check-observability.sh" "$ROOT_DIR/scripts/cleanup.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/inject-redis-outage.sh" "$ROOT_DIR/game-days/01-redis-dependency-outage/scripts/recover-redis.sh" "$ROOT_DIR/game-days/02-worker-interruption/scripts/inject-worker-interruption.sh" "$ROOT_DIR/game-days/02-worker-interruption/scripts/recover-worker.sh" "$ROOT_DIR/dr/scripts/backup-redis.sh" "$ROOT_DIR/dr/scripts/restore-redis.sh" "$ROOT_DIR/capacity/scripts/load-orders.sh" "$ROOT_DIR/migration/scripts/requeue-processing.sh"
 
 if command -v docker >/dev/null 2>&1; then

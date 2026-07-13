@@ -1,0 +1,11 @@
+{
+  "service": "reference-order-flow",
+  "owner": "platform-curriculum",
+  "slo_ref": "slo/order-flow.yml",
+  "budget_monthly_usd": 1500,
+  "runtime": {
+    "run_as_non_root": true,
+    "network_policy": true,
+    "image": "reference-order-api:2026-07-13"
+  }
+}
