@@ -24,6 +24,7 @@ capstone/pilot-plan.md
 assessments/README.md
 assessments/level-exit-rubrics.md
 release-readiness.md
+redesign-status.md
 personas.md
 "
 

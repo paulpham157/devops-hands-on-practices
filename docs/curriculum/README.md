@@ -13,6 +13,7 @@ This directory is the source of truth for the curriculum redesign described in [
 - [Assessment rubrics](assessments/level-exit-rubrics.md): diagnostic and level exit evidence thresholds.
 - [Learner personas](personas.md): routing assumptions and level boundaries.
 - [Release readiness](release-readiness.md): evidence gates before a stable curriculum milestone.
+- [Redesign status](redesign-status.md): phase-by-phase evidence and remaining gates.
 - [Lesson contract template](templates/lesson-contract.md): required shape for new or substantially rewritten lessons.
 
 ## Redesign Boundaries
