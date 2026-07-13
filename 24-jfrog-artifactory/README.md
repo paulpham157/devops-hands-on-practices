@@ -28,6 +28,13 @@ No JFrog account is required for the core exercises. The scripts in this lesson 
 - `33-snyk-and-sonar`
 - `37-teamcity-ci-pipelines`
 
+## Prerequisites and Entry Check
+
+- Completion of `15-helm-kustomize-artifact-repositories` and `11-devsecops-container-pipeline`, or equivalent artifact and supply-chain experience.
+- No JFrog account is required for the local lifecycle simulation.
+
+Entry check: distinguish artifact publishing, promotion, retention, and vulnerability policy; identify which step should be immutable.
+
 ## Mental Model
 
 ```text
@@ -185,6 +192,14 @@ exercises/README.md
 ```
 
 The exercises cover repository types, package mapping, repository design, access control, build info, promotion, caching, immutability, and Xray-style policy gates.
+
+## Cleanup
+
+```bash
+rm -rf sandbox/
+```
+
+The simulation writes only under `sandbox/`; do not remove repository source definitions or real artifacts as cleanup.
 
 ## References
 

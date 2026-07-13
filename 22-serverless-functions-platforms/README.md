@@ -35,6 +35,13 @@ No cloud account is required for the core exercises.
 - `21-aws-azure-gcp-cloud-fundamentals`
 - `23-iac-cdk-cloudformation-pulumi-terraform`
 
+## Prerequisites and Entry Check
+
+- Completion of `21-aws-azure-gcp-cloud-fundamentals`, or equivalent cloud resource and HTTP API vocabulary.
+- No provider account is required for the core comparison and handler examples.
+
+Entry check: distinguish a cold start, concurrency limit, timeout, and event retry before selecting a serverless platform.
+
 ## Mental Model
 
 ```text
@@ -171,6 +178,10 @@ exercises/README.md
 ```
 
 The exercises cover serverless fundamentals, invocation models, platform mapping, platform selection, handler shapes, events/bindings, cold starts, cost, security, observability, and deployment design.
+
+## Cleanup
+
+The core lesson creates no required cloud resources. Remove only local build output or emulators you started; do not run provider deletion commands without identifying the exact test resource and owner.
 
 ## References
 

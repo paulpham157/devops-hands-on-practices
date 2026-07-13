@@ -23,6 +23,13 @@ This lesson focuses on tool selection and production workflow, not cloud deploym
 - `39-aws-nx-plugin`
 - `38-openstack-private-cloud`
 
+## Prerequisites and Entry Check
+
+- Completion of `05-terraform-docker-container` and `10-opentofu-docker-module`, or equivalent IaC state/module experience.
+- No cloud account or credentials are required for the core examples.
+
+Entry check: explain how a plan/diff, state owner, and rollback boundary differ across two IaC approaches.
+
 ## Mental Model
 
 ```text
@@ -141,6 +148,10 @@ exercises/README.md
 ```
 
 The exercises cover IaC models, state and drift, CloudFormation, AWS CDK synthesis, Pulumi programs, Terraform modules and provider extension thinking, change review, and tool selection.
+
+## Cleanup
+
+The core examples are local/design-first. Remove only generated synthesis, package, or test output documented by the lesson validator; never delete a real cloud stack as a generic cleanup action.
 
 ## References
 

@@ -27,6 +27,13 @@ This lesson teaches:
 - `28-availability-patterns`
 - `30-network-patterns`
 
+## Prerequisites and Entry Check
+
+- Completion of `01-docker-compose-flask-redis` and `18-linux-unix-fundamentals`, or equivalent Redis/HTTP and troubleshooting experience.
+- Docker Engine with Compose; load tests must remain bounded to the local lab.
+
+Entry check: explain cache-aside versus a source of truth, and name one failure mode that a load balancer does not solve.
+
 ## Mental Model
 
 Without cache:
@@ -232,6 +239,14 @@ exercises/README.md
 ```
 
 The exercises cover cache-aside, TTL, invalidation, cache hit/miss behavior, NGINX load balancing, load testing, hot keys, cache stampede, memory eviction, persistence, observability, and failure modes.
+
+## Cleanup
+
+```bash
+docker compose down --volumes --remove-orphans
+```
+
+Remove generated load-test output only after retaining the evidence required by the capacity exercise.
 
 ## References
 
