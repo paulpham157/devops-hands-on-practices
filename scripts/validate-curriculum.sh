@@ -82,6 +82,27 @@ else
   exit 1
 fi
 
+if awk -F '\t' 'NR > 1 && $2 != "curriculum-maintainers" { bad = 1 } END { exit bad }' "$CURRICULUM_DIR/lesson-metadata.tsv"; then
+  :
+else
+  echo "Lesson metadata contains an unknown owner." >&2
+  exit 1
+fi
+
+if awk -F '\t' 'NR > 1 && $3 !~ /^(foundation|practitioner|production-owner|specialization)$/ { bad = 1 } END { exit bad }' "$CURRICULUM_DIR/lesson-metadata.tsv"; then
+  :
+else
+  echo "Lesson metadata contains an invalid level." >&2
+  exit 1
+fi
+
+if awk -F '\t' 'NR > 1 { n = split($4, codes, ","); for (i = 1; i <= n; i++) if (codes[i] !~ /^(SYS|NET|K8S|IAC|DEL|CLD|SEC|OBS|REL|DR|PERF|FIN|PLAT|ADR|LEAD)$/) bad = 1 } END { exit bad }' "$CURRICULUM_DIR/lesson-metadata.tsv"; then
+  :
+else
+  echo "Lesson metadata contains an unknown competency code." >&2
+  exit 1
+fi
+
 for lesson_dir in "$ROOT_DIR"/[0-9][0-9]-*; do
   lesson=$(basename "$lesson_dir" | cut -d- -f1)
   if ! grep -q "^| $lesson |" "$CURRICULUM_DIR/lesson-inventory.md"; then
@@ -90,6 +111,10 @@ for lesson_dir in "$ROOT_DIR"/[0-9][0-9]-*; do
   fi
   if ! awk -F '\t' -v lesson="$(basename "$lesson_dir")" 'NR > 1 && $1 == lesson { found = 1 } END { exit !found }' "$CURRICULUM_DIR/lesson-metadata.tsv"; then
     echo "Lesson $lesson is missing from docs/curriculum/lesson-metadata.tsv" >&2
+    exit 1
+  fi
+  if [ ! -d "$lesson_dir/exercises" ] || [ ! -f "$lesson_dir/scripts/validate.sh" ]; then
+    echo "Lesson $lesson is missing the standard exercises or validator path." >&2
     exit 1
   fi
 
