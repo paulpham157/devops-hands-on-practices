@@ -34,6 +34,13 @@ for file in $required_files; do
   fi
 done
 
+for release_file in "$ROOT_DIR/docs/releases/README.md" "$ROOT_DIR/docs/releases/TEMPLATE.md" "$ROOT_DIR/.github/workflows/draft-learning-product-release.yml"; do
+  if [ ! -f "$release_file" ]; then
+    echo "Missing editorial release artifact: $release_file" >&2
+    exit 1
+  fi
+done
+
 if [ ! -f "$ROOT_DIR/docs/adr/0002-curriculum-redesign-architecture.md" ]; then
   echo "Missing curriculum redesign ADR: docs/adr/0002-curriculum-redesign-architecture.md" >&2
   exit 1

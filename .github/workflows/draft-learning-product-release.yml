@@ -1,0 +1,51 @@
+name: Draft Learning Product Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag, for example v0.2.0"
+        required: true
+        type: string
+      notes_file:
+        description: "Committed learner-facing notes path"
+        required: true
+        default: docs/releases/vX.Y.Z.md
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  draft-release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out stable branch
+        uses: actions/checkout@v4
+
+      - name: Validate release inputs
+        env:
+          VERSION: ${{ inputs.version }}
+          NOTES_FILE: ${{ inputs.notes_file }}
+        run: |
+          set -eu
+          case "$VERSION" in
+            v[0-9]*.[0-9]*.[0-9]*) ;;
+            *) echo "Version must look like vX.Y.Z" >&2; exit 1 ;;
+          esac
+          case "$NOTES_FILE" in
+            docs/releases/*.md) ;;
+            *) echo "Notes must live under docs/releases/" >&2; exit 1 ;;
+          esac
+          test -f "$NOTES_FILE"
+
+      - name: Run curriculum validation
+        run: ./scripts/validate-all.sh
+
+      - name: Create draft GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+          NOTES_FILE: ${{ inputs.notes_file }}
+        run: gh release create "$VERSION" --draft --title "Learning Product $VERSION" --notes-file "$NOTES_FILE"

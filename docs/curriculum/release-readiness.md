@@ -14,6 +14,7 @@ Use this checklist before a manual editorial release. A green repository validat
 - [ ] Legacy-to-new resume mapping has been updated for any changed path or lesson.
 - [ ] No credentials, real secrets, private learner data, or generated backup/scanner output are committed.
 - [ ] Curated learner-facing release notes exist under the editorial release workflow.
+- [ ] The manual workflow creates a draft release from a committed notes file; public publication remains a maintainer decision.
 
 ## Release Decision
 
