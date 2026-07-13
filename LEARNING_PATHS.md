@@ -4,6 +4,8 @@ This repository is being redesigned around capabilities and evidence, not a chec
 
 Start every lesson by reading its `README.md`. Run the lesson's `./scripts/validate.sh` when the README asks for it, complete the exercises before opening solutions, retain the required evidence, and run cleanup for temporary resources.
 
+Use the [level exit rubrics](docs/curriculum/assessments/level-exit-rubrics.md) when deciding whether your evidence is sufficient to skip or advance a level.
+
 ## Choose Your Starting Point
 
 | If you can already… | Start at | First lessons |

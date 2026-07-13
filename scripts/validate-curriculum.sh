@@ -20,6 +20,8 @@ capstone/required-artifacts.md
 capstone/rubric.md
 capstone/design-defense.md
 capstone/pilot-calibration.md
+assessments/README.md
+assessments/level-exit-rubrics.md
 "
 
 for file in $required_files; do

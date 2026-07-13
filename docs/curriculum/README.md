@@ -10,6 +10,7 @@ This directory is the source of truth for the curriculum redesign described in [
 - [Legacy migration](legacy-migration.md): how existing learner progress maps to the redesigned paths.
 - [Workstream register](workstream-register.md): ownership, dependencies, delivery checks, and rough sizing.
 - [Senior production capstone](capstone/README.md): public brief, artifact contract, rubric, and defense protocol for pilot use.
+- [Assessment rubrics](assessments/level-exit-rubrics.md): diagnostic and level exit evidence thresholds.
 - [Lesson contract template](templates/lesson-contract.md): required shape for new or substantially rewritten lessons.
 
 ## Redesign Boundaries
