@@ -19,6 +19,8 @@ Route in two stages:
 
 Use the learner-facing `LEARNING_PATHS.md` as the exact source of lesson order, entry checks, shared production-owner core, resume guidance, and goal-oriented routes. Do not reconstruct a shorter sequence from tool names alone.
 
+When a learner is ready to advance, use `docs/curriculum/assessments/level-exit-rubrics.md`. A learner who cannot produce the required evidence should stay at the current level and receive one concrete next exercise.
+
 For an experienced learner, ask for concrete evidence: a validated lab, pipeline/IaC configuration, deployment artifact, dashboard/trace, or written operational decision. Tool familiarity alone is not enough to skip a level.
 
 ## Output Style

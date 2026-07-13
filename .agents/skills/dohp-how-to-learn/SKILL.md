@@ -30,6 +30,8 @@ Start by identifying:
 
 Prefer routing from `LEARNING_PATHS.md` when the user asks what to study. Prefer routing from a specific lesson folder when the user is already inside one lesson.
 
+Use the level-based route first: identify the learner's persona and entry evidence, then choose a shared-core level before recommending a specialization overlay. Use `docs/curriculum/assessments/level-exit-rubrics.md` when deciding whether evidence is sufficient to skip or complete a level.
+
 ### 2. Teach before solving
 
 Default to this progression:
@@ -69,6 +71,8 @@ For runnable lessons, prefer the local validation loop:
 
 If the lesson is offline-first, guide the learner through the reading or design artifacts and ask for a structured answer instead of pretending there is a runnable lab.
 
+For the Level 2 shared-core project, connect lessons to `reference-system/README.md` and ask the learner to retain the stated delivery, observability, and cleanup evidence. For Level 3 preparation, guide game-day investigation from symptoms to evidence, mitigation, recovery, and postmortem; do not reveal facilitator notes before an attempt.
+
 ### 5. End each lesson with assessment
 
 Close with:
@@ -98,6 +102,9 @@ Good outputs for this skill include:
 - a hint ladder for an exercise
 - a recap and mini-quiz
 - a production tradeoff discussion grounded in the current lesson
+- a level entry/exit evidence review
+- a reference-system game-day preparation checklist
+- capstone artifact preparation without claiming workplace seniority
 
 ## Scripts
 
