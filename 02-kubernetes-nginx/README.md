@@ -17,7 +17,7 @@ This lesson uses `nginxinc/nginx-unprivileged` so the pod can run as a non-root 
 - `03-ansible-docker-host`
 - `09-k3s-local-cluster`
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Use one local Kubernetes option:
 
@@ -31,6 +31,8 @@ Check access:
 kubectl cluster-info
 kubectl get nodes
 ```
+
+Entry check: explain the roles of a namespace, Deployment, Service, and ServiceAccount before applying the manifests.
 
 ## Apply
 
@@ -73,4 +75,3 @@ http://localhost:8080
 ```bash
 kubectl delete -f manifests/
 ```
-

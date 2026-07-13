@@ -48,7 +48,7 @@ exercises/                  Structured hands-on practice
 
 Some examples are intentionally simple or old-fashioned so you can spot issues. For example, `ubuntu:latest` is useful for discussion, but production images should usually pin versions and minimize runtime packages.
 
-## Prerequisites
+## Prerequisites and Entry Check
 
 Required:
 
@@ -75,6 +75,8 @@ Confirm the installation before continuing:
 docker version
 docker compose version
 ```
+
+Entry check: explain the difference between an image, container, volume, and network, and identify which command proves each one exists.
 
 ### Install Optional VM Tools
 
