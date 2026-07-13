@@ -25,6 +25,13 @@ No account is required for the core exercises.
 - `16-opentelemetry-jaeger-datadog`
 - `24-jfrog-artifactory`
 
+## Prerequisites and Entry Check
+
+- Completion of `11-devsecops-container-pipeline` and `32-sla-sli-slo`, or equivalent CI/security gate experience.
+- Core exercises require no Snyk or Sonar account; use the checked-in examples and local tools.
+
+Entry check: explain the difference between a security finding, a code-quality finding, and a policy exception before choosing a merge gate.
+
 ## Mental Model
 
 ```text
@@ -143,6 +150,10 @@ exercises/README.md
 ```
 
 The exercises cover tool positioning, shift-left practice, Snyk scan types, Sonar quality gates, new-code governance, and combined pipeline policies.
+
+## Cleanup
+
+Remove only generated scanner caches and reports documented by the lesson scripts. Do not commit tokens, organization identifiers, or real scan results containing sensitive source details.
 
 ## References
 

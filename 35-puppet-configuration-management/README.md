@@ -26,6 +26,13 @@ No Puppet server is required for the core exercises. The lesson is designed as a
 - `04-packer-docker-image`
 - `36-chef-infra-automation`
 
+## Prerequisites and Entry Check
+
+- Completion of `03-ansible-docker-host` and `04-packer-docker-image`, or equivalent configuration/image lifecycle experience.
+- No Puppet server is required for the offline-first exercises.
+
+Entry check: explain desired state, idempotent convergence, drift, and the role/profile boundary before reading the examples.
+
 ## Mental Model
 
 ```text
@@ -127,6 +134,10 @@ exercises/README.md
 ```
 
 The exercises cover Puppet architecture, catalogs, role modeling, Hiera data, Code Manager and Puppetfile promotion, Bolt usage, compliance, and adoption tradeoffs.
+
+## Cleanup
+
+The core lesson is offline-first and creates no required server resources. Remove only generated parser output or disposable local files created by an exercise.
 
 ## References
 

@@ -26,6 +26,13 @@ No Chef server is required for the core exercises. The lesson is offline-first a
 - `11-devsecops-container-pipeline`
 - `35-puppet-configuration-management`
 
+## Prerequisites and Entry Check
+
+- Completion of `03-ansible-docker-host` and `35-puppet-configuration-management`, or equivalent configuration-management experience.
+- No Chef server is required for the offline-first exercises.
+
+Entry check: explain how a Policyfile lock, cookbook test, and convergence run provide different evidence.
+
 ## Mental Model
 
 ```text
@@ -125,6 +132,10 @@ exercises/README.md
 ```
 
 The exercises cover Chef architecture, cookbook design, Policyfiles, local test workflows, drift handling, and adoption tradeoffs.
+
+## Cleanup
+
+The core exercises are offline-first. Remove only generated Kitchen/Test output or local policy artifacts created during the exercise; do not delete managed host resources as cleanup.
 
 ## References
 

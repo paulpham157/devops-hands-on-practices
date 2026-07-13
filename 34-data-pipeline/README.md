@@ -27,6 +27,13 @@ No cloud account is required for the core exercises.
 - `27-data-management`
 - `28-availability-patterns`
 
+## Prerequisites and Entry Check
+
+- Completion of `27-data-management` and `28-availability-patterns`, or equivalent data/reliability experience.
+- No cloud account is required for the core pipeline models and scenario files.
+
+Entry check: define one source of truth, one quality rule, one idempotency key, and one replay boundary for a data flow.
+
 ## Mental Model
 
 ```text
@@ -160,6 +167,10 @@ exercises/README.md
 ```
 
 The exercises cover ETL versus ELT, batch versus streaming, ingestion and landing zones, orchestration, quality checks, idempotency, lineage, and pipeline pattern selection.
+
+## Cleanup
+
+The core exercises use example data and design files. Remove generated local reports or test data only after recording the evidence needed for the exercise; do not delete a shared dataset.
 
 ## References
 
