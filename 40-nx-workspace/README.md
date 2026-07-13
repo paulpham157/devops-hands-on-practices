@@ -30,6 +30,13 @@ No generated Nx workspace is required for the core exercises. This lesson is off
 - `31-backend-for-frontend`
 - `39-aws-nx-plugin`
 
+## Prerequisites and Entry Check
+
+- Completion of `08-github-actions-gitlab-ci` and `17-language-runtime-containerization`, or equivalent monorepo/CI experience.
+- No generated Nx workspace is required for the core exercises.
+
+Entry check: explain the difference between a project graph, task graph, affected calculation, and cache key.
+
 ## Mental Model
 
 ```text
@@ -132,6 +139,10 @@ exercises/README.md
 ```
 
 The exercises cover Nx workspace modeling, project and task graphs, inferred tasks, caching, affected commands, plugin selection, CI design, and adoption tradeoffs.
+
+## Cleanup
+
+The core lesson is offline-first. Remove only generated local workspace examples or cache directories created during practice; do not remove a real repository's `.nx` state or CI configuration as cleanup.
 
 ## References
 

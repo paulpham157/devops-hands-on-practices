@@ -36,6 +36,13 @@ No AWS account is required for the core exercises. This lesson is offline-first 
 - `31-backend-for-frontend`
 - `40-nx-workspace`
 
+## Prerequisites and Entry Check
+
+- Completion of `40-nx-workspace`, `21-aws-azure-gcp-cloud-fundamentals`, and `23-iac-cdk-cloudformation-pulumi-terraform`, or equivalent workspace/IaC experience.
+- No AWS account is required for the generator-planning exercises.
+
+Entry check: inspect a generated command and identify its project boundaries, IAM implications, environment inputs, and deployment risk.
+
 ## Mental Model
 
 ```text
@@ -111,6 +118,10 @@ exercises/README.md
 The exercises cover AWS generator command planning, frontend/backend connection,
 local development, infrastructure review, and production adoption tradeoffs.
 Use `40-nx-workspace` for the general Nx workspace model.
+
+## Cleanup
+
+The core lesson is offline-first and does not create AWS resources. Remove only generated planning files or local workspace output; never run an unreviewed destroy command against cloud infrastructure.
 
 ## References
 

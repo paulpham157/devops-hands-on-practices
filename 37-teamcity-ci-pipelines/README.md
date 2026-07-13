@@ -26,6 +26,13 @@ No TeamCity server is required for the core exercises. The lesson is offline-fir
 - `08-github-actions-gitlab-ci`
 - `33-snyk-and-sonar`
 
+## Prerequisites and Entry Check
+
+- Completion of `07-jenkins-ci-pipeline` and `08-github-actions-gitlab-ci`, or equivalent CI/CD governance experience.
+- No TeamCity server is required for the offline-first exercises.
+
+Entry check: explain the difference between a build chain, snapshot dependency, artifact dependency, and release gate.
+
 ## Mental Model
 
 ```text
@@ -111,6 +118,10 @@ exercises/README.md
 ```
 
 The exercises cover TeamCity architecture, VCS triggers, Kotlin DSL, build chains, artifact flow, secrets, branch governance, capacity planning, and migration tradeoffs.
+
+## Cleanup
+
+The core lesson is offline-first. Remove only generated Kotlin/build inspection output or disposable local files created by an exercise; never delete a real CI project as cleanup.
 
 ## References
 

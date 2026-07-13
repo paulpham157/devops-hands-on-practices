@@ -26,6 +26,13 @@ No OpenStack cluster is required for the core exercises. The lesson is offline-f
 - `23-iac-cdk-cloudformation-pulumi-terraform`
 - `25-openshift-gke-eks-aks-ecs-fargate`
 
+## Prerequisites and Entry Check
+
+- Completion of `21-aws-azure-gcp-cloud-fundamentals` and `23-iac-cdk-cloudformation-pulumi-terraform`, or equivalent cloud/IaC vocabulary.
+- No OpenStack cluster is required for the offline-first exercises.
+
+Entry check: identify compute, network, storage, identity, quota, and failure-domain responsibilities in a private cloud.
+
 ## Mental Model
 
 ```text
@@ -114,6 +121,10 @@ exercises/README.md
 ```
 
 The exercises cover OpenStack services, tenant design, Heat stacks, security, operations, and private-cloud tradeoffs.
+
+## Cleanup
+
+The core exercises use Heat examples and design artifacts only. If you ran an optional local OpenStack environment, remove only the identified test stack and verify quotas/resources afterward.
 
 ## References
 
