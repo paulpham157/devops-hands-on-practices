@@ -11,5 +11,6 @@ Use it after completing the shared production-owner preparation core, the refere
 - [Review rubric](rubric.md)
 - [Design defense protocol](design-defense.md)
 - [Pilot calibration record](pilot-calibration.md)
+- [Pilot plan](pilot-plan.md)
 
 The capstone is ready for structured pilot use once its prerequisites are met. Do not mark a learner as having passed until two reviewers have applied the rubric and the calibration record is updated.

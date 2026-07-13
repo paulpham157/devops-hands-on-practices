@@ -20,8 +20,10 @@ capstone/required-artifacts.md
 capstone/rubric.md
 capstone/design-defense.md
 capstone/pilot-calibration.md
+capstone/pilot-plan.md
 assessments/README.md
 assessments/level-exit-rubrics.md
+release-readiness.md
 personas.md
 "
 
