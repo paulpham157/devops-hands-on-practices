@@ -67,6 +67,16 @@ for lesson_dir in "$ROOT_DIR"/[0-9][0-9]-*; do
     echo "Lesson $lesson is missing from docs/curriculum/lesson-inventory.md" >&2
     exit 1
   fi
+
+  lesson_readme="$lesson_dir/README.md"
+  if ! grep -q '^## Prerequisites and Entry Check' "$lesson_readme"; then
+    echo "Lesson $lesson is missing the standard prerequisites/entry-check section." >&2
+    exit 1
+  fi
+  if ! grep -Eq '^## Cleanup$|^## Clean Up$' "$lesson_readme"; then
+    echo "Lesson $lesson is missing a cleanup section." >&2
+    exit 1
+  fi
 done
 
 echo "Curriculum architecture artifacts are complete for $lesson_count numbered lessons."
