@@ -11,10 +11,10 @@ services:
 
   api:
     build:
-      context: ../01-docker-compose-flask-redis
+      context: ../01-docker-compose-fastapi-redis
     environment:
-      FLASK_HOST: 0.0.0.0
-      FLASK_PORT: "5000"
+      FASTAPI_HOST: 0.0.0.0
+      FASTAPI_PORT: "5000"
       REDIS_HOST: redis
       REDIS_PORT: "6379"
     depends_on:

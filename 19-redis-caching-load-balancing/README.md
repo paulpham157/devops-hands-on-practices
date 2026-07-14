@@ -29,7 +29,7 @@ This lesson teaches:
 
 ## Prerequisites and Entry Check
 
-- Completion of `01-docker-compose-flask-redis` and `18-linux-unix-fundamentals`, or equivalent Redis/HTTP and troubleshooting experience.
+- Completion of `01-docker-compose-fastapi-redis` and `18-linux-unix-fundamentals`, or equivalent Redis/HTTP and troubleshooting experience.
 - Docker Engine with Compose; load tests must remain bounded to the local lab.
 
 Entry check: explain cache-aside versus a source of truth, and name one failure mode that a load balancer does not solve.

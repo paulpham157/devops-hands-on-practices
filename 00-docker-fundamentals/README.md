@@ -16,11 +16,11 @@ By the end of this lesson, you should be able to:
 ## Navigation
 
 - Previous lesson: none
-- Next lesson: `01-docker-compose-flask-redis`
+- Next lesson: `01-docker-compose-fastapi-redis`
 
 ## Related Lessons
 
-- `01-docker-compose-flask-redis`
+- `01-docker-compose-fastapi-redis`
 - `02-kubernetes-nginx`
 - `17-language-runtime-containerization`
 

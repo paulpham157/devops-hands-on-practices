@@ -24,7 +24,7 @@ Promtail is intentionally not used because it reached end-of-life on 2026-03-02.
 
 ## Prerequisites and Entry Check
 
-- Completion of `01-docker-compose-flask-redis`, or equivalent ability to inspect a local Compose service.
+- Completion of `01-docker-compose-fastapi-redis`, or equivalent ability to inspect a local Compose service.
 - Docker Engine with `docker compose` and local ports `3000`, `3100`, `5002`, and `9090` available.
 
 Entry check: explain the difference between a metric, log, and trace, and name one user-visible signal for an HTTP service.

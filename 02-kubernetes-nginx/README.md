@@ -8,12 +8,12 @@ This lesson uses `nginxinc/nginx-unprivileged` so the pod can run as a non-root 
 
 ## Navigation
 
-- Previous lesson: `01-docker-compose-flask-redis`
+- Previous lesson: `01-docker-compose-fastapi-redis`
 - Next lesson: `03-ansible-docker-host`
 
 ## Related Lessons
 
-- `01-docker-compose-flask-redis`
+- `01-docker-compose-fastapi-redis`
 - `03-ansible-docker-host`
 - `09-k3s-local-cluster`
 

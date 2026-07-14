@@ -19,7 +19,7 @@ PATHS = (
     LearningPath(
         "Level 1: Foundations",
         ("new", "beginner", "foundation", "basic", "start", "linux", "terminal"),
-        ("18-linux-unix-fundamentals", "00-docker-fundamentals", "01-docker-compose-flask-redis"),
+        ("18-linux-unix-fundamentals", "00-docker-fundamentals", "01-docker-compose-fastapi-redis"),
         "Build safe Linux, container, and local workflow confidence before choosing an overlay.",
     ),
     LearningPath(

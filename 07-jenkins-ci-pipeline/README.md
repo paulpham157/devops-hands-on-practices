@@ -24,7 +24,7 @@ This lesson teaches:
 
 ## Prerequisites and Entry Check
 
-- Completion of `01-docker-compose-flask-redis` and `06-observability-prometheus-grafana-loki`, or equivalent container/CI basics.
+- Completion of `01-docker-compose-fastapi-redis` and `06-observability-prometheus-grafana-loki`, or equivalent container/CI basics.
 - Docker Engine with Compose; the local lab uses a privileged Docker-in-Docker sidecar.
 
 Entry check: identify one reason a CI job needs isolated credentials and one reason a pipeline should run tests before publishing an artifact.

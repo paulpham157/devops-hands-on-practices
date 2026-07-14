@@ -1,6 +1,6 @@
 lesson	owner	level	competencies	evidence
 00-docker-fundamentals	curriculum-maintainers	foundation	SYS,DEL	README.md;exercises;validate.sh
-01-docker-compose-flask-redis	curriculum-maintainers	foundation	SYS,DEL,OBS	README.md;exercises;validate.sh
+01-docker-compose-fastapi-redis	curriculum-maintainers	foundation	SYS,DEL,OBS	README.md;exercises;validate.sh
 02-kubernetes-nginx	curriculum-maintainers	foundation	K8S,NET,SEC	README.md;exercises;validate.sh
 03-ansible-docker-host	curriculum-maintainers	practitioner	IAC,SYS	README.md;exercises;validate.sh
 04-packer-docker-image	curriculum-maintainers	practitioner	IAC,DEL	README.md;exercises;validate.sh

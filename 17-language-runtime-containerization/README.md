@@ -75,7 +75,7 @@ GET /work
 
 ## Prerequisites and Entry Check
 
-- Completion of `00-docker-fundamentals` and `01-docker-compose-flask-redis`, or equivalent container evidence.
+- Completion of `00-docker-fundamentals` and `01-docker-compose-fastapi-redis`, or equivalent container evidence.
 - Docker Engine with `docker compose` for the optional runtime builds.
 
 Entry check: identify the difference between a build image and a runtime image, and explain why a container should normally run as a non-root user.

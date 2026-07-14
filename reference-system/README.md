@@ -1,6 +1,6 @@
 # Reference System: Order Flow
 
-This is the shared, local-first system used by redesigned advanced lessons. It composes the Flask and Redis application from `01-docker-compose-flask-redis` rather than creating a second disconnected sample application.
+This is the shared, local-first system used by redesigned advanced lessons. It composes the FastAPI and Redis application from `01-docker-compose-fastapi-redis` rather than creating a second disconnected sample application.
 
 ## What It Models
 
@@ -9,7 +9,7 @@ client -> gateway -> order API -> Redis cache / order queue -> worker
 ```
 
 - **Gateway** is a deliberately small identity boundary: it requires an `X-Role` request header before forwarding traffic. It demonstrates a boundary only; it is not real authentication or authorization.
-- **Order API** reuses lesson 01's Flask application, its `/healthz` endpoint, and its `POST /orders` queue endpoint.
+- **Order API** reuses lesson 01's FastAPI application, its `/healthz` endpoint, and its `POST /orders` queue endpoint.
 - **Redis** provides cache state, a locally persistent queue list, and worker-result counters. It uses explicit snapshot backup/restore for the local DR drill. The worker uses a processing-list acknowledgement pattern with a local requeue helper; it remains a simplified learning model, not a complete production queue.
 - **Worker** consumes queue messages and records completed work.
 - **Prometheus** scrapes API metrics for local observability practice.

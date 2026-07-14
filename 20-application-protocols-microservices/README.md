@@ -69,7 +69,7 @@ Both services expose a small product catalog use case.
 
 ## Prerequisites and Entry Check
 
-- Completion of `01-docker-compose-flask-redis` and `17-language-runtime-containerization`, or equivalent HTTP/container experience.
+- Completion of `01-docker-compose-fastapi-redis` and `17-language-runtime-containerization`, or equivalent HTTP/container experience.
 - Docker Engine with `docker compose` for the local protocol examples.
 
 Entry check: explain the difference between a synchronous request/response call and an asynchronous event, including one failure mode for each.

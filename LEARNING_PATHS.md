@@ -51,7 +51,7 @@ Core sequence:
 
 1. `18-linux-unix-fundamentals`
 2. `00-docker-fundamentals`
-3. `01-docker-compose-flask-redis`
+3. `01-docker-compose-fastapi-redis`
 4. `17-language-runtime-containerization`
 5. `02-kubernetes-nginx`
 6. `20-application-protocols-microservices`
