@@ -5,8 +5,11 @@ constraints:
   - "Reliability goals drive engineering prioritization"
 recommended_focus:
   - internal_slos
+  - olas_between_platform_and_application_teams
+  - kpis_for_adoption_and_operational_workload
   - selective_external_slas
 decision_notes:
   - "SLOs can exist without promising the same target in an SLA."
+  - "An OLA should make the internal handoff actionable without becoming a customer-facing contract."
+  - "KPIs should expose adoption, change, workload, or cost trends without replacing user-focused reliability indicators."
   - "Contracts should lag behind operational confidence."
-

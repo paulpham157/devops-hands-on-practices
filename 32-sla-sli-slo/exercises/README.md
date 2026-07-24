@@ -28,6 +28,9 @@ Work through these exercises after reading the lesson README.
 8. `04-production-reliability-management/04.02-choose-the-right-sli-and-slo`
    - Choose practical indicators and targets for realistic services.
 
+9. `04-production-reliability-management/04.03-ola-kpi-and-service-review`
+   - Design an internal OLA and choose KPIs without confusing them with SLI, SLO, or SLA.
+
 ## Suggested Workflow
 
 From the lesson directory:
@@ -47,4 +50,3 @@ scenario-designs/
 ```
 
 No cloud account is required.
-

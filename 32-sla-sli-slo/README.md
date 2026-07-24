@@ -7,11 +7,13 @@ Learn how to define and use service level indicators, objectives, and agreements
 This lesson teaches:
 
 - what `SLI`, `SLO`, and `SLA` each mean
+- how `OLA` and `KPI` complement service-level thinking
 - how to choose user-meaningful indicators
 - how to set objectives over time windows
 - how to calculate and use error budgets
 - how burn-rate thinking supports alerting and operational response
 - how internal SLOs differ from customer-facing SLAs
+- how internal team commitments differ from reliability targets and performance measures
 
 No cloud account is required for the core exercises.
 
@@ -44,6 +46,8 @@ The important distinction is:
 - `SLI`: what is measured
 - `SLO`: target for that measurement over a time window
 - `SLA`: external promise with consequences if the promise is missed
+- `OLA`: internal agreement that defines supporting team responsibilities
+- `KPI`: broader performance or outcome measure used for decisions
 
 ## Core Problems
 
@@ -73,6 +77,8 @@ exercises/         Structured hands-on practice
 | SLI | measured reliability indicator | 99.95 percent of checkout requests succeed under 1 second |
 | SLO | target for an SLI over a time window | checkout availability SLO is 99.9 percent over 30 days |
 | SLA | customer-facing commitment with consequences | refund or credit if monthly availability drops below 99.5 percent |
+| OLA | internal agreement between teams that supports service delivery | Platform acknowledges a P1 alert within 5 minutes and provides an escalation path |
+| KPI | broader performance indicator for a team, process, or business outcome | change failure rate, deployment frequency, or cost per accepted order |
 
 ## What Makes a Good SLI
 
@@ -113,6 +119,22 @@ An SLA is external and usually includes:
 
 Many internal systems should have SLOs without promising the same numbers in a customer-facing SLA.
 
+## OLA and KPI Notes
+
+An OLA is an internal operating agreement. It describes who must do what for another team or service to meet its goals. An OLA may cover response time, escalation, handoff, support hours, or dependency ownership. It is not a customer contract and it does not replace an SLO.
+
+A KPI is a decision or performance measure. It may describe delivery speed, operational workload, cost, or business value. A KPI is not automatically a reliability target: `deployment frequency` can be a KPI, while `99.9 percent successful checkout requests over 30 days` is an SLO.
+
+Example relationship:
+
+```text
+SLI: successful checkout request ratio
+SLO: 99.9 percent over 30 days
+SLA: customer credit below 99.5 percent
+OLA: Platform pages the on-call team within 5 minutes for a P1 dependency alert
+KPI: change failure rate and cost per accepted order
+```
+
 ## Production Questions
 
 Before defining service levels, answer:
@@ -122,6 +144,7 @@ Before defining service levels, answer:
 3. Which latency or success thresholds map to real user value?
 4. What error budget behavior should trigger engineering action?
 5. Which commitments are safe enough to expose in contracts?
+6. Which internal handoff needs an OLA, and which KPI would show whether the operating model is improving?
 
 ## Validate
 
@@ -146,7 +169,7 @@ Start here:
 exercises/README.md
 ```
 
-The exercises cover core definitions, good-event thinking, SLI design, error budgets, burn-rate policy, internal versus external commitments, and choosing practical objectives.
+The exercises cover core definitions, good-event thinking, SLI design, error budgets, burn-rate policy, internal versus external commitments, OLA handoffs, KPI selection, and choosing practical objectives.
 
 ## Cleanup
 
